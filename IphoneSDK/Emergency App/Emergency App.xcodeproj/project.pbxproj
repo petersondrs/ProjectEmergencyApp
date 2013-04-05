@@ -21,6 +21,7 @@
 		6CAF1B72170F858D003CC459 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B71170F858D003CC459 /* first@2x.png */; };
 		6CAF1B77170F858D003CC459 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B76170F858D003CC459 /* second.png */; };
 		6CAF1B79170F858D003CC459 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B78170F858D003CC459 /* second@2x.png */; };
+		6CAF1B82170F8D83003CC459 /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B81170F8D83003CC459 /* SplashScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +35,15 @@
 		6CAF1B5F170F858D003CC459 /* Emergency App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emergency App-Prefix.pch"; sourceTree = "<group>"; };
 		6CAF1B60170F858D003CC459 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CAF1B61170F858D003CC459 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6CAF1B63170F858D003CC459 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		6CAF1B65170F858D003CC459 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		6CAF1B67170F858D003CC459 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6CAF1B63170F858D003CC459 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Emergency App/Default.png"; sourceTree = "<group>"; };
+		6CAF1B65170F858D003CC459 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Emergency App/Default@2x.png"; sourceTree = "<group>"; };
+		6CAF1B67170F858D003CC459 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Emergency App/Default-568h@2x.png"; sourceTree = "<group>"; };
 		6CAF1B6A170F858D003CC459 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6CAF1B6F170F858D003CC459 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = "Emergency App/first.png"; sourceTree = "<group>"; };
 		6CAF1B71170F858D003CC459 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Emergency App/first@2x.png"; sourceTree = "<group>"; };
 		6CAF1B76170F858D003CC459 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = "Emergency App/second.png"; sourceTree = "<group>"; };
 		6CAF1B78170F858D003CC459 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Emergency App/second@2x.png"; sourceTree = "<group>"; };
+		6CAF1B81170F8D83003CC459 /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../PrintScreens/SplashScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +107,6 @@
 				6CAF1B5A170F858D003CC459 /* InfoPlist.strings */,
 				6CAF1B5D170F858D003CC459 /* main.m */,
 				6CAF1B5F170F858D003CC459 /* Emergency App-Prefix.pch */,
-				6CAF1B63170F858D003CC459 /* Default.png */,
-				6CAF1B65170F858D003CC459 /* Default@2x.png */,
-				6CAF1B67170F858D003CC459 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,6 +122,10 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6CAF1B81170F8D83003CC459 /* SplashScreen.png */,
+				6CAF1B63170F858D003CC459 /* Default.png */,
+				6CAF1B65170F858D003CC459 /* Default@2x.png */,
+				6CAF1B67170F858D003CC459 /* Default-568h@2x.png */,
 				6CAF1B6F170F858D003CC459 /* first.png */,
 				6CAF1B71170F858D003CC459 /* first@2x.png */,
 				6CAF1B76170F858D003CC459 /* second.png */,
@@ -192,6 +195,7 @@
 				6CAF1B72170F858D003CC459 /* first@2x.png in Resources */,
 				6CAF1B77170F858D003CC459 /* second.png in Resources */,
 				6CAF1B79170F858D003CC459 /* second@2x.png in Resources */,
+				6CAF1B82170F8D83003CC459 /* SplashScreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +330,7 @@
 				6CAF1B7E170F858D003CC459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
