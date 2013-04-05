@@ -22,6 +22,7 @@
 		6CAF1B77170F858D003CC459 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B76170F858D003CC459 /* second.png */; };
 		6CAF1B79170F858D003CC459 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B78170F858D003CC459 /* second@2x.png */; };
 		6CAF1B82170F8D83003CC459 /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B81170F8D83003CC459 /* SplashScreen.png */; };
+		6CAF1B85170F910B003CC459 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B84170F910B003CC459 /* SplashScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		6CAF1B76170F858D003CC459 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = "Emergency App/second.png"; sourceTree = "<group>"; };
 		6CAF1B78170F858D003CC459 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Emergency App/second@2x.png"; sourceTree = "<group>"; };
 		6CAF1B81170F8D83003CC459 /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../PrintScreens/SplashScreen.png; sourceTree = "<group>"; };
+		6CAF1B83170F910B003CC459 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		6CAF1B84170F910B003CC459 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 		6CAF1B7F170F8599003CC459 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6CAF1B83170F910B003CC459 /* SplashScreenViewController.h */,
+				6CAF1B84170F910B003CC459 /* SplashScreenViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -208,6 +213,7 @@
 			files = (
 				6CAF1B5E170F858D003CC459 /* main.m in Sources */,
 				6CAF1B62170F858D003CC459 /* AppDelegate.m in Sources */,
+				6CAF1B85170F910B003CC459 /* SplashScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
