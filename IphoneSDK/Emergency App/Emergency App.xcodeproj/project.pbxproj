@@ -23,6 +23,7 @@
 		6CAF1B79170F858D003CC459 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B78170F858D003CC459 /* second@2x.png */; };
 		6CAF1B82170F8D83003CC459 /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B81170F8D83003CC459 /* SplashScreen.png */; };
 		6CAF1B88170F93AF003CC459 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B87170F93AF003CC459 /* SplashScreenViewController.m */; };
+		6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		6CAF1B81170F8D83003CC459 /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../PrintScreens/SplashScreen.png; sourceTree = "<group>"; };
 		6CAF1B86170F93AF003CC459 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashScreenViewController.h; path = "Emergency App/SplashScreenViewController.h"; sourceTree = "<group>"; };
 		6CAF1B87170F93AF003CC459 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashScreenViewController.m; path = "Emergency App/SplashScreenViewController.m"; sourceTree = "<group>"; };
+		6CDFB3B1170FBD0700D5F041 /* SettingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingScreenViewController.h; path = "Emergency App/SettingScreenViewController.h"; sourceTree = "<group>"; };
+		6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingScreenViewController.m; path = "Emergency App/SettingScreenViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				6CAF1B86170F93AF003CC459 /* SplashScreenViewController.h */,
 				6CAF1B87170F93AF003CC459 /* SplashScreenViewController.m */,
+				6CDFB3B1170FBD0700D5F041 /* SettingScreenViewController.h */,
+				6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -214,6 +219,7 @@
 				6CAF1B5E170F858D003CC459 /* main.m in Sources */,
 				6CAF1B62170F858D003CC459 /* AppDelegate.m in Sources */,
 				6CAF1B88170F93AF003CC459 /* SplashScreenViewController.m in Sources */,
+				6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
