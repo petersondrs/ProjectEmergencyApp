@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EMe-tE-1ke">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Splash Screen View Controller-->
-        <scene sceneID="3gc-De-vBf">
-            <objects>
-                <viewController id="EMe-tE-1ke" customClass="SplashScreenViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eVl-o3-WZY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SplashScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="HuU-Ja-V8x"/>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="trailing" secondItem="eVl-o3-WZY" secondAttribute="trailing" type="default" id="9ep-Wx-gS2"/>
-                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="leading" secondItem="eVl-o3-WZY" secondAttribute="leading" type="default" id="AmF-LM-nHI"/>
-                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="top" secondItem="eVl-o3-WZY" secondAttribute="top" type="default" id="dBR-JD-ejv"/>
-                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="bottom" secondItem="eVl-o3-WZY" secondAttribute="bottom" type="default" id="uME-yN-9AV"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="YQw-Hq-mqA" kind="modal" identifier="MainApplication" modalTransitionStyle="crossDissolve" id="98r-g9-ekI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tBP-dg-8bG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3258" y="421"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6am-xm-Sak">
             <objects>
@@ -49,7 +23,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m7-yE-v1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2784" y="421"/>
+            <point key="canvasLocation" x="-3316" y="431"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cWb-kT-SW6">
@@ -60,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iTH-NC-APS"/>
+                    <navigationItem key="navigationItem" id="iTH-NC-APS" colorLabel="IBBuiltInLabel-Orange"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W35-DY-ptY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,11 +55,11 @@
             </objects>
             <point key="canvasLocation" x="-1730" y="-540"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Enviar Alerta-->
         <scene sceneID="bcZ-MU-oFr">
             <objects>
                 <navigationController id="5po-Cn-Ob6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="K4f-tx-t2I"/>
+                    <tabBarItem key="tabBarItem" title="Enviar Alerta" id="K4f-tx-t2I"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPI-LN-KQ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -100,11 +74,11 @@
             </objects>
             <point key="canvasLocation" x="-2168" y="-540"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Contatos-->
         <scene sceneID="UfW-dd-SVp">
             <objects>
                 <navigationController id="FoF-Vx-6wy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pl2-GJ-hx6"/>
+                    <tabBarItem key="tabBarItem" title="Contatos" id="pl2-GJ-hx6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KaI-k3-2WV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,11 +108,11 @@
             </objects>
             <point key="canvasLocation" x="-1730" y="801"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Dados Pessoais-->
         <scene sceneID="duF-r5-3gS">
             <objects>
                 <navigationController id="txJ-yz-4DB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ej2-G5-Kwa"/>
+                    <tabBarItem key="tabBarItem" title="Dados Pessoais" id="Ej2-G5-Kwa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1dN-o7-csK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="-2156" y="801"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Configurações-->
         <scene sceneID="0av-U3-rBK">
             <objects>
                 <navigationController id="qTr-fw-5GS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lrR-sP-NOU"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" id="lrR-sP-NOU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lSB-Qk-aiz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,18 +292,9 @@
             <point key="canvasLocation" x="-1721" y="1453"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="SplashScreen.png" width="640" height="1130"/>
-    </resources>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="SettingScreenViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
-        </class>
-        <class className="SplashScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashScreenViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
