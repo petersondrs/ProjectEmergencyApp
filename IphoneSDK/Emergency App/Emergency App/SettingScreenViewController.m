@@ -7,6 +7,7 @@
 //
 
 #import "SettingScreenViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SettingScreenViewController ()
 
@@ -26,7 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //Setando as aparencias do controles na aplicação
+    
+    
     self.clearsSelectionOnViewWillAppear = YES;
 }
 
@@ -41,8 +45,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Entrou %d",indexPath.row);
+    //Deselecionando a linha
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    //Fazendo a ação necessária para uma determinada linha
+    switch (indexPath.row) {
+        case 1:
+            [self performSegueWithIdentifier:@"Contacts" sender:self];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

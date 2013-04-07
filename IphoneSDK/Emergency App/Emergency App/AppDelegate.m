@@ -7,11 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // SETA A COR DE FUNDO DE TODAS AS TELAS DE NAVEGACAO;
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:255/255 green:7/255 blue:0 alpha:1.0]];
+    
     // Override point for customization after application launch.
     return YES;
 }
