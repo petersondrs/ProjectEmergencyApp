@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate>
+@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate,ABPeoplePickerNavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableContato;
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender;
 
 - (IBAction)btnSalvarContatoEContinuar_TouchUpInside:(id)sender;
+- (IBAction)btnImportarContato_TouchUpInside:(id)sender;
 
 @end

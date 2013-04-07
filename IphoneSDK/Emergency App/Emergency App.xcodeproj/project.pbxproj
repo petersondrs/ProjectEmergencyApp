@@ -28,6 +28,8 @@
 		6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */; };
 		6CE13CD81711360800E7E8E9 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD51711360800E7E8E9 /* AddContactViewController.m */; };
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
+		6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE46349171204DF00EEF46C /* AddressBook.framework */; };
+		6CE4634C171204E000EEF46C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE4634A171204DF00EEF46C /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		6CE13CD51711360800E7E8E9 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddContactViewController.m; path = "Emergency App/AddContactViewController.m"; sourceTree = "<group>"; };
 		6CE13CD61711360800E7E8E9 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = "Emergency App/ContactViewController.h"; sourceTree = "<group>"; };
 		6CE13CD71711360800E7E8E9 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = "Emergency App/ContactViewController.m"; sourceTree = "<group>"; };
+		6CE46349171204DF00EEF46C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6CE4634A171204DF00EEF46C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */,
+				6CE4634C171204E000EEF46C /* AddressBookUI.framework in Frameworks */,
 				6CAF1B52170F858D003CC459 /* UIKit.framework in Frameworks */,
 				6CAF1B54170F858D003CC459 /* Foundation.framework in Frameworks */,
 				6CAF1B56170F858D003CC459 /* CoreGraphics.framework in Frameworks */,
@@ -79,9 +85,6 @@
 		6CAF1B45170F858D003CC459 = {
 			isa = PBXGroup;
 			children = (
-				183CA1391710DAA700FA8DA6 /* icon-iphone-114x114.png */,
-				183CA1371710DAA100FA8DA6 /* icone-iphone-57x57.png */,
-				183CA1351710D8C300FA8DA6 /* Default.png */,
 				6CAF1B57170F858D003CC459 /* Emergency App */,
 				6CAF1B50170F858D003CC459 /* Frameworks */,
 				6CAF1B4F170F858D003CC459 /* Products */,
@@ -99,6 +102,8 @@
 		6CAF1B50170F858D003CC459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CE46349171204DF00EEF46C /* AddressBook.framework */,
+				6CE4634A171204DF00EEF46C /* AddressBookUI.framework */,
 				6CAF1B51170F858D003CC459 /* UIKit.framework */,
 				6CAF1B53170F858D003CC459 /* Foundation.framework */,
 				6CAF1B55170F858D003CC459 /* CoreGraphics.framework */,
@@ -149,6 +154,9 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				183CA1391710DAA700FA8DA6 /* icon-iphone-114x114.png */,
+				183CA1371710DAA100FA8DA6 /* icone-iphone-57x57.png */,
+				183CA1351710D8C300FA8DA6 /* Default.png */,
 				183CA1341710D1C500FA8DA6 /* Default.png */,
 				6CAF1B65170F858D003CC459 /* Default@2x.png */,
 				6CAF1B67170F858D003CC459 /* Default-568h@2x.png */,

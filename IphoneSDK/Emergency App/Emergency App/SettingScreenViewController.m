@@ -45,9 +45,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Deselecionando a linha
-    [tableView deselectRowAtIndexPath:indexPath animated:true];
-    
     //Fazendo a ação necessária para uma determinada linha
     switch (indexPath.row) {
         case 1:
@@ -57,6 +54,11 @@
         default:
             break;
     }
+    
+    
+    //Deselecionando a linha
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
 }
 
 @end
