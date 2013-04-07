@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableContato;
 

@@ -56,31 +56,48 @@
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     
+    UISwitch* uiSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+    
     
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"Nome";
             aRect = CGRectMake(62, 10, 233, 31.f );
+            textField.keyboardType = UIKeyboardTypeDefault;
+            textField.returnKeyType = UIReturnKeyNext;
+            textField.tag = indexPath.row;
+            textField.frame = aRect;
+            textField.delegate = self;
             [cell.contentView addSubview:textField];
             break;
         case 1:
             cell.textLabel.text = @"Telefone";
             aRect = CGRectMake(85, 10, 210, 31.f );
+            textField.keyboardType = UIKeyboardTypeNumberPad;
+            textField.returnKeyType = UIReturnKeyDone;
+            textField.tag = indexPath.row;
+            textField.frame = aRect;
+            textField.delegate = self;
             [cell.contentView addSubview:textField];
             break;
         case 2:
             cell.textLabel.text = @"Efetuar Ligação";
-             aRect = CGRectMake(140, 10, 155, 31.f );
+            aRect = CGRectMake(210, 10, 0, 0 );
+            
+            uiSwitch.frame = aRect;
+            [cell.contentView addSubview:uiSwitch];
+            
             break;
         case 3:
-             cell.textLabel.text = @"Enviar SMS";
-             aRect = CGRectMake(110, 10, 185, 31.f );
+            cell.textLabel.text = @"Enviar SMS";
+            aRect = CGRectMake(210, 10, 0, 0 );
+            uiSwitch.frame = aRect;
+            [cell.contentView addSubview:uiSwitch];
             break;
         default:
             break;
     }
- 
-    textField.frame = aRect;
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
@@ -91,6 +108,25 @@
     return 4;
     
 }
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    UIResponder* nextTextField = [self.view viewWithTag:textField.tag + 1];
+    
+    if (nextTextField)
+    {
+        [nextTextField becomeFirstResponder];
+    }
+    else
+    {
+        [nextTextField resignFirstResponder];
+    }
+    
+    return NO;
+
+}
+
+
 
 
 
