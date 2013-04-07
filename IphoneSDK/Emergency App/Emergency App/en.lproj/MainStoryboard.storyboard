@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EMe-tE-1ke">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="3gc-De-vBf">
+            <objects>
+                <viewController id="EMe-tE-1ke" customClass="SplashScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eVl-o3-WZY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SplashScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="HuU-Ja-V8x"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="trailing" secondItem="eVl-o3-WZY" secondAttribute="trailing" type="default" id="9ep-Wx-gS2"/>
+                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="leading" secondItem="eVl-o3-WZY" secondAttribute="leading" type="default" id="AmF-LM-nHI"/>
+                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="top" secondItem="eVl-o3-WZY" secondAttribute="top" type="default" id="dBR-JD-ejv"/>
+                            <constraint firstItem="HuU-Ja-V8x" firstAttribute="bottom" secondItem="eVl-o3-WZY" secondAttribute="bottom" type="default" id="uME-yN-9AV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="YQw-Hq-mqA" kind="modal" identifier="MainApplication" modalTransitionStyle="crossDissolve" id="98r-g9-ekI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBP-dg-8bG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5016" y="1477"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6am-xm-Sak">
             <objects>
@@ -23,7 +49,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m7-yE-v1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3316" y="431"/>
+            <point key="canvasLocation" x="-4542" y="1477"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cWb-kT-SW6">
@@ -34,11 +60,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iTH-NC-APS" colorLabel="IBBuiltInLabel-Orange"/>
+                    <navigationItem key="navigationItem" id="iTH-NC-APS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W35-DY-ptY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730" y="120"/>
+            <point key="canvasLocation" x="-3488" y="1176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eyd-Ea-wB0">
@@ -53,13 +79,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDP-3j-eY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730" y="-540"/>
+            <point key="canvasLocation" x="-3488" y="516"/>
         </scene>
-        <!--Navigation Controller - Enviar Alerta-->
+        <!--Navigation Controller - Item-->
         <scene sceneID="bcZ-MU-oFr">
             <objects>
                 <navigationController id="5po-Cn-Ob6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Enviar Alerta" id="K4f-tx-t2I"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="K4f-tx-t2I"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPI-LN-KQ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -72,13 +98,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n31-0R-X1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168" y="-540"/>
+            <point key="canvasLocation" x="-3926" y="516"/>
         </scene>
-        <!--Navigation Controller - Contatos-->
+        <!--Navigation Controller - Item-->
         <scene sceneID="UfW-dd-SVp">
             <objects>
                 <navigationController id="FoF-Vx-6wy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contatos" id="pl2-GJ-hx6"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="pl2-GJ-hx6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KaI-k3-2WV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -91,7 +117,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gY-Vd-VP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168" y="120"/>
+            <point key="canvasLocation" x="-3926" y="1176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xUZ-1M-t8i">
@@ -106,13 +132,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFC-ka-k3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730" y="801"/>
+            <point key="canvasLocation" x="-3488" y="1857"/>
         </scene>
-        <!--Navigation Controller - Dados Pessoais-->
+        <!--Navigation Controller - Item-->
         <scene sceneID="duF-r5-3gS">
             <objects>
                 <navigationController id="txJ-yz-4DB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dados Pessoais" id="Ej2-G5-Kwa"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ej2-G5-Kwa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1dN-o7-csK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -125,13 +151,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAq-0p-7lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2156" y="801"/>
+            <point key="canvasLocation" x="-3914" y="1857"/>
         </scene>
-        <!--Navigation Controller - Configurações-->
+        <!--Navigation Controller - Item-->
         <scene sceneID="0av-U3-rBK">
             <objects>
                 <navigationController id="qTr-fw-5GS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configurações" id="lrR-sP-NOU"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="lrR-sP-NOU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lSB-Qk-aiz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -144,7 +170,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KP9-AS-wXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168" y="1453"/>
+            <point key="canvasLocation" x="-3926" y="2509"/>
         </scene>
         <!--Setting Screen View Controller-->
         <scene sceneID="t6f-x2-Nc0">
@@ -204,6 +230,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="XpS-pL-bIX" kind="push" identifier="Contacts" id="qCP-N0-4yH"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="fEM-dR-IGX" style="IBUITableViewCellStyleDefault" id="Ljp-Gn-vnQ">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
@@ -289,14 +318,111 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FuT-Hv-h9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1721" y="1453"/>
+            <point key="canvasLocation" x="-3479" y="2509"/>
+        </scene>
+        <!--Contact View Controller - Contatos-->
+        <scene sceneID="VvH-kw-FCu">
+            <objects>
+                <viewController id="XpS-pL-bIX" customClass="ContactViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9UA-lA-hV4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contatos" id="4sR-iK-T2c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DUn-xJ-gRa">
+                            <color key="tintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="btnAddContact:" destination="XpS-pL-bIX" id="FpO-rS-2w1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="9RA-zY-v6P" kind="push" identifier="AddContact" id="I0G-Dz-P3K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwD-ub-EN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3013" y="2509"/>
+        </scene>
+        <!--Add Contact View Controller - Novo Contato-->
+        <scene sceneID="lOy-8W-nKl">
+            <objects>
+                <viewController id="9RA-zY-v6P" customClass="AddContactViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lvf-qO-qFg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-gP-ZWr">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="SKg-4l-uyS"/>
+                                </constraints>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9RA-zY-v6P" id="xKH-40-8ee"/>
+                                    <outlet property="delegate" destination="9RA-zY-v6P" id="aPi-nG-x3B"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-BP-BTu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="Qb9-Jb-qJq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Salvar Contato">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSalvarContato_TouchUpInside:" destination="9RA-zY-v6P" eventType="touchUpInside" id="rer-1p-yiJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3V-Yc-AUR">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Salva Contato e Continuar">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSalvarContatoEContinuar_TouchUpInside:" destination="9RA-zY-v6P" eventType="touchUpInside" id="UDL-19-Vxz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s3V-Yc-AUR" firstAttribute="leading" secondItem="dUC-BP-BTu" secondAttribute="leading" type="default" id="7Vh-pm-yTC"/>
+                            <constraint firstItem="dUC-BP-BTu" firstAttribute="trailing" secondItem="s3V-Yc-AUR" secondAttribute="trailing" type="default" id="DFe-zp-hKO"/>
+                            <constraint firstItem="dUC-BP-BTu" firstAttribute="centerX" secondItem="EJQ-gP-ZWr" secondAttribute="centerX" type="default" id="f6B-kp-amz"/>
+                            <constraint firstItem="EJQ-gP-ZWr" firstAttribute="leading" secondItem="lvf-qO-qFg" secondAttribute="leading" type="default" id="mpe-2p-HKG"/>
+                            <constraint firstItem="EJQ-gP-ZWr" firstAttribute="top" secondItem="lvf-qO-qFg" secondAttribute="top" type="default" id="nP0-j3-tJr"/>
+                            <constraint firstItem="dUC-BP-BTu" firstAttribute="top" secondItem="EJQ-gP-ZWr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ouY-NS-4wz"/>
+                            <constraint firstItem="EJQ-gP-ZWr" firstAttribute="trailing" secondItem="lvf-qO-qFg" secondAttribute="trailing" type="default" id="via-pw-7hY"/>
+                            <constraint firstAttribute="bottom" secondItem="s3V-Yc-AUR" secondAttribute="bottom" constant="50" id="yYi-eA-Dyr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo Contato" id="ghH-QP-ksc">
+                        <barButtonItem key="rightBarButtonItem" title="Importar" id="cna-l2-334">
+                            <color key="tintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableContato" destination="EJQ-gP-ZWr" id="DP8-EC-NPB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xm-rg-wkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2541" y="2509"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="SettingScreenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="SplashScreen.png" width="640" height="1130"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
