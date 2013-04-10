@@ -81,11 +81,11 @@
             </objects>
             <point key="canvasLocation" x="-3488" y="516"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Enviar Alerta-->
         <scene sceneID="bcZ-MU-oFr">
             <objects>
                 <navigationController id="5po-Cn-Ob6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="K4f-tx-t2I"/>
+                    <tabBarItem key="tabBarItem" title="Enviar Alerta" id="K4f-tx-t2I"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPI-LN-KQ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,11 +134,11 @@
             </objects>
             <point key="canvasLocation" x="-3488" y="1857"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Informações-->
         <scene sceneID="duF-r5-3gS">
             <objects>
                 <navigationController id="txJ-yz-4DB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ej2-G5-Kwa"/>
+                    <tabBarItem key="tabBarItem" title="Informações" id="Ej2-G5-Kwa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1dN-o7-csK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,11 +153,11 @@
             </objects>
             <point key="canvasLocation" x="-3914" y="1857"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Configurações-->
         <scene sceneID="0av-U3-rBK">
             <objects>
                 <navigationController id="qTr-fw-5GS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lrR-sP-NOU"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Configurações" id="lrR-sP-NOU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lSB-Qk-aiz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

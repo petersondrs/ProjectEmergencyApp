@@ -40,6 +40,50 @@
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
     
+    
+    UITextField* nomeTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:0]
+                                                  contentView] subviews] objectAtIndex:1];
+    
+    UITextField* phoneTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:1]
+                                                   contentView] subviews] objectAtIndex:1];
+    
+    UISwitch* switchSMS = (UISwitch*)[[[[self.tableContato.visibleCells objectAtIndex:2]
+                                        contentView] subviews] objectAtIndex:1];
+    
+    UISwitch* switchCall = (UISwitch*)[[[[self.tableContato.visibleCells objectAtIndex:3]
+                                         contentView] subviews] objectAtIndex:1];
+    
+    
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
+    
+    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
+    
+    //Le o array ja gravado para se manter os antigos registros
+    NSMutableArray* arrContato = [dic valueForKey:@"Contato"];
+    
+    
+    //Cria o novo contato
+    NSMutableArray* novoContato = [NSMutableArray arrayWithObjects:nomeTextField.text
+                                   , phoneTextField.text
+                                   , switchSMS.isOn
+                                   , switchCall.isOn ,nil];
+    
+    
+    
+    //Adiciona o novo contato
+    [arrContato addObject:novoContato];
+    
+    //Grava os novos valores no dicionario
+    [dic setObject:arrContato forKey:@"Contato"];
+    
+    //Escreve no arquivo o contato
+    [dic writeToFile:bundle atomically:YES];
+    
+    
+    
+    
+    
+    
 }
 
 - (IBAction)btnSalvarContatoEContinuar_TouchUpInside:(id)sender {

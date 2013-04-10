@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
-		183CA1361710D8C300FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1351710D8C300FA8DA6 /* Default.png */; };
-		183CA1381710DAA100FA8DA6 /* icone-iphone-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1371710DAA100FA8DA6 /* icone-iphone-57x57.png */; };
-		183CA13A1710DAA700FA8DA6 /* icon-iphone-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1391710DAA700FA8DA6 /* icon-iphone-114x114.png */; };
 		6CAF1B52170F858D003CC459 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B51170F858D003CC459 /* UIKit.framework */; };
 		6CAF1B54170F858D003CC459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B53170F858D003CC459 /* Foundation.framework */; };
 		6CAF1B56170F858D003CC459 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B55170F858D003CC459 /* CoreGraphics.framework */; };
@@ -20,11 +17,11 @@
 		6CAF1B66170F858D003CC459 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B65170F858D003CC459 /* Default@2x.png */; };
 		6CAF1B68170F858D003CC459 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B67170F858D003CC459 /* Default-568h@2x.png */; };
 		6CAF1B6B170F858D003CC459 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B69170F858D003CC459 /* MainStoryboard.storyboard */; };
-		6CAF1B70170F858D003CC459 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B6F170F858D003CC459 /* first.png */; };
-		6CAF1B72170F858D003CC459 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B71170F858D003CC459 /* first@2x.png */; };
-		6CAF1B77170F858D003CC459 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B76170F858D003CC459 /* second.png */; };
-		6CAF1B79170F858D003CC459 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B78170F858D003CC459 /* second@2x.png */; };
 		6CAF1B88170F93AF003CC459 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B87170F93AF003CC459 /* SplashScreenViewController.m */; };
+		6CDD559317150FCB002BB31A /* Contatos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559217150FCB002BB31A /* Contatos.plist */; };
+		6CDD559717151044002BB31A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559417151044002BB31A /* Default.png */; };
+		6CDD559817151044002BB31A /* icon-iphone-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559517151044002BB31A /* icon-iphone-114x114.png */; };
+		6CDD559917151044002BB31A /* icone-iphone-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559617151044002BB31A /* icone-iphone-57x57.png */; };
 		6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */; };
 		6CE13CD81711360800E7E8E9 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD51711360800E7E8E9 /* AddContactViewController.m */; };
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
@@ -34,9 +31,6 @@
 
 /* Begin PBXFileReference section */
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
-		183CA1351710D8C300FA8DA6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		183CA1371710DAA100FA8DA6 /* icone-iphone-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icone-iphone-57x57.png"; sourceTree = "<group>"; };
-		183CA1391710DAA700FA8DA6 /* icon-iphone-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iphone-114x114.png"; sourceTree = "<group>"; };
 		6CAF1B4E170F858D003CC459 /* Emergency App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAF1B51170F858D003CC459 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6CAF1B53170F858D003CC459 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,12 +44,12 @@
 		6CAF1B65170F858D003CC459 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Emergency App/Default@2x.png"; sourceTree = "<group>"; };
 		6CAF1B67170F858D003CC459 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Emergency App/Default-568h@2x.png"; sourceTree = "<group>"; };
 		6CAF1B6A170F858D003CC459 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6CAF1B6F170F858D003CC459 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = "Emergency App/first.png"; sourceTree = "<group>"; };
-		6CAF1B71170F858D003CC459 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Emergency App/first@2x.png"; sourceTree = "<group>"; };
-		6CAF1B76170F858D003CC459 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = "Emergency App/second.png"; sourceTree = "<group>"; };
-		6CAF1B78170F858D003CC459 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Emergency App/second@2x.png"; sourceTree = "<group>"; };
 		6CAF1B86170F93AF003CC459 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashScreenViewController.h; path = "Emergency App/SplashScreenViewController.h"; sourceTree = "<group>"; };
 		6CAF1B87170F93AF003CC459 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashScreenViewController.m; path = "Emergency App/SplashScreenViewController.m"; sourceTree = "<group>"; };
+		6CDD559217150FCB002BB31A /* Contatos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contatos.plist; sourceTree = "<group>"; };
+		6CDD559417151044002BB31A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Emergency App/Default.png"; sourceTree = "<group>"; };
+		6CDD559517151044002BB31A /* icon-iphone-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone-114x114.png"; path = "Emergency App/icon-iphone-114x114.png"; sourceTree = "<group>"; };
+		6CDD559617151044002BB31A /* icone-iphone-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone-iphone-57x57.png"; path = "Emergency App/icone-iphone-57x57.png"; sourceTree = "<group>"; };
 		6CDFB3B1170FBD0700D5F041 /* SettingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingScreenViewController.h; path = "Emergency App/SettingScreenViewController.h"; sourceTree = "<group>"; };
 		6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingScreenViewController.m; path = "Emergency App/SettingScreenViewController.m"; sourceTree = "<group>"; };
 		6CE13CD41711360800E7E8E9 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddContactViewController.h; path = "Emergency App/AddContactViewController.h"; sourceTree = "<group>"; };
@@ -117,6 +111,7 @@
 				6CAF1B80170F85AA003CC459 /* Resources */,
 				6CAF1B7F170F8599003CC459 /* Views */,
 				6CAF1B60170F858D003CC459 /* AppDelegate.h */,
+				6CDD559217150FCB002BB31A /* Contatos.plist */,
 				6CAF1B61170F858D003CC459 /* AppDelegate.m */,
 				6CAF1B69170F858D003CC459 /* MainStoryboard.storyboard */,
 				6CAF1B58170F858D003CC459 /* Supporting Files */,
@@ -154,16 +149,12 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				183CA1391710DAA700FA8DA6 /* icon-iphone-114x114.png */,
-				183CA1371710DAA100FA8DA6 /* icone-iphone-57x57.png */,
-				183CA1351710D8C300FA8DA6 /* Default.png */,
+				6CDD559417151044002BB31A /* Default.png */,
+				6CDD559517151044002BB31A /* icon-iphone-114x114.png */,
+				6CDD559617151044002BB31A /* icone-iphone-57x57.png */,
 				183CA1341710D1C500FA8DA6 /* Default.png */,
 				6CAF1B65170F858D003CC459 /* Default@2x.png */,
 				6CAF1B67170F858D003CC459 /* Default-568h@2x.png */,
-				6CAF1B6F170F858D003CC459 /* first.png */,
-				6CAF1B71170F858D003CC459 /* first@2x.png */,
-				6CAF1B76170F858D003CC459 /* second.png */,
-				6CAF1B78170F858D003CC459 /* second@2x.png */,
 			);
 			name = Resources;
 			path = ..;
@@ -225,13 +216,10 @@
 				6CAF1B66170F858D003CC459 /* Default@2x.png in Resources */,
 				6CAF1B68170F858D003CC459 /* Default-568h@2x.png in Resources */,
 				6CAF1B6B170F858D003CC459 /* MainStoryboard.storyboard in Resources */,
-				6CAF1B70170F858D003CC459 /* first.png in Resources */,
-				6CAF1B72170F858D003CC459 /* first@2x.png in Resources */,
-				6CAF1B77170F858D003CC459 /* second.png in Resources */,
-				6CAF1B79170F858D003CC459 /* second@2x.png in Resources */,
-				183CA1361710D8C300FA8DA6 /* Default.png in Resources */,
-				183CA1381710DAA100FA8DA6 /* icone-iphone-57x57.png in Resources */,
-				183CA13A1710DAA700FA8DA6 /* icon-iphone-114x114.png in Resources */,
+				6CDD559317150FCB002BB31A /* Contatos.plist in Resources */,
+				6CDD559717151044002BB31A /* Default.png in Resources */,
+				6CDD559817151044002BB31A /* icon-iphone-114x114.png in Resources */,
+				6CDD559917151044002BB31A /* icone-iphone-57x57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
