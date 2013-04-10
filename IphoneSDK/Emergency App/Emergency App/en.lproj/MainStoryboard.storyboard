@@ -380,30 +380,14 @@
                                     <action selector="btnSalvarContato_TouchUpInside:" destination="9RA-zY-v6P" eventType="touchUpInside" id="rer-1p-yiJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3V-Yc-AUR">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Salva Contato e Continuar">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnSalvarContatoEContinuar_TouchUpInside:" destination="9RA-zY-v6P" eventType="touchUpInside" id="UDL-19-Vxz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s3V-Yc-AUR" firstAttribute="leading" secondItem="dUC-BP-BTu" secondAttribute="leading" type="default" id="7Vh-pm-yTC"/>
-                            <constraint firstItem="dUC-BP-BTu" firstAttribute="trailing" secondItem="s3V-Yc-AUR" secondAttribute="trailing" type="default" id="DFe-zp-hKO"/>
                             <constraint firstItem="dUC-BP-BTu" firstAttribute="centerX" secondItem="EJQ-gP-ZWr" secondAttribute="centerX" type="default" id="f6B-kp-amz"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="leading" secondItem="lvf-qO-qFg" secondAttribute="leading" type="default" id="mpe-2p-HKG"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="top" secondItem="lvf-qO-qFg" secondAttribute="top" type="default" id="nP0-j3-tJr"/>
                             <constraint firstItem="dUC-BP-BTu" firstAttribute="top" secondItem="EJQ-gP-ZWr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ouY-NS-4wz"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="trailing" secondItem="lvf-qO-qFg" secondAttribute="trailing" type="default" id="via-pw-7hY"/>
-                            <constraint firstAttribute="bottom" secondItem="s3V-Yc-AUR" secondAttribute="bottom" constant="50" id="yYi-eA-Dyr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Contato" id="ghH-QP-ksc">

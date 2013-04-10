@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate,ABPeoplePickerNavigationControllerDelegate>
+@interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate,ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableContato;
 
+
+@property (weak,nonatomic)  UITextField* nomeTextField;
+@property (weak, nonatomic) UITextField* phoneTextField;
+@property (weak, nonatomic) UISwitch* switchSMS;
+@property (weak, nonatomic) UISwitch* switchCall;
+
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender;
 
-- (IBAction)btnSalvarContatoEContinuar_TouchUpInside:(id)sender;
 - (IBAction)btnImportarContato_TouchUpInside:(id)sender;
 
 @end

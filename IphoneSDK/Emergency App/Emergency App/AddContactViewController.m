@@ -16,6 +16,8 @@
 
 @implementation AddContactViewController
 
+@synthesize nomeTextField, phoneTextField, switchSMS, switchCall;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,21 +40,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
-    
-    
-    UITextField* nomeTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:0]
-                                                  contentView] subviews] objectAtIndex:1];
-    
-    UITextField* phoneTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:1]
-                                                   contentView] subviews] objectAtIndex:1];
-    
-    UISwitch* switchSMS = (UISwitch*)[[[[self.tableContato.visibleCells objectAtIndex:2]
-                                        contentView] subviews] objectAtIndex:1];
-    
-    UISwitch* switchCall = (UISwitch*)[[[[self.tableContato.visibleCells objectAtIndex:3]
-                                         contentView] subviews] objectAtIndex:1];
-    
     
     NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
     
@@ -61,15 +50,15 @@
     //Le o array ja gravado para se manter os antigos registros
     NSMutableArray* arrContato = [dic valueForKey:@"Contato"];
     
+    bool sendSMS = (self.switchSMS.isOn ? YES : NO);
+    bool sendCall = (self.switchCall.isOn ? YES : NO);
     
     //Cria o novo contato
-    NSMutableArray* novoContato = [NSMutableArray arrayWithObjects:nomeTextField.text
-                                   , phoneTextField.text
-                                   , switchSMS.isOn
-                                   , switchCall.isOn ,nil];
-    
-    
-    
+    NSMutableArray* novoContato = [[NSMutableArray alloc] initWithObjects:self.nomeTextField.text
+                                                                         ,self.phoneTextField.text
+                                                                         ,[NSNumber numberWithBool:sendSMS]
+                                                                         ,[NSNumber numberWithBool:sendCall]
+                                                                         , nil];
     //Adiciona o novo contato
     [arrContato addObject:novoContato];
     
@@ -79,16 +68,16 @@
     //Escreve no arquivo o contato
     [dic writeToFile:bundle atomically:YES];
     
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                    message:@"Contato Salvo.\nDeseja adicionar mais contatos?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Sim"
+                                          otherButtonTitles:@"Não", nil];
     
-    
-    
-    
+    [alert show];
     
 }
 
-- (IBAction)btnSalvarContatoEContinuar_TouchUpInside:(id)sender {
-    
-}
 
 - (IBAction)btnImportarContato_TouchUpInside:(id)sender {
     
@@ -113,6 +102,26 @@
                             [text substringFromIndex:6]];
     
     return textFormat;
+}
+
+#pragma UIAlert Protocol
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+       
+    if (buttonIndex == 0){
+        
+        self.nomeTextField.text = @"";
+        self.phoneTextField.text = @"";
+        self.switchCall.on = NO;
+        self.switchSMS.on = NO;
+        
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 
 #pragma UITableViewDataSource Protocol
@@ -144,6 +153,9 @@
             textField.frame = aRect;
             textField.delegate = self;
             textField.textColor = cell.detailTextLabel.textColor;
+            
+            self.nomeTextField = textField;
+            
             [cell.contentView addSubview:textField];
             break;
         case 1:
@@ -155,6 +167,9 @@
             textField.frame = aRect;
             textField.delegate = self;
             textField.textColor = cell.detailTextLabel.textColor;
+            
+            self.phoneTextField = textField;
+            
             [cell.contentView addSubview:textField];
             break;
         case 2:
@@ -162,6 +177,9 @@
             aRect = CGRectMake(210, 10, 0, 0 );
             
             uiSwitch.frame = aRect;
+            
+            self.switchCall = uiSwitch;
+            
             [cell.contentView addSubview:uiSwitch];
             
             break;
@@ -169,6 +187,9 @@
             cell.textLabel.text = @"Enviar SMS:";
             aRect = CGRectMake(210, 10, 0, 0 );
             uiSwitch.frame = aRect;
+            
+            self.switchSMS = uiSwitch;
+            
             [cell.contentView addSubview:uiSwitch];
             break;
         default:
@@ -243,12 +264,6 @@
 -(BOOL) peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
 {
     
-    UITextField* nomeTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:0]
-                                                  contentView] subviews] objectAtIndex:1];
-    UITextField* phoneTextField = (UITextField*)[[[[self.tableContato.visibleCells objectAtIndex:1]
-                                                   contentView] subviews] objectAtIndex:1];
-    
-    
     //Pegando o nome do contato
     NSString* nome = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     NSString* lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
@@ -265,8 +280,10 @@
         phone = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
     }
     
-    nomeTextField.text = nome;
-    phoneTextField.text = phone;
+    self.nomeTextField.text = nome;
+    self.phoneTextField.text = phone;
+    self.switchSMS.on = NO;
+    self.switchCall.on = NO;
     
     [self dismissViewControllerAnimated:true completion:nil];
     
