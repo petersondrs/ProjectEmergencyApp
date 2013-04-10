@@ -45,16 +45,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Fazendo a ação necessária para uma determinada linha
-    switch (indexPath.row) {
-        case 1:
-            [self performSegueWithIdentifier:@"Contacts" sender:self];
-            break;
-            
-        default:
-            break;
-    }
-    
     
     //Deselecionando a linha
     [tableView deselectRowAtIndexPath:indexPath animated:true];
