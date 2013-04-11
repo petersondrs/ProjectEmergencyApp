@@ -119,6 +119,8 @@
     
     [alert show];
     
+    [self.tableContato reloadData];
+    
 }
 
 
@@ -232,7 +234,7 @@
         
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"Nome:";
+                cell.textLabel.text = @"Nome";
                 aRect = CGRectMake(70, 11, 223, 31.f );
                 textField.keyboardType = UIKeyboardTypeDefault;
                 textField.returnKeyType = UIReturnKeyNext;
@@ -246,7 +248,7 @@
                 [cell.contentView addSubview:textField];
                 break;
             case 1:
-                cell.textLabel.text = @"Telefone:";
+                cell.textLabel.text = @"Telefone";
                 aRect = CGRectMake(95, 11, 200, 31.f );
                 textField.keyboardType = UIKeyboardTypeNumberPad;
                 textField.returnKeyType = UIReturnKeyDone;
@@ -279,7 +281,7 @@
                 [cell.contentView addSubview:textField];
                 break;
             case 2:
-                cell.textLabel.text = @"Efetuar Ligação:";
+                cell.textLabel.text = @"Efetuar Ligação";
                 aRect = CGRectMake(210, 10, 0, 0 );
                 
                 uiSwitch.frame = aRect;
@@ -290,7 +292,7 @@
                 
                 break;
             case 3:
-                cell.textLabel.text = @"Enviar SMS:";
+                cell.textLabel.text = @"Enviar SMS";
                 aRect = CGRectMake(210, 10, 0, 0 );
                 uiSwitch.frame = aRect;
                 

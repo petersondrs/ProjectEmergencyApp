@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactViewController : UIViewController
-- (IBAction)btnAddContact:(id)sender;
+@interface ContactViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
+    @property(retain,nonatomic) NSMutableArray* contatos;
+
+- (IBAction)btnAddContact_TouchUpInside:(id)sender;
+
 @end

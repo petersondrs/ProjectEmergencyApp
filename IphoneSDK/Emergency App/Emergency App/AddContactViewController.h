@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "ContactViewController.h"
 
 @interface AddContactViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate,ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableContato;
-
+@property (weak, nonatomic) UITableView *tableContato;
 
 @property (weak,nonatomic)  UITextField* nomeTextField;
 @property (weak, nonatomic) UITextField* phoneTextField;

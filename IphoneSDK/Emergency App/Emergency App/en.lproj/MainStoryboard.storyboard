@@ -189,7 +189,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="XpS-pL-bIX" kind="push" id="S8u-bd-7dI"/>
+                                            <segue destination="gQn-a5-tsi" kind="push" id="srz-x3-fz2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="JrN-OW-nW8" style="IBUITableViewCellStyleDefault" id="Gsc-lv-wPo">
@@ -258,30 +258,33 @@
             </objects>
             <point key="canvasLocation" x="-3479" y="2509"/>
         </scene>
-        <!--Contact View Controller - Contatos-->
-        <scene sceneID="VvH-kw-FCu">
+        <!--Contact View Controller - Contato-->
+        <scene sceneID="Dp7-nm-Elz">
             <objects>
-                <viewController id="XpS-pL-bIX" customClass="ContactViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9UA-lA-hV4">
+                <tableViewController id="gQn-a5-tsi" customClass="ContactViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OLH-Mr-J1H">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Contatos" id="4sR-iK-T2c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DUn-xJ-gRa">
-                            <color key="tintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gQn-a5-tsi" id="uTG-Zl-r9i"/>
+                            <outlet property="delegate" destination="gQn-a5-tsi" id="COU-yp-yFO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contato" id="qht-NW-wKf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NPC-Gn-3pH">
                             <connections>
-                                <action selector="btnAddContact:" destination="XpS-pL-bIX" id="FpO-rS-2w1"/>
+                                <action selector="btnAddContact_TouchUpInside:" destination="gQn-a5-tsi" id="R0l-4X-QTb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="9RA-zY-v6P" kind="push" identifier="AddContact" id="I0G-Dz-P3K"/>
+                        <segue destination="9RA-zY-v6P" kind="push" identifier="AddContact" id="RO0-Af-ykC"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YwD-ub-EN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Las-3y-Ja7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3013" y="2509"/>
+            <point key="canvasLocation" x="-3029" y="2509"/>
         </scene>
         <!--Add Contact View Controller - Novo Contato-->
         <scene sceneID="lOy-8W-nKl">
@@ -316,9 +319,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableContato" destination="EJQ-gP-ZWr" id="DP8-EC-NPB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xm-rg-wkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,28 +331,6 @@
         <image name="icon-tabBar3.png" width="30" height="30"/>
         <image name="icon-tabBar4.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AddContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnImportarContato_TouchUpInside:"/>
-                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
-                <relationship kind="outlet" name="tableContato" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAddContact:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SettingScreenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
