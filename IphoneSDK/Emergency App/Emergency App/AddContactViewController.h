@@ -21,6 +21,6 @@
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender;
 
-- (IBAction)btnImportarContato_TouchUpInside:(id)sender;
+- (void)btnImportarContato_TouchUpInside;
 
 @end

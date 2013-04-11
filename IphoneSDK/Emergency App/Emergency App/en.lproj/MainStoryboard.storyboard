@@ -293,46 +293,26 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-gP-ZWr">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="202" id="SKg-4l-uyS"/>
-                                </constraints>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="9RA-zY-v6P" id="xKH-40-8ee"/>
                                     <outlet property="delegate" destination="9RA-zY-v6P" id="aPi-nG-x3B"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-BP-BTu">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="293" id="Qb9-Jb-qJq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Salvar Contato">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnSalvarContato_TouchUpInside:" destination="9RA-zY-v6P" eventType="touchUpInside" id="rer-1p-yiJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dUC-BP-BTu" firstAttribute="centerX" secondItem="EJQ-gP-ZWr" secondAttribute="centerX" type="default" id="f6B-kp-amz"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="leading" secondItem="lvf-qO-qFg" secondAttribute="leading" type="default" id="mpe-2p-HKG"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="top" secondItem="lvf-qO-qFg" secondAttribute="top" type="default" id="nP0-j3-tJr"/>
-                            <constraint firstItem="dUC-BP-BTu" firstAttribute="top" secondItem="EJQ-gP-ZWr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ouY-NS-4wz"/>
                             <constraint firstItem="EJQ-gP-ZWr" firstAttribute="trailing" secondItem="lvf-qO-qFg" secondAttribute="trailing" type="default" id="via-pw-7hY"/>
+                            <constraint firstItem="EJQ-gP-ZWr" firstAttribute="bottom" secondItem="lvf-qO-qFg" secondAttribute="bottom" type="default" id="zko-cv-Y7L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Contato" id="ghH-QP-ksc">
-                        <barButtonItem key="rightBarButtonItem" title="Importar" id="cna-l2-334">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="cna-l2-334">
                             <color key="tintColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="btnImportarContato_TouchUpInside:" destination="9RA-zY-v6P" id="kpV-3q-bDJ"/>
+                                <action selector="btnSalvarContato_TouchUpInside:" destination="9RA-zY-v6P" id="UcN-69-UPO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

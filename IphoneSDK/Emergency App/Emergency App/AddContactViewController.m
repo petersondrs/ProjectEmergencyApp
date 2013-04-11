@@ -41,10 +41,51 @@
 }
 
 
+- (void)validateView {
+    
+    UIAlertView *alertErro;
+    
+    if ([nomeTextField.text isEqual: @""] || nomeTextField.text == nil)
+    {
+        alertErro = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                               message:@"Preencha o nome do contato"
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil, nil];
+        [alertErro show];
+        return;
+    }
+    
+    if ([phoneTextField.text isEqual: @""] || phoneTextField.text == nil)
+    {
+        alertErro = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                               message:@"Preencha o telefone do contato"
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil, nil];
+        
+        [alertErro show];
+        return;
+        
+    }
+    
+    if (self.switchCall.isOn == NO && self.switchSMS.isOn == NO)
+    {
+        alertErro = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                               message:@"Escolha pelo menos uma forma de contato"
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil, nil];
+        [alertErro show];
+        return;
+        
+        
+    }
+}
+
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
     
     NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
-    
     NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
     
     //Le o array ja gravado para se manter os antigos registros
@@ -52,6 +93,8 @@
     
     bool sendSMS = (self.switchSMS.isOn ? YES : NO);
     bool sendCall = (self.switchCall.isOn ? YES : NO);
+    
+    [self validateView];
     
     //Cria o novo contato
     NSMutableArray* novoContato = [[NSMutableArray alloc] initWithObjects:self.nomeTextField.text
@@ -79,7 +122,7 @@
 }
 
 
-- (IBAction)btnImportarContato_TouchUpInside:(id)sender {
+- (void)btnImportarContato_TouchUpInside {
     
     //Criando o controller de contato
     ABPeoplePickerNavigationController* picker = [[ABPeoplePickerNavigationController alloc] init];
@@ -93,15 +136,55 @@
 
 - (NSString*)formatPhone:(NSString *)text
 {
-    NSRange range = NSMakeRange(2, 4);
+   
+    NSString* textFormat;
     
+    textFormat = text;
     
-    NSString* textFormat = [NSString stringWithFormat:@"(%@) %@-%@",
-                            [text substringToIndex:2],
-                            [text substringWithRange:range],
-                            [text substringFromIndex:6]];
+    if ([[text substringToIndex:1] isEqual: @"0"])
+    {
+        if ([text length] >= 13)
+        {
+            textFormat = [NSString stringWithFormat:@"(%@ %@) %@",
+                          [text substringToIndex:3],
+                          [text substringWithRange:NSMakeRange(3, 2)],
+                          [text substringWithRange:NSMakeRange(5, [text length]-5)]
+                         ];
+        }
+    }
+    else
+    {
+        if ([text length] >= 10)
+        {
+            textFormat = [NSString stringWithFormat:@"(%@) %@",
+                          [text substringToIndex:2],
+                           [text substringWithRange:NSMakeRange(2, [text length]-2)]
+                          ];
+        }
+        
+    }
     
     return textFormat;
+}
+
+-(void) btnDone_TouchUpInside
+{
+    if ([self.phoneTextField.text isEqual:@""] || self.phoneTextField.text == nil)
+    {
+        [self.phoneTextField resignFirstResponder];
+        return;
+    }
+    
+    
+    self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@")" withString:@""];
+    self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    
+    
+    self.phoneTextField.text = [self formatPhone:self.phoneTextField.text];
+    
+    [self.phoneTextField resignFirstResponder];
 }
 
 #pragma UIAlert Protocol
@@ -130,81 +213,133 @@
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
     CGRect aRect;
-   
-                                                               
-    if (cell == nil)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                      reuseIdentifier:@"CellIdentifier"];
+    UIToolbar* numberBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     
-    UITextField* textField = [[UITextField alloc] initWithFrame:CGRectZero];
-    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    
-    UISwitch* uiSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    
-    
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"Nome:";
-            aRect = CGRectMake(70, 11, 223, 31.f );
-            textField.keyboardType = UIKeyboardTypeDefault;
-            textField.returnKeyType = UIReturnKeyNext;
-            textField.tag = indexPath.row;
-            textField.frame = aRect;
-            textField.delegate = self;
-            textField.textColor = cell.detailTextLabel.textColor;
-            
-            self.nomeTextField = textField;
-            
-            [cell.contentView addSubview:textField];
-            break;
-        case 1:
-            cell.textLabel.text = @"Telefone:";
-            aRect = CGRectMake(95, 11, 200, 31.f );
-            textField.keyboardType = UIKeyboardTypeNumberPad;
-            textField.returnKeyType = UIReturnKeyDone;
-            textField.tag = indexPath.row;
-            textField.frame = aRect;
-            textField.delegate = self;
-            textField.textColor = cell.detailTextLabel.textColor;
-            
-            self.phoneTextField = textField;
-            
-            [cell.contentView addSubview:textField];
-            break;
-        case 2:
-            cell.textLabel.text = @"Efetuar Ligação:";
-            aRect = CGRectMake(210, 10, 0, 0 );
-            
-            uiSwitch.frame = aRect;
-            
-            self.switchCall = uiSwitch;
-            
-            [cell.contentView addSubview:uiSwitch];
-            
-            break;
-        case 3:
-            cell.textLabel.text = @"Enviar SMS:";
-            aRect = CGRectMake(210, 10, 0, 0 );
-            uiSwitch.frame = aRect;
-            
-            self.switchSMS = uiSwitch;
-            
-            [cell.contentView addSubview:uiSwitch];
-            break;
-        default:
-            break;
+    if (indexPath.section == 0)
+    {
+        
+        if (cell == nil)
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                          reuseIdentifier:@"CellIdentifier"];
+        
+        UITextField* textField = [[UITextField alloc] initWithFrame:CGRectZero];
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        
+        UISwitch* uiSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+        
+        
+        
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"Nome:";
+                aRect = CGRectMake(70, 11, 223, 31.f );
+                textField.keyboardType = UIKeyboardTypeDefault;
+                textField.returnKeyType = UIReturnKeyNext;
+                textField.tag = indexPath.row;
+                textField.frame = aRect;
+                textField.delegate = self;
+                textField.textColor = cell.detailTextLabel.textColor;
+                
+                self.nomeTextField = textField;
+                
+                [cell.contentView addSubview:textField];
+                break;
+            case 1:
+                cell.textLabel.text = @"Telefone:";
+                aRect = CGRectMake(95, 11, 200, 31.f );
+                textField.keyboardType = UIKeyboardTypeNumberPad;
+                textField.returnKeyType = UIReturnKeyDone;
+                textField.tag = indexPath.row;
+                textField.frame = aRect;
+                textField.delegate = self;
+                textField.textColor = cell.detailTextLabel.textColor;
+                
+                numberBar.barStyle = UIBarStyleBlackOpaque;
+                numberBar.items = [NSArray arrayWithObjects:[
+                                                             [UIBarButtonItem alloc]
+                                                                initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                target:nil
+                                                                action:nil]
+                                                            ,[
+                                                              [UIBarButtonItem alloc]
+                                                                initWithTitle:@"Done"
+                                                                        style:UIBarButtonItemStyleDone
+                                                                       target:self
+                                                                        action:@selector(btnDone_TouchUpInside)]
+                                                            ,nil];
+                
+                
+                [numberBar sizeToFit];
+                
+                textField.inputAccessoryView = numberBar;
+                
+                self.phoneTextField = textField;
+                
+                [cell.contentView addSubview:textField];
+                break;
+            case 2:
+                cell.textLabel.text = @"Efetuar Ligação:";
+                aRect = CGRectMake(210, 10, 0, 0 );
+                
+                uiSwitch.frame = aRect;
+                
+                self.switchCall = uiSwitch;
+                
+                [cell.contentView addSubview:uiSwitch];
+                
+                break;
+            case 3:
+                cell.textLabel.text = @"Enviar SMS:";
+                aRect = CGRectMake(210, 10, 0, 0 );
+                uiSwitch.frame = aRect;
+                
+                self.switchSMS = uiSwitch;
+                
+                [cell.contentView addSubview:uiSwitch];
+                break;
+            default:
+                break;
+        }
+        
+        
+    }
+    else if (indexPath.section == 1)
+    {
+        if (cell == nil)
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                          reuseIdentifier:@"CellIdentifier"];
+        cell.textLabel.text = @"Importar Contatos";
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //Numero de linhas da tabela.
-    return 4;
+    if (section == 0)
+        return 4;
+    else
+        return 1;
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 1 && indexPath.row == 0)
+    {
+        [self btnImportarContato_TouchUpInside];
+    }
+    
+}
+
+
 
 #pragma Text Field Protocol
 
@@ -220,34 +355,6 @@
     return YES;
 }
 
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if (textField.tag == 1)
-    {
-        NSString* text = [textField.text stringByReplacingCharactersInRange:range
-                                                                withString:string];
-        text = [text stringByReplacingOccurrencesOfString:@"(" withString:@""];
-        text = [text stringByReplacingOccurrencesOfString:@")" withString:@""];
-        text = [text stringByReplacingOccurrencesOfString:@"-" withString:@""];
-        text = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
-        
-        if ([text length] == 10)
-        {
-            textField.text = [self formatPhone:text];
-            [textField resignFirstResponder];
-        }
-        else if ([text length] > 10)
-        {
-            [textField resignFirstResponder];
-            return NO;
-        }
-        
-    }
-    
-    return YES;
-    
-}
 
 #pragma Address Book Protocol
 
@@ -282,8 +389,8 @@
     
     self.nomeTextField.text = nome;
     self.phoneTextField.text = phone;
-    self.switchSMS.on = NO;
-    self.switchCall.on = NO;
+    self.switchSMS.on = YES;
+    self.switchCall.on = YES;
     
     [self dismissViewControllerAnimated:true completion:nil];
     
