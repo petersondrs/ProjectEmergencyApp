@@ -41,7 +41,7 @@
 }
 
 
-- (void)validateView {
+- (BOOL)validateView {
     
     UIAlertView *alertErro;
     
@@ -53,7 +53,7 @@
                                      cancelButtonTitle:@"OK"
                                      otherButtonTitles:nil, nil];
         [alertErro show];
-        return;
+        return NO;
     }
     
     if ([phoneTextField.text isEqual: @""] || phoneTextField.text == nil)
@@ -65,7 +65,7 @@
                                      otherButtonTitles:nil, nil];
         
         [alertErro show];
-        return;
+        return NO;
         
     }
     
@@ -77,10 +77,12 @@
                                      cancelButtonTitle:@"OK"
                                      otherButtonTitles:nil, nil];
         [alertErro show];
-        return;
+        return NO;
         
         
     }
+    
+    return YES;
 }
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
@@ -94,7 +96,8 @@
     bool sendSMS = (self.switchSMS.isOn ? YES : NO);
     bool sendCall = (self.switchCall.isOn ? YES : NO);
     
-    [self validateView];
+    if(![self validateView])
+        return;
     
     //Cria o novo contato
     NSMutableArray* novoContato = [[NSMutableArray alloc] initWithObjects:self.nomeTextField.text
