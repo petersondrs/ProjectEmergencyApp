@@ -1,22 +1,20 @@
 //
-//  AddContactViewController.m
+//  EditContactViewContollerViewController.m
 //  Emergency App
 //
-//  Created by Rafael Bento Cruz on 06/04/13.
+//  Created by Rafael Bento Cruz on 13/04/13.
 //  Copyright (c) 2013 Rafael Bento Cruz. All rights reserved.
 //
 
-#import "AddContactViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import <AddressBookUI/AddressBookUI.h>
+#import "EditContactViewContollerViewController.h"
 
-@interface AddContactViewController ()
+@interface EditContactViewContollerViewController ()
 
 @end
 
-@implementation AddContactViewController
+@implementation EditContactViewContollerViewController
 
-@synthesize nomeTextField, phoneTextField, switchSMS, switchCall;
+@synthesize nomeTextField, phoneTextField, switchSMS, switchCall, editRow, detailContato;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +29,9 @@
 {
     [super viewDidLoad];
     
-     // Do any additional setup after loading the view.
+    
+    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,13 +100,13 @@
         return;
     
     //Cria o novo contato
-    NSMutableArray* novoContato = [[NSMutableArray alloc] initWithObjects:self.nomeTextField.text
-                                                                         ,self.phoneTextField.text
-                                                                         ,[NSNumber numberWithBool:sendCall]
-                                                                         ,[NSNumber numberWithBool:sendSMS]
-                                                                         , nil];
+    NSMutableArray* editContato = [[NSMutableArray alloc] initWithObjects:self.nomeTextField.text
+                                   ,self.phoneTextField.text
+                                   ,[NSNumber numberWithBool:sendCall]
+                                   ,[NSNumber numberWithBool:sendSMS]
+                                   , nil];
     //Adiciona o novo contato
-    [arrContato addObject:novoContato];
+    [arrContato setObject:editContato atIndexedSubscript:self.editRow];
     
     //Grava os novos valores no dicionario
     [dic setObject:arrContato forKey:@"Contato"];
@@ -114,34 +114,16 @@
     //Escreve no arquivo o contato
     [dic writeToFile:bundle atomically:YES];
     
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
-                                                    message:@"Contato Salvo.\nDeseja adicionar mais contatos?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Sim"
-                                          otherButtonTitles:@"Não", nil];
-    
-    [alert show];
-    
     [self.tableContato reloadData];
     
-}
-
-
-- (void)btnImportarContato_TouchUpInside {
-    
-    //Criando o controller de contato
-    ABPeoplePickerNavigationController* picker = [[ABPeoplePickerNavigationController alloc] init];
-    
-    picker.peoplePickerDelegate = self;
-    
-    [self presentViewController:picker animated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
 
 - (NSString*)formatPhone:(NSString *)text
 {
-   
+    
     NSString* textFormat;
     
     textFormat = text;
@@ -154,7 +136,7 @@
                           [text substringToIndex:3],
                           [text substringWithRange:NSMakeRange(3, 2)],
                           [text substringWithRange:NSMakeRange(5, [text length]-5)]
-                         ];
+                          ];
         }
     }
     else
@@ -163,7 +145,7 @@
         {
             textFormat = [NSString stringWithFormat:@"(%@) %@",
                           [text substringToIndex:2],
-                           [text substringWithRange:NSMakeRange(2, [text length]-2)]
+                          [text substringWithRange:NSMakeRange(2, [text length]-2)]
                           ];
         }
         
@@ -184,33 +166,12 @@
     self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@"(" withString:@""];
     self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@")" withString:@""];
     self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-
-    
-    
+    self.phoneTextField.text = [self.phoneTextField.text stringByReplacingOccurrencesOfString:@"-" withString:@""];
     self.phoneTextField.text = [self formatPhone:self.phoneTextField.text];
     
     [self.phoneTextField resignFirstResponder];
 }
 
-#pragma UIAlert Protocol
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-       
-    if (buttonIndex == 0){
-        
-        self.nomeTextField.text = @"";
-        self.phoneTextField.text = @"";
-        self.switchCall.on = NO;
-        self.switchSMS.on = NO;
-        
-    }
-    else
-    {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
-}
 
 #pragma UITableViewDataSource Protocol
 
@@ -245,6 +206,8 @@
                 textField.frame = aRect;
                 textField.delegate = self;
                 textField.textColor = cell.detailTextLabel.textColor;
+                textField.text = [self.detailContato objectAtIndex:0];
+                textField.enabled = NO;
                 
                 self.nomeTextField = textField;
                 
@@ -259,20 +222,21 @@
                 textField.frame = aRect;
                 textField.delegate = self;
                 textField.textColor = cell.detailTextLabel.textColor;
+                textField.text = [self.detailContato objectAtIndex:1];
                 
                 numberBar.barStyle = UIBarStyleBlackOpaque;
                 numberBar.items = [NSArray arrayWithObjects:[
                                                              [UIBarButtonItem alloc]
-                                                                initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                target:nil
-                                                                action:nil]
-                                                            ,[
-                                                              [UIBarButtonItem alloc]
-                                                                initWithTitle:@"Done"
-                                                                        style:UIBarButtonItemStyleDone
-                                                                       target:self
-                                                                        action:@selector(btnDone_TouchUpInside)]
-                                                            ,nil];
+                                                             initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                             target:nil
+                                                             action:nil]
+                                   ,[
+                                     [UIBarButtonItem alloc]
+                                     initWithTitle:@"Done"
+                                     style:UIBarButtonItemStyleDone
+                                     target:self
+                                     action:@selector(btnDone_TouchUpInside)]
+                                   ,nil];
                 
                 
                 [numberBar sizeToFit];
@@ -286,11 +250,9 @@
             case 2:
                 cell.textLabel.text = @"Efetuar Ligação";
                 aRect = CGRectMake(210, 10, 0, 0 );
-                
                 uiSwitch.frame = aRect;
-                
                 self.switchCall = uiSwitch;
-                
+                uiSwitch.on = [[self.detailContato objectAtIndex:2] intValue];
                 [cell.contentView addSubview:uiSwitch];
                 
                 break;
@@ -298,50 +260,21 @@
                 cell.textLabel.text = @"Enviar SMS";
                 aRect = CGRectMake(210, 10, 0, 0 );
                 uiSwitch.frame = aRect;
-                
+                uiSwitch.on = [[self.detailContato objectAtIndex:3] intValue];
                 self.switchSMS = uiSwitch;
-                
                 [cell.contentView addSubview:uiSwitch];
-                break;
-            default:
                 break;
         }
         
         
     }
-    else if (indexPath.section == 1)
-    {
-        if (cell == nil)
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                          reuseIdentifier:@"CellIdentifier"];
-        cell.textLabel.text = @"Importar Contatos";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        
-    }
-    
+   
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //Numero de linhas da tabela.
-    if (section == 0)
-        return 4;
-    else
-        return 1;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 1 && indexPath.row == 0)
-    {
-        [self btnImportarContato_TouchUpInside];
-    }
-    
+    return 4;
 }
 
 
@@ -361,56 +294,4 @@
 }
 
 
-#pragma Address Book Protocol
-
--(void) peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
-{
-    [self dismissViewControllerAnimated:true completion:nil];
-}
-
--(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
-{
-    return NO;
-}
-
--(BOOL) peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
-{
-    
-    //Pegando o nome do contato
-    NSString* nome = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    NSString* lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
-    
-    if (![lastName isEqual: @""])
-        nome = [NSString stringWithFormat:@"%@ %@", nome, lastName];
-    
-    //pegando o telefone do contato
-    ABMultiValueRef phoneNumbers =  ABRecordCopyValue(person, kABPersonPhoneProperty);
-
-    NSString* phone;
-    
-    if (ABMultiValueGetCount(phoneNumbers) > 0){
-        phone = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
-    }
-    
-    
-    phone = [phone stringByReplacingOccurrencesOfString:@"(" withString:@""];
-    phone = [phone stringByReplacingOccurrencesOfString:@")" withString:@""];
-    phone = [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
-    phone = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    phone = [self formatPhone:phone];
-    
-    
-    
-    self.nomeTextField.text = nome;
-    self.phoneTextField.text = phone;
-    self.switchSMS.on = YES;
-    self.switchCall.on = YES;
-    
-    
-    
-    [self dismissViewControllerAnimated:true completion:nil];
-    
-    return  NO;
-    
-}
 @end

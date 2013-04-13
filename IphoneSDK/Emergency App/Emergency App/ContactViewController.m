@@ -8,6 +8,7 @@
 
 #import "ContactViewController.h"
 #import "AddContactViewController.h"
+#import "EditContactViewContollerViewController.h"
 
 @interface ContactViewController ()
 
@@ -93,10 +94,6 @@
       
         [tableView endUpdates];
         
-        
-        
-               
-        
     }
     
 }
@@ -130,6 +127,16 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"EditContact" sender:indexPath];
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -148,9 +155,17 @@
     
     if ([segue.identifier isEqualToString:@"AddContact"])
     {
-        ContactViewController* root = (sender);
         AddContactViewController* destination = (AddContactViewController*)[segue destinationViewController];
-        destination.tableContato = root.tableView;
+        destination.tableContato = self.tableView;
+    }
+    else if ([segue.identifier isEqualToString:@"EditContact"])
+    {
+        NSIndexPath* indexPath = (NSIndexPath*)sender;
+        
+        EditContactViewContollerViewController* destination = (EditContactViewContollerViewController*)[segue destinationViewController];
+        destination.tableContato = self.tableView;
+        destination.editRow = indexPath.row;
+        destination.detailContato = [contatos objectAtIndex:indexPath.row];
     }
     
 }

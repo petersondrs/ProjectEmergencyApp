@@ -25,6 +25,7 @@
 		6CD44F051715D85F0051B96A /* icon-tabBar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFD1715D85F0051B96A /* icon-tabBar3@2x.png */; };
 		6CD44F061715D85F0051B96A /* icon-tabBar4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFE1715D85F0051B96A /* icon-tabBar4.png */; };
 		6CD44F071715D85F0051B96A /* icon-tabBar4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFF1715D85F0051B96A /* icon-tabBar4@2x.png */; };
+		6CD925211719F5DB0050AC53 /* EditContactViewContollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD925201719F5DB0050AC53 /* EditContactViewContollerViewController.m */; };
 		6CDD559317150FCB002BB31A /* Contatos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559217150FCB002BB31A /* Contatos.plist */; };
 		6CDD559717151044002BB31A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559417151044002BB31A /* Default.png */; };
 		6CDD559817151044002BB31A /* icon-iphone-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559517151044002BB31A /* icon-iphone-114x114.png */; };
@@ -59,6 +60,8 @@
 		6CD44EFD1715D85F0051B96A /* icon-tabBar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar3@2x.png"; sourceTree = "<group>"; };
 		6CD44EFE1715D85F0051B96A /* icon-tabBar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar4.png"; sourceTree = "<group>"; };
 		6CD44EFF1715D85F0051B96A /* icon-tabBar4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar4@2x.png"; sourceTree = "<group>"; };
+		6CD9251F1719F5DB0050AC53 /* EditContactViewContollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditContactViewContollerViewController.h; path = "Emergency App/EditContactViewContollerViewController.h"; sourceTree = "<group>"; };
+		6CD925201719F5DB0050AC53 /* EditContactViewContollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditContactViewContollerViewController.m; path = "Emergency App/EditContactViewContollerViewController.m"; sourceTree = "<group>"; };
 		6CDD559217150FCB002BB31A /* Contatos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contatos.plist; sourceTree = "<group>"; };
 		6CDD559417151044002BB31A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Emergency App/Default.png"; sourceTree = "<group>"; };
 		6CDD559517151044002BB31A /* icon-iphone-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone-114x114.png"; path = "Emergency App/icon-iphone-114x114.png"; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				6CE13CD71711360800E7E8E9 /* ContactViewController.m */,
 				6CDFB3B1170FBD0700D5F041 /* SettingScreenViewController.h */,
 				6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */,
+				6CD9251F1719F5DB0050AC53 /* EditContactViewContollerViewController.h */,
+				6CD925201719F5DB0050AC53 /* EditContactViewContollerViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -270,6 +275,7 @@
 				6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */,
 				6CE13CD81711360800E7E8E9 /* AddContactViewController.m in Sources */,
 				6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */,
+				6CD925211719F5DB0050AC53 /* EditContactViewContollerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
