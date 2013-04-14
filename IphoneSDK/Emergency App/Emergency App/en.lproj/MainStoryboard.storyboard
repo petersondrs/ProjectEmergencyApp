@@ -23,7 +23,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m7-yE-v1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4542" y="1477"/>
+            <point key="canvasLocation" x="-7486" y="2141"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cWb-kT-SW6">
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W35-DY-ptY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3488" y="1176"/>
+            <point key="canvasLocation" x="-6432" y="1840"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eyd-Ea-wB0">
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDP-3j-eY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3488" y="516"/>
+            <point key="canvasLocation" x="-6432" y="1180"/>
         </scene>
         <!--Navigation Controller - Enviar Alerta-->
         <scene sceneID="bcZ-MU-oFr">
@@ -72,7 +72,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n31-0R-X1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3926" y="516"/>
+            <point key="canvasLocation" x="-6870" y="1180"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="UfW-dd-SVp">
@@ -91,7 +91,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gY-Vd-VP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3926" y="1176"/>
+            <point key="canvasLocation" x="-6870" y="1840"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xUZ-1M-t8i">
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFC-ka-k3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3488" y="1857"/>
+            <point key="canvasLocation" x="-6432" y="2521"/>
         </scene>
         <!--Navigation Controller - Informações-->
         <scene sceneID="duF-r5-3gS">
@@ -125,7 +125,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAq-0p-7lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3914" y="1857"/>
+            <point key="canvasLocation" x="-6858" y="2521"/>
         </scene>
         <!--Navigation Controller - Configurações-->
         <scene sceneID="0av-U3-rBK">
@@ -144,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KP9-AS-wXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3926" y="2509"/>
+            <point key="canvasLocation" x="-6946" y="5013"/>
         </scene>
         <!--Setting Screen View Controller-->
         <scene sceneID="t6f-x2-Nc0">
@@ -172,6 +172,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="3DZ-Hu-3Ns" kind="push" identifier="Profile" id="wsl-FA-I0T"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="hrv-kM-VBC" style="IBUITableViewCellStyleDefault" id="myD-HR-4s1">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
@@ -189,7 +192,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="gQn-a5-tsi" kind="push" id="srz-x3-fz2"/>
+                                            <segue destination="gQn-a5-tsi" kind="push" identifier="Contact" id="srz-x3-fz2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="JrN-OW-nW8" style="IBUITableViewCellStyleDefault" id="Gsc-lv-wPo">
@@ -207,6 +210,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="VCp-yE-i1g" kind="push" id="zqQ-Rh-suc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="fEM-dR-IGX" style="IBUITableViewCellStyleDefault" id="Ljp-Gn-vnQ">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
@@ -215,7 +221,7 @@
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Quando utilizar este APP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEM-dR-IGX">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Quando Usar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fEM-dR-IGX">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -225,6 +231,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="z4n-r7-g26" kind="push" identifier="HowToUseApp" id="kp6-oe-2Ff"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="L3V-Rv-Lt1" style="IBUITableViewCellStyleDefault" id="dew-Xn-7Oy">
                                         <rect key="frame" x="0.0" y="187" width="320" height="45"/>
@@ -243,6 +252,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="TEX-BM-efS" kind="push" identifier="ServiceTerm" id="xk7-29-GK7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -256,7 +268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FuT-Hv-h9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3479" y="2509"/>
+            <point key="canvasLocation" x="-6452" y="5013"/>
         </scene>
         <!--Contact View Controller - Contato-->
         <scene sceneID="Dp7-nm-Elz">
@@ -285,7 +297,78 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Las-3y-Ja7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3029" y="2509"/>
+            <point key="canvasLocation" x="-5915" y="4221"/>
+        </scene>
+        <!--Service Term View Controller - Termo de Uso-->
+        <scene sceneID="COh-Ux-8Kz">
+            <objects>
+                <viewController id="TEX-BM-efS" customClass="ServiceTermViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aF8-CM-SZF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwD-Hc-bRR">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gwD-Hc-bRR" firstAttribute="top" secondItem="aF8-CM-SZF" secondAttribute="top" type="default" id="GqG-J0-eFR"/>
+                            <constraint firstItem="gwD-Hc-bRR" firstAttribute="trailing" secondItem="aF8-CM-SZF" secondAttribute="trailing" type="default" id="MyM-bj-1mK"/>
+                            <constraint firstItem="gwD-Hc-bRR" firstAttribute="bottom" secondItem="aF8-CM-SZF" secondAttribute="bottom" type="default" id="fBw-yc-fhz"/>
+                            <constraint firstItem="gwD-Hc-bRR" firstAttribute="leading" secondItem="aF8-CM-SZF" secondAttribute="leading" type="default" id="sHt-gD-Og3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Termo de Uso" id="8bJ-dG-a86"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfX-9e-JRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5915" y="4807"/>
+        </scene>
+        <!--View Controller - Redes Sociais-->
+        <scene sceneID="pyN-0k-VNY">
+            <objects>
+                <viewController id="VCp-yE-i1g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yuP-d9-DNp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Redes Sociais" id="RdR-T5-4ML"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXm-tm-e6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5915" y="6595"/>
+        </scene>
+        <!--View Controller - Quando Usar-->
+        <scene sceneID="HNn-cn-fnE">
+            <objects>
+                <viewController id="z4n-r7-g26" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mos-go-1me">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quando Usar" id="oNm-f4-bm5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9JQ-BR-g2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5915" y="5388"/>
+        </scene>
+        <!--View Controller - Meus Dados-->
+        <scene sceneID="1et-oz-HHX">
+            <objects>
+                <viewController id="3DZ-Hu-3Ns" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3r-oH-Nda">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meus Dados" id="sQ8-P2-Arp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HbU-0B-4sF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5915" y="5985"/>
         </scene>
         <!--Edit Contact View Contoller View Controller - Editar Contato-->
         <scene sceneID="FHg-zd-TxV">
@@ -321,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVi-Dm-EhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2495" y="2793"/>
+            <point key="canvasLocation" x="-5387" y="4545"/>
         </scene>
         <!--Add Contact View Controller - Novo Contato-->
         <scene sceneID="lOy-8W-nKl">
@@ -358,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xm-rg-wkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2495" y="2177"/>
+            <point key="canvasLocation" x="-5387" y="3897"/>
         </scene>
     </scenes>
     <resources>
@@ -367,6 +450,35 @@
         <image name="icon-tabBar3.png" width="30" height="30"/>
         <image name="icon-tabBar4.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AddContactViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
+            </relationships>
+        </class>
+        <class className="ContactViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnAddContact_TouchUpInside:"/>
+            </relationships>
+        </class>
+        <class className="EditContactViewContollerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditContactViewContollerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ServiceTermViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServiceTermViewController.h"/>
+        </class>
+        <class className="SettingScreenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
