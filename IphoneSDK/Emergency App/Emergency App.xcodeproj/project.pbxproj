@@ -34,10 +34,6 @@
 		6CDD559917151044002BB31A /* icone-iphone-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559617151044002BB31A /* icone-iphone-57x57.png */; };
 		6CDF4622171B4A0C0003F609 /* ServiceTermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF4621171B4A0C0003F609 /* ServiceTermViewController.m */; };
 		6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */; };
-		6CE03A1B171B90E500E42216 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03A1A171B90E500E42216 /* ProfileViewController.m */; };
-		6CE03A1E171C905700E42216 /* NascidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03A1D171C905600E42216 /* NascidoViewController.m */; };
-		6CE03A21171C9FCC00E42216 /* TipoSanguineoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03A20171C9FCC00E42216 /* TipoSanguineoViewController.m */; };
-		6CE03A23171CB04700E42216 /* Profile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03A22171CB04600E42216 /* Profile.plist */; };
 		6CE13CD81711360800E7E8E9 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD51711360800E7E8E9 /* AddContactViewController.m */; };
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
 		6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE46349171204DF00EEF46C /* AddressBook.framework */; };
@@ -79,13 +75,6 @@
 		6CDF4621171B4A0C0003F609 /* ServiceTermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceTermViewController.m; path = "Emergency App/ServiceTermViewController.m"; sourceTree = "<group>"; };
 		6CDFB3B1170FBD0700D5F041 /* SettingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingScreenViewController.h; path = "Emergency App/SettingScreenViewController.h"; sourceTree = "<group>"; };
 		6CDFB3B2170FBD0700D5F041 /* SettingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingScreenViewController.m; path = "Emergency App/SettingScreenViewController.m"; sourceTree = "<group>"; };
-		6CE03A19171B90E500E42216 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = "Emergency App/ProfileViewController.h"; sourceTree = "<group>"; };
-		6CE03A1A171B90E500E42216 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "Emergency App/ProfileViewController.m"; sourceTree = "<group>"; };
-		6CE03A1C171C905600E42216 /* NascidoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NascidoViewController.h; path = "Emergency App/NascidoViewController.h"; sourceTree = "<group>"; };
-		6CE03A1D171C905600E42216 /* NascidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NascidoViewController.m; path = "Emergency App/NascidoViewController.m"; sourceTree = "<group>"; };
-		6CE03A1F171C9FCB00E42216 /* TipoSanguineoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipoSanguineoViewController.h; path = "Emergency App/TipoSanguineoViewController.h"; sourceTree = "<group>"; };
-		6CE03A20171C9FCC00E42216 /* TipoSanguineoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipoSanguineoViewController.m; path = "Emergency App/TipoSanguineoViewController.m"; sourceTree = "<group>"; };
-		6CE03A22171CB04600E42216 /* Profile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Profile.plist; sourceTree = "<group>"; };
 		6CE13CD41711360800E7E8E9 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddContactViewController.h; path = "Emergency App/AddContactViewController.h"; sourceTree = "<group>"; };
 		6CE13CD51711360800E7E8E9 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddContactViewController.m; path = "Emergency App/AddContactViewController.m"; sourceTree = "<group>"; };
 		6CE13CD61711360800E7E8E9 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = "Emergency App/ContactViewController.h"; sourceTree = "<group>"; };
@@ -146,7 +135,6 @@
 				6CAF1B80170F85AA003CC459 /* Resources */,
 				6CAF1B7F170F8599003CC459 /* Views */,
 				6CAF1B60170F858D003CC459 /* AppDelegate.h */,
-				6CE03A22171CB04600E42216 /* Profile.plist */,
 				6CDD559217150FCB002BB31A /* Contatos.plist */,
 				6CAF1B61170F858D003CC459 /* AppDelegate.m */,
 				6CAF1B69170F858D003CC459 /* MainStoryboard.storyboard */,
@@ -179,12 +167,6 @@
 				6CD925201719F5DB0050AC53 /* EditContactViewContollerViewController.m */,
 				6CDF4620171B4A0C0003F609 /* ServiceTermViewController.h */,
 				6CDF4621171B4A0C0003F609 /* ServiceTermViewController.m */,
-				6CE03A19171B90E500E42216 /* ProfileViewController.h */,
-				6CE03A1A171B90E500E42216 /* ProfileViewController.m */,
-				6CE03A1C171C905600E42216 /* NascidoViewController.h */,
-				6CE03A1D171C905600E42216 /* NascidoViewController.m */,
-				6CE03A1F171C9FCB00E42216 /* TipoSanguineoViewController.h */,
-				6CE03A20171C9FCC00E42216 /* TipoSanguineoViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -289,12 +271,8 @@
 				6CD44F051715D85F0051B96A /* icon-tabBar3@2x.png in Resources */,
 				6CD44F061715D85F0051B96A /* icon-tabBar4.png in Resources */,
 				6CD44F071715D85F0051B96A /* icon-tabBar4@2x.png in Resources */,
-<<<<<<< HEAD
 				18EB0F0F171B74D800C57D0F /* navigator-controller.png in Resources */,
 				18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */,
-=======
-				6CE03A23171CB04700E42216 /* Profile.plist in Resources */,
->>>>>>> Programação da tela de meus dados
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +290,6 @@
 				6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */,
 				6CD925211719F5DB0050AC53 /* EditContactViewContollerViewController.m in Sources */,
 				6CDF4622171B4A0C0003F609 /* ServiceTermViewController.m in Sources */,
-				6CE03A1B171B90E500E42216 /* ProfileViewController.m in Sources */,
-				6CE03A1E171C905700E42216 /* NascidoViewController.m in Sources */,
-				6CE03A21171C9FCC00E42216 /* TipoSanguineoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

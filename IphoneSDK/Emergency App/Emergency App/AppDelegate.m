@@ -28,7 +28,6 @@
     //Rodape
     [[UITabBar appearance] setSelectionIndicatorImage: [UIImage imageNamed:@"UITabBar.png"]];
     
-    
     // Override point for customization after application launch.
     return YES;
     return YES;
