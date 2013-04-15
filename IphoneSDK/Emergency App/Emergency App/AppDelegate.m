@@ -21,17 +21,9 @@
     
     [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1.0]];
     
-    //Componentes
-    //[[UISwitch appearance] setTintColor:[UIColor colorWithRed:255/255 green:10/255 blue:10/255 alpha:1.0]];
-    
-    
-    //Rodape
-    [[UITabBar appearance] setSelectionIndicatorImage: [UIImage imageNamed:@"UITabBar.png"]];
-    
-    
     // Override point for customization after application launch.
     return YES;
-    return YES;
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
