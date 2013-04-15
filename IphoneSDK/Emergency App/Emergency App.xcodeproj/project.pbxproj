@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
+		18EB0F0F171B74D800C57D0F /* navigator-controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F0E171B74D800C57D0F /* navigator-controller.png */; };
+		18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F12171B92E000C57D0F /* UITabBar.png */; };
 		6CAF1B52170F858D003CC459 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B51170F858D003CC459 /* UIKit.framework */; };
 		6CAF1B54170F858D003CC459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B53170F858D003CC459 /* Foundation.framework */; };
 		6CAF1B56170F858D003CC459 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF1B55170F858D003CC459 /* CoreGraphics.framework */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
+		18EB0F0E171B74D800C57D0F /* navigator-controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigator-controller.png"; path = "../../PNG/navigator-controller.png"; sourceTree = "<group>"; };
+		18EB0F12171B92E000C57D0F /* UITabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBar.png; sourceTree = "<group>"; };
 		6CAF1B4E170F858D003CC459 /* Emergency App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emergency App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAF1B51170F858D003CC459 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6CAF1B53170F858D003CC459 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +175,8 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18EB0F12171B92E000C57D0F /* UITabBar.png */,
+				18EB0F0E171B74D800C57D0F /* navigator-controller.png */,
 				6CD44EF81715D85F0051B96A /* icon-tabBar1.png */,
 				6CD44EF91715D85F0051B96A /* icon-tabBar1@2x.png */,
 				6CD44EFA1715D85F0051B96A /* icon-tabBar2.png */,
@@ -265,6 +271,8 @@
 				6CD44F051715D85F0051B96A /* icon-tabBar3@2x.png in Resources */,
 				6CD44F061715D85F0051B96A /* icon-tabBar4.png in Resources */,
 				6CD44F071715D85F0051B96A /* icon-tabBar4@2x.png in Resources */,
+				18EB0F0F171B74D800C57D0F /* navigator-controller.png in Resources */,
+				18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

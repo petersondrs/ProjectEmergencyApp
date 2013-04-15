@@ -15,9 +15,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // SETA A COR DE FUNDO DE TODAS AS TELAS DE NAVEGACAO;
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:255/255 green:7/255 blue:0 alpha:1.0]];
+    // Cabecalho
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigator-controller.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:1.0]];
+    
+    [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1.0]];
+    
+    //Componentes
+    //[[UISwitch appearance] setTintColor:[UIColor colorWithRed:255/255 green:10/255 blue:10/255 alpha:1.0]];
+    
+    
+    //Rodape
+    [[UITabBar appearance] setSelectionIndicatorImage: [UIImage imageNamed:@"UITabBar.png"]];
     
     // Override point for customization after application launch.
+    return YES;
     return YES;
 }
 							
