@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface EditContactViewContollerViewController : UIViewController<UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate>
+@interface EditContactViewController : UITableViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) UITableView *tableContato;
 @property (nonatomic) NSInteger editRow;
 @property (weak, nonatomic) NSMutableArray* detailContato;
 
-@property (weak, nonatomic)  UITextField* nomeTextField;
-@property (weak, nonatomic) UITextField* phoneTextField;
-@property (weak, nonatomic) UISwitch* switchSMS;
-@property (weak, nonatomic) UISwitch* switchCall;
+@property (weak, nonatomic) IBOutlet UITextField* nomeTextField;
+@property (weak, nonatomic) IBOutlet UITextField* phoneTextField;
+@property (weak, nonatomic) IBOutlet UISwitch* switchSMS;
+@property (weak, nonatomic) IBOutlet UISwitch* switchCall;
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender;
 

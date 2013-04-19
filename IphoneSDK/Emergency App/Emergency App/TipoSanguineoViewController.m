@@ -71,14 +71,29 @@
     
 }
 - (IBAction)btnSalvar_TouchUpInside:(id)sender {
-    
+    BOOL isValid = NO;
     for (UITableViewCell* cell in self.tableView.visibleCells)
     {
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
         {
             self.cell.detailTextLabel.text = cell.textLabel.text;
+            isValid = YES;
         }
         
+    }
+    
+    if (!isValid)
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                        message:@"Selecione um tipo sanguineo"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        
+        return;
+
     }
     
     [self.navigationController popViewControllerAnimated:YES];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UITableViewController<UITextFieldDelegate,UIAlertViewDelegate>
+@interface ProfileViewController : UITableViewController<UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UITextField *txtSobreNome;
 @property (weak, nonatomic) IBOutlet UITextField *txtPais;

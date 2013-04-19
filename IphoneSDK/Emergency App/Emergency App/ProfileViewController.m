@@ -37,11 +37,34 @@
     self.txtSobreNome.text = [dic objectForKey:@"SobreNome"];
     self.cellNascido.detailTextLabel.text = [dic objectForKey:@"DataNascimento"];
     self.cellTipoSanguineo.detailTextLabel.text = [dic objectForKey:@"TipoSanguineo"];
-    self.txtPais.text = [dic objectForKey:@"Pais"];
     self.txtAlergia.text = [dic objectForKey:@"Alergia"];
     self.txtPlanoSaude.text = [dic objectForKey:@"PlanoSaude"];
     self.txtObs.text = [dic objectForKey:@"Obs"];
     
+    
+}
+
+- (IBAction)btnSalvar_TouchUpInside:(id)sender {
+    
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
+    [dic setObject:self.txtNome.text forKey:@"Nome"];
+    [dic setObject:self.txtSobreNome.text forKey:@"SobreNome"];
+    [dic setObject:self.txtAlergia.text forKey:@"Alergia"];
+    [dic setObject:self.txtPlanoSaude.text forKey:@"PlanoSaude"];
+    [dic setObject:self.txtObs.text forKey:@"Obs"];
+    [dic setObject:self.cellNascido.detailTextLabel.text forKey:@"DataNascimento"];
+    [dic setObject:self.cellTipoSanguineo.detailTextLabel.text forKey:@"TipoSanguineo"];
+    [dic writeToFile:bundle atomically:YES];
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                    message:@"Dados Salvos"
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
     
 }
 
@@ -93,31 +116,38 @@
 }
 */
 
+#pragma UITextField Protocol
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     UIResponder* nextTextField = [self.view viewWithTag:textField.tag + 1];
     
-    if (nextTextField)
+    if (textField.tag == 1)
     {
         [nextTextField becomeFirstResponder];
+    }
+    else if (textField.tag == 2)
+    {
+        [nextTextField resignFirstResponder];
+        [self.view endEditing:YES];
     }
     
     return YES;
     
 }
 
-
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+#pragma UITextView Protocol
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    if ([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        [self.view endEditing:YES];
+    }
     return YES;
 }
 
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    return YES;
-    
-}
+
 
 #pragma mark - Table view delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -153,30 +183,7 @@
     
 }
 
-- (IBAction)btnSalvar_TouchUpInside:(id)sender {
-    
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
-    
-    [dic setObject:self.txtNome.text forKey:@"Nome"];
-    [dic setObject:self.txtSobreNome.text forKey:@"SobreNome"];
-    [dic setObject:self.txtPais.text forKey:@"Pais"];
-    [dic setObject:self.txtAlergia.text forKey:@"Alergia"];
-    [dic setObject:self.txtPlanoSaude.text forKey:@"PlanoSaude"];
-    [dic setObject:self.txtObs.text forKey:@"Obs"];
-    [dic setObject:self.cellNascido.detailTextLabel.text forKey:@"DataNascimento"];
-    [dic setObject:self.cellTipoSanguineo.detailTextLabel.text forKey:@"TipoSanguineo"];
-    [dic writeToFile:bundle atomically:YES];
-    
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
-                                                    message:@"Dados Salvos"
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    
-    [alert show];
-    
-}
+#pragma UIAlert Protocol
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     

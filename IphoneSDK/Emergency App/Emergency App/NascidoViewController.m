@@ -45,6 +45,20 @@
     {
         self.cell.detailTextLabel.text = cell.textLabel.text;
     }
+    else
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                        message:@"Selecione uma data"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        
+        return;
+
+        
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -67,6 +81,7 @@
     if ([self.cell.detailTextLabel.text isEqualToString:@""])
     {
         cell.textLabel.text = @"Selecione uma data";
+        
     }
     else
     {

@@ -8,7 +8,7 @@
 
 #import "ContactViewController.h"
 #import "AddContactViewController.h"
-#import "EditContactViewContollerViewController.h"
+#import "EditContactViewController.h"
 
 @interface ContactViewController ()
 
@@ -162,7 +162,7 @@
     {
         NSIndexPath* indexPath = (NSIndexPath*)sender;
         
-        EditContactViewContollerViewController* destination = (EditContactViewContollerViewController*)[segue destinationViewController];
+        EditContactViewController* destination = (EditContactViewController*)[segue destinationViewController];
         destination.tableContato = self.tableView;
         destination.editRow = indexPath.row;
         destination.detailContato = [contatos objectAtIndex:indexPath.row];

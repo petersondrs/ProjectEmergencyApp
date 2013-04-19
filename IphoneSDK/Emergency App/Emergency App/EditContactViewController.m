@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Rafael Bento Cruz. All rights reserved.
 //
 
-#import "EditContactViewContollerViewController.h"
+#import "EditContactViewController.h"
 
-@interface EditContactViewContollerViewController ()
+@interface EditContactViewController ()
 
 @end
 
-@implementation EditContactViewContollerViewController
+@implementation EditContactViewController
 
 @synthesize nomeTextField, phoneTextField, switchSMS, switchCall, editRow, detailContato;
 
@@ -25,14 +25,45 @@
     return self;
 }
 
+- (void)loadDataContato
+{
+    self.nomeTextField.text = [self.detailContato objectAtIndex:0];
+    self.phoneTextField.text = [self.detailContato objectAtIndex:1];
+    self.switchCall.on = [[ self.detailContato objectAtIndex:2] intValue];
+    self.switchSMS.on = [[self.detailContato objectAtIndex:3] intValue];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self loadDataContato];
     
-    
-    // Do any additional setup after loading the view.
+    [self configuraKeyboard];
 }
+
+-(void)configuraKeyboard {
+    UIToolbar* numberBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberBar.barStyle = UIBarStyleBlackOpaque;
+    numberBar.items = [NSArray arrayWithObjects:[[UIBarButtonItem alloc]
+                                                 initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                 target:nil
+                                                 action:nil],
+                       [[UIBarButtonItem alloc]
+                        initWithTitle:@"Done"
+                        style:UIBarButtonItemStyleDone
+                        target:self
+                        action:@selector(btnDone_TouchUpInside)]
+                       ,nil];
+    
+    
+    [numberBar sizeToFit];
+    
+    self.phoneTextField.inputAccessoryView = numberBar;
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -171,113 +202,6 @@
     
     [self.phoneTextField resignFirstResponder];
 }
-
-
-#pragma UITableViewDataSource Protocol
-
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
-    CGRect aRect;
-    UIToolbar* numberBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    
-    if (indexPath.section == 0)
-    {
-        
-        if (cell == nil)
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                          reuseIdentifier:@"CellIdentifier"];
-        
-        UITextField* textField = [[UITextField alloc] initWithFrame:CGRectZero];
-        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        
-        UISwitch* uiSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-        
-        
-        
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"Nome";
-                aRect = CGRectMake(70, 11, 223, 31.f );
-                textField.keyboardType = UIKeyboardTypeDefault;
-                textField.returnKeyType = UIReturnKeyNext;
-                textField.tag = indexPath.row;
-                textField.frame = aRect;
-                textField.delegate = self;
-                textField.textColor = cell.detailTextLabel.textColor;
-                textField.text = [self.detailContato objectAtIndex:0];
-                textField.enabled = NO;
-                
-                self.nomeTextField = textField;
-                
-                [cell.contentView addSubview:textField];
-                break;
-            case 1:
-                cell.textLabel.text = @"Telefone";
-                aRect = CGRectMake(95, 11, 200, 31.f );
-                textField.keyboardType = UIKeyboardTypeNumberPad;
-                textField.returnKeyType = UIReturnKeyDone;
-                textField.tag = indexPath.row;
-                textField.frame = aRect;
-                textField.delegate = self;
-                textField.textColor = cell.detailTextLabel.textColor;
-                textField.text = [self.detailContato objectAtIndex:1];
-                
-                numberBar.barStyle = UIBarStyleBlackOpaque;
-                numberBar.items = [NSArray arrayWithObjects:[
-                                                             [UIBarButtonItem alloc]
-                                                             initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                             target:nil
-                                                             action:nil]
-                                   ,[
-                                     [UIBarButtonItem alloc]
-                                     initWithTitle:@"Done"
-                                     style:UIBarButtonItemStyleDone
-                                     target:self
-                                     action:@selector(btnDone_TouchUpInside)]
-                                   ,nil];
-                
-                
-                [numberBar sizeToFit];
-                
-                textField.inputAccessoryView = numberBar;
-                
-                self.phoneTextField = textField;
-                
-                [cell.contentView addSubview:textField];
-                break;
-            case 2:
-                cell.textLabel.text = @"Efetuar Ligação";
-                aRect = CGRectMake(210, 10, 0, 0 );
-                uiSwitch.frame = aRect;
-                self.switchCall = uiSwitch;
-                uiSwitch.on = [[self.detailContato objectAtIndex:2] intValue];
-                [cell.contentView addSubview:uiSwitch];
-                
-                break;
-            case 3:
-                cell.textLabel.text = @"Enviar SMS";
-                aRect = CGRectMake(210, 10, 0, 0 );
-                uiSwitch.frame = aRect;
-                uiSwitch.on = [[self.detailContato objectAtIndex:3] intValue];
-                self.switchSMS = uiSwitch;
-                [cell.contentView addSubview:uiSwitch];
-                break;
-        }
-        
-        
-    }
-   
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
-
-
 
 #pragma Text Field Protocol
 

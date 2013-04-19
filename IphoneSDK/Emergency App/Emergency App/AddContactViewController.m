@@ -31,7 +31,31 @@
 {
     [super viewDidLoad];
     
+    [self configuraKeyboard];
+    
      // Do any additional setup after loading the view.
+}
+
+-(void)configuraKeyboard {
+    UIToolbar* numberBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberBar.barStyle = UIBarStyleBlackOpaque;
+    numberBar.items = [NSArray arrayWithObjects:[[UIBarButtonItem alloc]
+                                                 initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                 target:nil
+                                                 action:nil],
+                                                [[UIBarButtonItem alloc]
+                                                 initWithTitle:@"Done"
+                                                 style:UIBarButtonItemStyleDone
+                                                 target:self
+                                                 action:@selector(btnDone_TouchUpInside)]
+                                                ,nil];
+    
+    
+    [numberBar sizeToFit];
+    
+    self.phoneTextField.inputAccessoryView = numberBar;
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -213,127 +237,6 @@
 }
 
 #pragma UITableViewDataSource Protocol
-
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
-    CGRect aRect;
-    UIToolbar* numberBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    
-    if (indexPath.section == 0)
-    {
-        
-        if (cell == nil)
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                          reuseIdentifier:@"CellIdentifier"];
-        
-        UITextField* textField = [[UITextField alloc] initWithFrame:CGRectZero];
-        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        
-        UISwitch* uiSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-        
-        
-        
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"Nome";
-                aRect = CGRectMake(70, 11, 223, 31.f );
-                textField.keyboardType = UIKeyboardTypeDefault;
-                textField.returnKeyType = UIReturnKeyNext;
-                textField.tag = indexPath.row;
-                textField.frame = aRect;
-                textField.delegate = self;
-                textField.textColor = cell.detailTextLabel.textColor;
-                
-                self.nomeTextField = textField;
-                
-                [cell.contentView addSubview:textField];
-                break;
-            case 1:
-                cell.textLabel.text = @"Telefone";
-                aRect = CGRectMake(95, 11, 200, 31.f );
-                textField.keyboardType = UIKeyboardTypeNumberPad;
-                textField.returnKeyType = UIReturnKeyDone;
-                textField.tag = indexPath.row;
-                textField.frame = aRect;
-                textField.delegate = self;
-                textField.textColor = cell.detailTextLabel.textColor;
-                
-                numberBar.barStyle = UIBarStyleBlackOpaque;
-                numberBar.items = [NSArray arrayWithObjects:[
-                                                             [UIBarButtonItem alloc]
-                                                                initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                target:nil
-                                                                action:nil]
-                                                            ,[
-                                                              [UIBarButtonItem alloc]
-                                                                initWithTitle:@"Done"
-                                                                        style:UIBarButtonItemStyleDone
-                                                                       target:self
-                                                                        action:@selector(btnDone_TouchUpInside)]
-                                                            ,nil];
-                
-                
-                [numberBar sizeToFit];
-                
-                textField.inputAccessoryView = numberBar;
-                
-                self.phoneTextField = textField;
-                
-                [cell.contentView addSubview:textField];
-                break;
-            case 2:
-                cell.textLabel.text = @"Efetuar Ligação";
-                aRect = CGRectMake(210, 10, 0, 0 );
-                
-                uiSwitch.frame = aRect;
-                
-                self.switchCall = uiSwitch;
-                
-                [cell.contentView addSubview:uiSwitch];
-                
-                break;
-            case 3:
-                cell.textLabel.text = @"Enviar SMS";
-                aRect = CGRectMake(210, 10, 0, 0 );
-                uiSwitch.frame = aRect;
-                
-                self.switchSMS = uiSwitch;
-                
-                [cell.contentView addSubview:uiSwitch];
-                break;
-            default:
-                break;
-        }
-        
-        
-    }
-    else if (indexPath.section == 1)
-    {
-        if (cell == nil)
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                          reuseIdentifier:@"CellIdentifier"];
-        cell.textLabel.text = @"Importar Contatos";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        
-    }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //Numero de linhas da tabela.
-    if (section == 0)
-        return 4;
-    else
-        return 1;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
