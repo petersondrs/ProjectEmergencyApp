@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
+		186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */; };
+		186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */; };
 		18EB0F0F171B74D800C57D0F /* navigator-controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F0E171B74D800C57D0F /* navigator-controller.png */; };
 		18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F12171B92E000C57D0F /* UITabBar.png */; };
-		6C5E55F21720DE59005643C5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55F11720DE59005643C5 /* FacebookSDK.framework */; };
-		6C5E55F71720DE81005643C5 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C5E55F41720DE81005643C5 /* FacebookSDKResources.bundle */; };
 		6C5E55FB1720DF44005643C5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FA1720DF44005643C5 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E55FD1720DF4E005643C5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FC1720DF4E005643C5 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E55FF1720DF58005643C5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FE1720DF58005643C5 /* Security.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -54,10 +54,10 @@
 
 /* Begin PBXFileReference section */
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
+		186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		18EB0F0E171B74D800C57D0F /* navigator-controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigator-controller.png"; path = "../../PNG/navigator-controller.png"; sourceTree = "<group>"; };
 		18EB0F12171B92E000C57D0F /* UITabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBar.png; sourceTree = "<group>"; };
-		6C5E55F11720DE59005643C5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		6C5E55F41720DE81005643C5 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../../FacebookSDK/FacebookSDK.framework/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		6C5E55FA1720DF44005643C5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6C5E55FC1720DF4E005643C5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		6C5E55FE1720DF58005643C5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -126,7 +126,7 @@
 				6CAF1B52170F858D003CC459 /* UIKit.framework in Frameworks */,
 				6CAF1B54170F858D003CC459 /* Foundation.framework in Frameworks */,
 				6CAF1B56170F858D003CC459 /* CoreGraphics.framework in Frameworks */,
-				6C5E55F21720DE59005643C5 /* FacebookSDK.framework in Frameworks */,
+				186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,13 +153,13 @@
 		6CAF1B50170F858D003CC459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */,
+				186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */,
 				6C5E56021720DF71005643C5 /* libsqlite3.dylib */,
 				6C5E56001720DF62005643C5 /* Social.framework */,
 				6C5E55FE1720DF58005643C5 /* Security.framework */,
 				6C5E55FC1720DF4E005643C5 /* AdSupport.framework */,
 				6C5E55FA1720DF44005643C5 /* Accounts.framework */,
-				6C5E55F41720DE81005643C5 /* FacebookSDKResources.bundle */,
-				6C5E55F11720DE59005643C5 /* FacebookSDK.framework */,
 				6CE46349171204DF00EEF46C /* AddressBook.framework */,
 				6CE4634A171204DF00EEF46C /* AddressBookUI.framework */,
 				6CAF1B51170F858D003CC459 /* UIKit.framework */,
@@ -324,7 +324,7 @@
 				18EB0F0F171B74D800C57D0F /* navigator-controller.png in Resources */,
 				18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */,
 				6C7007DB171CB98F00D57A99 /* Profile.plist in Resources */,
-				6C5E55F71720DE81005643C5 /* FacebookSDKResources.bundle in Resources */,
+				186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +442,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+					"\"$(SRCROOT)/../../../../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Emergency App/Emergency App-Prefix.pch";
@@ -457,6 +459,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+					"\"$(SRCROOT)/../../../../../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Emergency App/Emergency App-Prefix.pch";
