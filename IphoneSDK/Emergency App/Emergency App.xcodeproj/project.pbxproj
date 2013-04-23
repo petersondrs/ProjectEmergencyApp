@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1827666B17273EB6009A40B1 /* g_barbutton_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827666717273EB6009A40B1 /* g_barbutton_active.png */; };
+		1827666C17273EB6009A40B1 /* g_barbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827666817273EB6009A40B1 /* g_barbutton.png */; };
+		1827666D17273EB6009A40B1 /* g_barbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827666917273EB6009A40B1 /* g_barbutton@2x.png */; };
+		1827666E17273EB6009A40B1 /* g_barbutton_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1827666A17273EB6009A40B1 /* g_barbutton_active@2x.png */; };
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
 		186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */; };
 		186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */; };
@@ -53,6 +57,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1827666717273EB6009A40B1 /* g_barbutton_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = g_barbutton_active.png; path = "Emergency App/g_barbutton_active.png"; sourceTree = "<group>"; };
+		1827666817273EB6009A40B1 /* g_barbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = g_barbutton.png; path = "Emergency App/g_barbutton.png"; sourceTree = "<group>"; };
+		1827666917273EB6009A40B1 /* g_barbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "g_barbutton@2x.png"; path = "Emergency App/g_barbutton@2x.png"; sourceTree = "<group>"; };
+		1827666A17273EB6009A40B1 /* g_barbutton_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "g_barbutton_active@2x.png"; path = "Emergency App/g_barbutton_active@2x.png"; sourceTree = "<group>"; };
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
 		186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -225,6 +233,10 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1827666717273EB6009A40B1 /* g_barbutton_active.png */,
+				1827666817273EB6009A40B1 /* g_barbutton.png */,
+				1827666917273EB6009A40B1 /* g_barbutton@2x.png */,
+				1827666A17273EB6009A40B1 /* g_barbutton_active@2x.png */,
 				18EB0F12171B92E000C57D0F /* UITabBar.png */,
 				18EB0F0E171B74D800C57D0F /* navigator-controller.png */,
 				6CD44EF81715D85F0051B96A /* icon-tabBar1.png */,
@@ -325,6 +337,10 @@
 				18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */,
 				6C7007DB171CB98F00D57A99 /* Profile.plist in Resources */,
 				186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */,
+				1827666B17273EB6009A40B1 /* g_barbutton_active.png in Resources */,
+				1827666C17273EB6009A40B1 /* g_barbutton.png in Resources */,
+				1827666D17273EB6009A40B1 /* g_barbutton@2x.png in Resources */,
+				1827666E17273EB6009A40B1 /* g_barbutton_active@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
