@@ -28,17 +28,8 @@
 {
     // SETA A COR DE FUNDO DE TODAS AS TELAS DE NAVEGACAO;
     // Cabecalho
-<<<<<<< HEAD
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigator-controller.png"] forBarMetrics:UIBarMetricsDefault];
-    //[[UINavigationBar appearance] setBackButtonBackgroundImage:[UIImage imageNamed:@"g_barbutton.png"] forState:UIControlStateNormal  barMetrics:UIBarMetricsDefault];
-
-    
-    UIImage *barButtonBgImage = [[UIImage imageNamed:@"g_barbutton.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 4, 15, 4)];
-    [[UIBarButtonItem appearance] setBackgroundImage:barButtonBgImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-=======
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigator-controller.png"]
                                        forBarMetrics:UIBarMetricsDefault];
->>>>>>> Adiçao dos Botãos de Voltar
     
     [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:1.0]];
     
