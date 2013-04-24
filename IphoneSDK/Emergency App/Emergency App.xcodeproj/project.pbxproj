@@ -35,6 +35,7 @@
 		6C5E56011720DF62005643C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E56001720DF62005643C5 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E56031720DF71005643C5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E56021720DF71005643C5 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E56061720E26D005643C5 /* SocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E56051720E26D005643C5 /* SocialNetworkViewController.m */; };
+		6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C628476172780AB005702A8 /* FacebookLoginViewController.m */; };
 		6C7007DA171CB98F00D57A99 /* NascidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7007D4171CB98F00D57A99 /* NascidoViewController.m */; };
 		6C7007DB171CB98F00D57A99 /* Profile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7007D5171CB98F00D57A99 /* Profile.plist */; };
 		6C7007DC171CB98F00D57A99 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7007D7171CB98F00D57A99 /* ProfileViewController.m */; };
@@ -94,6 +95,8 @@
 		6C5E56021720DF71005643C5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6C5E56041720E26D005643C5 /* SocialNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialNetworkViewController.h; path = "Emergency App/SocialNetworkViewController.h"; sourceTree = "<group>"; };
 		6C5E56051720E26D005643C5 /* SocialNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialNetworkViewController.m; path = "Emergency App/SocialNetworkViewController.m"; sourceTree = "<group>"; };
+		6C628475172780AB005702A8 /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = "Emergency App/FacebookLoginViewController.h"; sourceTree = "<group>"; };
+		6C628476172780AB005702A8 /* FacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookLoginViewController.m; path = "Emergency App/FacebookLoginViewController.m"; sourceTree = "<group>"; };
 		6C7007D3171CB98F00D57A99 /* NascidoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NascidoViewController.h; path = "Emergency App/NascidoViewController.h"; sourceTree = "<group>"; };
 		6C7007D4171CB98F00D57A99 /* NascidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NascidoViewController.m; path = "Emergency App/NascidoViewController.m"; sourceTree = "<group>"; };
 		6C7007D5171CB98F00D57A99 /* Profile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Profile.plist; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				6CDF4621171B4A0C0003F609 /* ServiceTermViewController.m */,
 				6C5E56041720E26D005643C5 /* SocialNetworkViewController.h */,
 				6C5E56051720E26D005643C5 /* SocialNetworkViewController.m */,
+				6C628475172780AB005702A8 /* FacebookLoginViewController.h */,
+				6C628476172780AB005702A8 /* FacebookLoginViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -394,6 +399,7 @@
 				6C7007DC171CB98F00D57A99 /* ProfileViewController.m in Sources */,
 				6C7007DD171CB98F00D57A99 /* TipoSanguineoViewController.m in Sources */,
 				6C5E56061720E26D005643C5 /* SocialNetworkViewController.m in Sources */,
+				6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
