@@ -10,9 +10,12 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 
-@interface SocialNetworkViewController : UIViewController<FBLoginViewDelegate>
-- (IBAction)btnPostStatus_TouchUpInside:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnPostStatus;
-@property (weak, nonatomic) IBOutlet UILabel *lblLogIn;
+@interface SocialNetworkViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) UISwitch *switchFacebook;
+
+@property (weak, nonatomic) UISwitch *switchTwitter;
+@property (weak, nonatomic) IBOutlet UITableView *tblRedeSocial;
+
+- (IBAction)btnSalvar_TouchUpInside:(id)sender;
 @end

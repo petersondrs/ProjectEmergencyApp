@@ -7,6 +7,7 @@
 //
 
 #import "SocialNetworkViewController.h"
+#import "FacebookLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface SocialNetworkViewController ()
@@ -24,21 +25,18 @@
     return self;
 }
 
+-(BOOL)verifyIfIsLoggedToFacebook{
+    
+    return (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    // Do any additional setup after loading the view.
     
-    
-    FBLoginView* fbloginView = [[FBLoginView alloc] init];
-    fbloginView.frame = CGRectOffset(fbloginView.frame, 5, 5);
-    fbloginView.delegate = self;
-    fbloginView.publishPermissions = @[@"publish_actions"];
-    fbloginView.defaultAudience = FBSessionDefaultAudienceEveryone;
-    [fbloginView sizeToFit];
-    
-    
-    [self.view addSubview:fbloginView];
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,89 +45,124 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnLoginFacebook_TouchUpInside:(id)sender {
-}
-
-- (void)showAlert:(NSString *)message
-           result:(id)result
-            error:(NSError *)error {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    NSString *alertMsg;
-    NSString *alertTitle;
-    if (error) {
-        alertTitle = @"Error";
-        if (error.fberrorShouldNotifyUser ||
-            error.fberrorCategory == FBErrorCategoryPermissions ||
-            error.fberrorCategory == FBErrorCategoryAuthenticationReopenSession) {
-            alertMsg = error.fberrorUserMessage;
-        } else {
-            alertMsg = @"Operation failed due to a connection problem, retry later.";
-        }
-    } else {
-        alertMsg = [NSString stringWithFormat:@"Successfully posted '%@'.", message];
-        alertTitle = @"Success";
+    if ([segue.identifier isEqualToString:@"facebookLogin"])
+    {
+        FacebookLoginViewController* facebook = (FacebookLoginViewController*) [segue destinationViewController];
+        facebook.rootController = self;
     }
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
-                                                        message:alertMsg
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];
 }
 
-- (IBAction)btnPostStatus_TouchUpInside:(id)sender {
-     [self performPublishAction:^{
-        NSString *message = [NSString stringWithFormat:@"Integrando no iOS em %@", [NSDate date]];
+
+#pragma UiTableViewDataSource Protocol
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* cellIdentifier = @"CellIdentifier";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UISwitch*  switchNetwork = [[UISwitch alloc] initWithFrame:CGRectMake(231, 14, 79, 27)];
+    
+    
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    
+    if (indexPath.row == 0)
+    {
+        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
         
-        [FBRequestConnection startForPostStatusUpdate:message
-                                    completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                        [self showAlert:message result:result error:error];
-                                    }];
-       
-    }];
-
+        [switchNetwork addTarget:self
+                          action:@selector(switchFacebook_ValueChanged:)
+                forControlEvents:UIControlEventValueChanged];
+        
+        cell.textLabel.text = @"Facebook";
+        
+        
+        [cell.contentView addSubview:switchNetwork];
+        
+        self.switchFacebook = switchNetwork;
+        
+    }
+    else
+    {
+        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
+        
+        [switchNetwork addTarget:self
+                          action:@selector(switchTwitter_ValueChanged:)
+                forControlEvents:UIControlEventValueChanged];
+        
+        cell.textLabel.text = @"Twitter";
+        
+        [cell.contentView addSubview:switchNetwork];
+        
+        self.switchTwitter = switchNetwork;
+        
+    }
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
+    cell.textLabel.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.tblRedeSocial setSeparatorColor:[UIColor colorWithRed:198.0/255.0 green:0 blue:0 alpha:1]];
+    
+    return cell;
+    
 }
 
-// Convenience method to perform some action that requires the "publish_actions" permissions.
-- (void) performPublishAction:(void (^)(void)) action {
-    // we defer request for permission to post to the moment of post, then we check for the permission
-    if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
-        // if we don't already have the permission, then we request it now
-        [FBSession.activeSession requestNewPublishPermissions:@[@"publish_actions"]
-                                              defaultAudience:FBSessionDefaultAudienceEveryone
-                                            completionHandler:^(FBSession *session, NSError *error) {
-                                                if (!error) {
-                                                    action();
-                                                }
-                                                //For this example, ignore errors (such as if user cancels).
-                                            }];
-    } else {
-        action();
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 0)];
+    
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 12)];
+    
+    label.textColor = [UIColor colorWithRed:1 green:27/255 blue:0 alpha:1];
+    label.text = @"CONECTAR";
+    label.font = [UIFont boldSystemFontOfSize:17];
+    
+    [headerView addSubview:label];
+    
+    return headerView;
+}
+
+
+
+#pragma View Events
+
+- (void)switchTwitter_ValueChanged:(id)sender {
+    
+    
+    
+}
+
+- (void)switchFacebook_ValueChanged:(id)sender {
+    
+    if (self.switchFacebook.isOn)
+    {
+        if (![self verifyIfIsLoggedToFacebook])
+        {
+            [self performSegueWithIdentifier:@"facebookLogin" sender:self];
+            self.switchFacebook.on = NO;
+        }
     }
     
 }
 
-
-#pragma FbLoginViewDelegate
--(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    
-    
-    self.btnPostStatus.enabled = NO;
+- (IBAction)btnSalvar_TouchUpInside:(id)sender {
 }
--(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
-    
-    NSLog(@"%@",error);
-}
--(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
-    
-}
--(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    
-    self.btnPostStatus.enabled = YES;
-    self.lblLogIn.text = @"Você está logado no facebook";
-    
-    
-}
-
 @end
