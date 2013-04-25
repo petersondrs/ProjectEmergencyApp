@@ -9,6 +9,7 @@
 #import "SocialNetworkViewController.h"
 #import "FacebookLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
 
 @interface SocialNetworkViewController ()
 
@@ -25,8 +26,8 @@
     return self;
 }
 
--(BOOL)verifyIfIsLoggedToFacebook{
-    
+-(BOOL)verifyIfIsLoggedToFacebook
+{
     return (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded);
 }
 
@@ -37,9 +38,7 @@
     // Do any additional setup after loading the view.
     [self.tblRedeSocial
      setSeparatorColor:[UIColor colorWithRed:198.0/255.0 green:0 blue:0 alpha:1]];
-
     
-  
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,8 +51,13 @@
     
     if ([segue.identifier isEqualToString:@"facebookLogin"])
     {
-        FacebookLoginViewController* facebook = (FacebookLoginViewController*) [segue destinationViewController];
+        UINavigationController* navCtrl = (UINavigationController*) [segue destinationViewController];
+        
+        FacebookLoginViewController* facebook = (FacebookLoginViewController*) [navCtrl.viewControllers objectAtIndex:0];
+        
         facebook.rootController = self;
+        self.switchFacebook.on = NO;
+
     }
     
 }
@@ -128,7 +132,7 @@
         //Adiciono o UILabel
         text.text = @"TWITTER";
         
-        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
+        //switchNetwork.on = [self verifyIfIsLoggedToFacebook];
         [switchNetwork addTarget:self
                           action:@selector(switchTwitter_ValueChanged:)
                 forControlEvents:UIControlEventValueChanged];
@@ -192,8 +196,11 @@
         if (![self verifyIfIsLoggedToFacebook])
         {
             [self performSegueWithIdentifier:@"facebookLogin" sender:self];
-            self.switchFacebook.on = NO;
         }
+    }
+    else
+    {
+        [[FBSession activeSession] closeAndClearTokenInformation];
     }
     
 }

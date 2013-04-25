@@ -10,10 +10,13 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "SocialNetworkViewController.h"
 
-@interface FacebookLoginViewController : UIViewController<FBLoginViewDelegate>
-@property (weak, nonatomic) IBOutlet UIView *uiViewFaceBook;
+@interface FacebookLoginViewController : UIViewController
 
 - (IBAction)btnFechar_TouchUpInside:(id)sender;
+
+- (IBAction)btnLogarFB_TouchUpInside:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnLogar;
 
 @property (weak,nonatomic) SocialNetworkViewController* rootController;
 

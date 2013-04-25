@@ -791,7 +791,8 @@
                                     <constraint firstAttribute="width" constant="282" id="GF0-GR-9dt"/>
                                     <constraint firstAttribute="height" constant="86" id="O30-Oa-pzF"/>
                                 </constraints>
-                                <string key="text">Conecte sua conta do Facebook e Twitter ao Emergency Response e utilize estes dois canais para enviar seu pedido de ajuda. A mensagem será a mesma enviada via SMS.</string>
+                                <string key="text">Conecte sua conta do Facebook e Twitter ao Emergency Response e utilize estes dois canais para enviar seu pedido de ajuda. 
+A mensagem será a mesma enviada via SMS.</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -810,6 +811,7 @@
                     <navigationItem key="navigationItem" id="x8n-Pc-MXE"/>
                     <connections>
                         <outlet property="tblRedeSocial" destination="PQ9-Or-KcC" id="gs7-LU-fqy"/>
+                        <segue destination="HE2-bL-Lnb" kind="modal" identifier="facebookLogin" id="e1B-Gz-99P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqU-UO-UGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -820,6 +822,7 @@
         <scene sceneID="L4q-ZQ-mgj">
             <objects>
                 <navigationController definesPresentationContext="YES" id="HE2-bL-Lnb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BM1-l1-wLv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2M4-mt-IhY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -829,7 +832,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VK-Sa-VSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5375" y="7219"/>
+            <point key="canvasLocation" x="-5456" y="7227"/>
         </scene>
         <!--Facebook Login View Controller - Facebook-->
         <scene sceneID="38X-gV-ESe">
@@ -839,24 +842,32 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-se-OxJ">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="facebook.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DYZ-QS-qxU">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="3gD-A7-xYC"/>
                                     <constraint firstAttribute="width" constant="240" id="IpH-VW-o54"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQm-Fc-6Vb">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogarFB_TouchUpInside:" destination="vb1-ze-qm5" eventType="touchUpInside" id="mHb-HK-1eK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uzX-se-OxJ" secondAttribute="bottom" constant="71" id="1B7-WA-dBy"/>
                             <constraint firstItem="DYZ-QS-qxU" firstAttribute="top" secondItem="xEM-r8-33l" secondAttribute="top" constant="36" id="LJq-0z-bw2"/>
                             <constraint firstItem="DYZ-QS-qxU" firstAttribute="leading" secondItem="xEM-r8-33l" secondAttribute="leading" constant="34" id="Mja-Me-TaB"/>
-                            <constraint firstItem="uzX-se-OxJ" firstAttribute="top" secondItem="xEM-r8-33l" secondAttribute="top" constant="294" id="P0H-F3-owm"/>
-                            <constraint firstItem="uzX-se-OxJ" firstAttribute="centerX" secondItem="xEM-r8-33l" secondAttribute="centerX" type="default" id="hOy-OR-fJl"/>
-                            <constraint firstItem="uzX-se-OxJ" firstAttribute="leading" secondItem="xEM-r8-33l" secondAttribute="leading" constant="82" id="kLB-Rc-hVi"/>
+                            <constraint firstAttribute="bottom" secondItem="MQm-Fc-6Vb" secondAttribute="bottom" constant="139" id="QM5-YL-Hhg"/>
+                            <constraint firstItem="MQm-Fc-6Vb" firstAttribute="leading" secondItem="xEM-r8-33l" secondAttribute="leading" constant="130" id="udM-Sg-2fs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Facebook" id="kol-9S-81y">
@@ -867,12 +878,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="uiViewFaceBook" destination="uzX-se-OxJ" id="V6s-BL-bl5"/>
+                        <outlet property="btnLogar" destination="MQm-Fc-6Vb" id="pdG-Mh-Odt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AI-AG-Yb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4953" y="7209"/>
+            <point key="canvasLocation" x="-5044" y="7227"/>
         </scene>
         <!--Nascido View Controller - Nascido em-->
         <scene sceneID="iPN-kf-aqJ">
@@ -1327,86 +1338,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="icon-tabBar4.png" width="30" height="30"/>
         <image name="logoErShareScreen.png" width="98" height="67"/>
     </resources>
-    <classes>
-        <class className="AddContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
-                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAddContact_TouchUpInside:"/>
-            </relationships>
-        </class>
-        <class className="EditContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
-                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="FacebookLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFechar_TouchUpInside:"/>
-                <relationship kind="outlet" name="uiViewFaceBook" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NascidoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NascidoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-                <relationship kind="action" name="datePickerChanged:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="tblNascido" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ProfileViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-                <relationship kind="outlet" name="cellNascido" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellTipoSanguineo" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="txtAlergia" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtNome" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtObs" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtPais" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPlanoSaude" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtSobreNome" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ServiceTermViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServiceTermViewController.h"/>
-        </class>
-        <class className="SettingScreenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
-        </class>
-        <class className="SocialNetworkViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialNetworkViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-                <relationship kind="outlet" name="tblRedeSocial" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="TipoSanguineoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipoSanguineoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -8,6 +8,8 @@
 
 #import "FacebookLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
+
 @interface FacebookLoginViewController ()
 
 @end
@@ -28,13 +30,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    FBLoginView* fbLogin = [[FBLoginView alloc] init];
-   // fbLogin.frame = CGRectOffset(self.uiViewFaceBook.frame, 0, 0);
-    fbLogin.delegate = self;
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     
-    [fbLogin sizeToFit];
+    if (appDelegate.session.isOpen)
+    {
+        [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.btnLogar setTitle:@"Log in" forState:UIControlStateNormal];
+    }
     
-    [self.uiViewFaceBook addSubview:fbLogin];
     
 }
 
@@ -48,17 +54,33 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-#pragma Fabebook Delegate
--(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
+- (IBAction)btnLogarFB_TouchUpInside:(id)sender {
     
-    self.rootController.switchFacebook.on = YES;
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void) loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    self.rootController.switchFacebook.on = NO;
+    //Se a sessão do facebook não está logado, logar no facebook
+    
+    if (!appDelegate.session.isOpen)
+    {
+        //Criar uma sessão nova
+        appDelegate.session = [[FBSession alloc]init];
+        
+        
+        [appDelegate.session openWithCompletionHandler:
+         ^(FBSession *session, FBSessionState status, NSError *error)
+        {
+            [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
+             self.rootController.switchFacebook.on = YES;
+        }];
+    }
+    else
+    {
+        [appDelegate.session closeAndClearTokenInformation];
+        [self.btnLogar setTitle:@"Log in" forState:UIControlStateNormal];
+        self.rootController.switchFacebook.on = NO;
+        
+    }
+    
 }
 
 
