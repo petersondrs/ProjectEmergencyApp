@@ -775,8 +775,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-Or-KcC">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="bkj-H3-Q5K"/>
                                     <constraint firstAttribute="height" constant="131" id="qFI-My-0kR"/>
-                                    <constraint firstAttribute="width" constant="313" id="rcv-xs-MxY"/>
                                 </constraints>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
@@ -785,11 +785,26 @@
                                     <outlet property="delegate" destination="yXh-uZ-mgO" id="uiQ-QO-TZJ"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoErShareScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="GqP-fR-1nv"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="282" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-GV-5CV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="GF0-GR-9dt"/>
+                                    <constraint firstAttribute="height" constant="86" id="O30-Oa-pzF"/>
+                                </constraints>
+                                <string key="text">Conecte sua conta do Facebook e Twitter ao Emergency Response e utilize estes dois canais para enviar seu pedido de ajuda. A mensagem será a mesma enviada via SMS.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="bottom" secondItem="E4m-vm-hMt" secondAttribute="bottom" type="default" id="1sF-Xj-m1R"/>
-                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="centerX" secondItem="E4m-vm-hMt" secondAttribute="centerX" type="default" id="Bi0-S6-fUg"/>
+                            <constraint firstItem="GqP-fR-1nv" firstAttribute="centerX" secondItem="PQ9-Or-KcC" secondAttribute="centerX" type="default" id="FcM-kt-AUl"/>
+                            <constraint firstItem="GqP-fR-1nv" firstAttribute="top" secondItem="E4m-vm-hMt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="MLx-fG-OEB"/>
+                            <constraint firstAttribute="bottom" secondItem="PQ9-Or-KcC" secondAttribute="bottom" constant="4" id="OTO-Ze-G15"/>
+                            <constraint firstItem="vWa-GV-5CV" firstAttribute="top" secondItem="E4m-vm-hMt" secondAttribute="top" constant="113" id="hX1-GE-aT5"/>
+                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="centerX" secondItem="E4m-vm-hMt" secondAttribute="centerX" type="default" id="jWf-fW-Ez2"/>
+                            <constraint firstItem="vWa-GV-5CV" firstAttribute="leading" secondItem="E4m-vm-hMt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ln4-Ly-HWY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x8n-Pc-MXE"/>
@@ -906,7 +921,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellNascido" id="5Zb-x1-YZw">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1235,7 +1250,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellAddContact" id="Zy4-Ie-yBr">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1262,7 +1277,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="r5t-4e-XqZ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellAddContact" textLabel="58I-TW-xfC" style="IBUITableViewCellStyleDefault" id="ZvP-Wk-MlN">
-                                        <rect key="frame" x="0.0" y="207" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="207" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1310,6 +1325,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="icon-tabBar2.png" width="30" height="30"/>
         <image name="icon-tabBar3.png" width="30" height="30"/>
         <image name="icon-tabBar4.png" width="30" height="30"/>
+        <image name="logoErShareScreen.png" width="98" height="67"/>
     </resources>
     <classes>
         <class className="AddContactViewController" superclassName="UITableViewController">

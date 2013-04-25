@@ -35,6 +35,9 @@
     [super viewDidLoad];
 	
     // Do any additional setup after loading the view.
+    [self.tblRedeSocial
+     setSeparatorColor:[UIColor colorWithRed:198.0/255.0 green:0 blue:0 alpha:1]];
+
     
   
 }
@@ -70,9 +73,6 @@
 {
     static NSString* cellIdentifier = @"CellIdentifier";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    UISwitch*  switchNetwork = [[UISwitch alloc] initWithFrame:CGRectMake(231, 14, 79, 27)];
-    
-    
     
     if (cell == nil)
     {
@@ -81,43 +81,78 @@
     }
     
     
+    //configura os objetos comuns label, switch, image...
+    
+    //configura a view ui como conteiner de objetos
+    UIView* viewCell = [[UIView alloc] initWithFrame:cell.frame];
+    
+    //Configura o label
+    UILabel* text = [[UILabel alloc]initWithFrame:CGRectMake(50, 11, 100 , 30)];
+    text.textColor = [UIColor whiteColor];
+    text.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
+    text.font = [UIFont boldSystemFontOfSize:17];
+   
+    //Configura o switch
+    UISwitch*  switchNetwork = [[UISwitch alloc] initWithFrame:CGRectMake(231, 13, 79, 27)];
+    
+    //Configura a imagem
+    UIImageView* viewImage = nil;
+    UIImage* img = nil;
+    
     if (indexPath.row == 0)
     {
-        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
+        //Criar a view de imagem
+        img = [UIImage imageNamed:@"logoFbShareScreen.png"];
+        viewImage = [[UIImageView alloc] initWithImage:img];
         
+        //Adiciono o UILabel
+        text.text = @"FACEBOOK";
+        [viewCell addSubview:text];
+        
+        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
         [switchNetwork addTarget:self
                           action:@selector(switchFacebook_ValueChanged:)
                 forControlEvents:UIControlEventValueChanged];
         
-        cell.textLabel.text = @"Facebook";
-        
-        
-        [cell.contentView addSubview:switchNetwork];
-        
         self.switchFacebook = switchNetwork;
-        
+    
     }
     else
     {
-        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
         
+        //Criar a view de imagem
+        img = [UIImage imageNamed:@"logoTwitterShareScreen.png"];
+        viewImage = [[UIImageView alloc] initWithImage:img];
+        
+        
+        //Adiciono o UILabel
+        text.text = @"TWITTER";
+        
+        switchNetwork.on = [self verifyIfIsLoggedToFacebook];
         [switchNetwork addTarget:self
                           action:@selector(switchTwitter_ValueChanged:)
                 forControlEvents:UIControlEventValueChanged];
-        
-        cell.textLabel.text = @"Twitter";
-        
-        [cell.contentView addSubview:switchNetwork];
-        
         self.switchTwitter = switchNetwork;
         
     }
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.contentView.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
-    cell.textLabel.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self.tblRedeSocial setSeparatorColor:[UIColor colorWithRed:198.0/255.0 green:0 blue:0 alpha:1]];
     
+    //Configura o frame da view
+    viewImage.frame = CGRectMake(6, 9, img.size.width, img.size.height);
+    
+    //Adiciona a img
+    [viewCell addSubview:viewImage];
+    
+    //Adicionando a label
+    [viewCell addSubview:text];
+    //Adicionando o switch
+    [viewCell addSubview:switchNetwork];
+    
+    //Cria a view na cell
+    [cell.contentView addSubview:viewCell];
+    
+    cell.contentView.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
     
 }
