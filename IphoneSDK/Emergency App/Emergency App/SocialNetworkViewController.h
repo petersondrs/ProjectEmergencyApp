@@ -17,5 +17,4 @@
 @property (weak, nonatomic) UISwitch *switchTwitter;
 @property (weak, nonatomic) IBOutlet UITableView *tblRedeSocial;
 
-- (IBAction)btnSalvar_TouchUpInside:(id)sender;
 @end

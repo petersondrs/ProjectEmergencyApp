@@ -29,10 +29,10 @@
 		18FA172B17276D5600FA1366 /* logoErShareScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA172417276D5600FA1366 /* logoErShareScreen.png */; };
 		18FA172C17276D5600FA1366 /* logoErShareScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA172517276D5600FA1366 /* logoErShareScreen@2x.png */; };
 		18FA172D17276D5600FA1366 /* navigator-controller@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA172617276D5600FA1366 /* navigator-controller@2x.png */; };
-		6C5E55FB1720DF44005643C5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FA1720DF44005643C5 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6C5E55FB1720DF44005643C5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FA1720DF44005643C5 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6C5E55FD1720DF4E005643C5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FC1720DF4E005643C5 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E55FF1720DF58005643C5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E55FE1720DF58005643C5 /* Security.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		6C5E56011720DF62005643C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E56001720DF62005643C5 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6C5E56011720DF62005643C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E56001720DF62005643C5 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6C5E56031720DF71005643C5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5E56021720DF71005643C5 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C5E56061720E26D005643C5 /* SocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E56051720E26D005643C5 /* SocialNetworkViewController.m */; };
 		6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C628476172780AB005702A8 /* FacebookLoginViewController.m */; };
@@ -55,6 +55,12 @@
 		6CD44F051715D85F0051B96A /* icon-tabBar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFD1715D85F0051B96A /* icon-tabBar3@2x.png */; };
 		6CD44F061715D85F0051B96A /* icon-tabBar4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFE1715D85F0051B96A /* icon-tabBar4.png */; };
 		6CD44F071715D85F0051B96A /* icon-tabBar4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFF1715D85F0051B96A /* icon-tabBar4@2x.png */; };
+		6CD6A8EC172B2D2E00413973 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD6A8EB172B2D2E00413973 /* Twitter.framework */; };
+		6CD6A8EE172B31CC00413973 /* TWAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A8DE172B2B3400413973 /* TWAPIManager.m */; };
+		6CD6A8F2172B31CC00413973 /* TWSignedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A8E2172B2B3400413973 /* TWSignedRequest.m */; settings = {COMPILER_FLAGS = "-D'TWITTER_CONSUMER_KEY=@\"$(TWITTER_CONSUMER_KEY)\"' -D'TWITTER_CONSUMER_SECRET=@\"$(TWITTER_CONSUMER_SECRET)\"'"; }; };
+		6CD6A8F4172B31D600413973 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A8E6172B2B9700413973 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6CD6A8F6172B31D600413973 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A8E8172B2B9700413973 /* OAuth+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6CD6A8F8172B31D600413973 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6A8EA172B2B9700413973 /* OAuthCore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6CD925211719F5DB0050AC53 /* EditContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD925201719F5DB0050AC53 /* EditContactViewController.m */; };
 		6CDD559317150FCB002BB31A /* Contatos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD559217150FCB002BB31A /* Contatos.plist */; };
 		6CDF4622171B4A0C0003F609 /* ServiceTermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF4621171B4A0C0003F609 /* ServiceTermViewController.m */; };
@@ -123,6 +129,17 @@
 		6CD44EFD1715D85F0051B96A /* icon-tabBar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar3@2x.png"; sourceTree = "<group>"; };
 		6CD44EFE1715D85F0051B96A /* icon-tabBar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar4.png"; sourceTree = "<group>"; };
 		6CD44EFF1715D85F0051B96A /* icon-tabBar4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar4@2x.png"; sourceTree = "<group>"; };
+		6CD6A8DD172B2B3400413973 /* TWAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAPIManager.h; sourceTree = "<group>"; };
+		6CD6A8DE172B2B3400413973 /* TWAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAPIManager.m; sourceTree = "<group>"; };
+		6CD6A8E1172B2B3400413973 /* TWSignedRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWSignedRequest.h; sourceTree = "<group>"; };
+		6CD6A8E2172B2B3400413973 /* TWSignedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWSignedRequest.m; sourceTree = "<group>"; };
+		6CD6A8E5172B2B9700413973 /* NSData+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		6CD6A8E6172B2B9700413973 /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		6CD6A8E7172B2B9700413973 /* OAuth+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		6CD6A8E8172B2B9700413973 /* OAuth+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		6CD6A8E9172B2B9700413973 /* OAuthCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		6CD6A8EA172B2B9700413973 /* OAuthCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
+		6CD6A8EB172B2D2E00413973 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		6CD9251F1719F5DB0050AC53 /* EditContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditContactViewController.h; path = "Emergency App/EditContactViewController.h"; sourceTree = "<group>"; };
 		6CD925201719F5DB0050AC53 /* EditContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditContactViewController.m; path = "Emergency App/EditContactViewController.m"; sourceTree = "<group>"; };
 		6CDD559217150FCB002BB31A /* Contatos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contatos.plist; sourceTree = "<group>"; };
@@ -143,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD6A8EC172B2D2E00413973 /* Twitter.framework in Frameworks */,
 				6C5E56031720DF71005643C5 /* libsqlite3.dylib in Frameworks */,
 				6C5E56011720DF62005643C5 /* Social.framework in Frameworks */,
 				6C5E55FF1720DF58005643C5 /* Security.framework in Frameworks */,
@@ -180,6 +198,7 @@
 		6CAF1B50170F858D003CC459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6A8EB172B2D2E00413973 /* Twitter.framework */,
 				186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */,
 				186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */,
 				6C5E56021720DF71005643C5 /* libsqlite3.dylib */,
@@ -199,7 +218,8 @@
 		6CAF1B57170F858D003CC459 /* Emergency App */ = {
 			isa = PBXGroup;
 			children = (
-				6CD44F081716143E0051B96A /* Componentes */,
+				6CD6A8E3172B2B3C00413973 /* Componentes */,
+				6CD6A8DC172B2B0D00413973 /* TwitterIntegration */,
 				6CAF1B80170F85AA003CC459 /* Resources */,
 				6CAF1B7F170F8599003CC459 /* Views */,
 				6CAF1B60170F858D003CC459 /* AppDelegate.h */,
@@ -287,11 +307,36 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		6CD44F081716143E0051B96A /* Componentes */ = {
+		6CD6A8DC172B2B0D00413973 /* TwitterIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				6CD6A8DD172B2B3400413973 /* TWAPIManager.h */,
+				6CD6A8DE172B2B3400413973 /* TWAPIManager.m */,
+				6CD6A8E1172B2B3400413973 /* TWSignedRequest.h */,
+				6CD6A8E2172B2B3400413973 /* TWSignedRequest.m */,
+			);
+			name = TwitterIntegration;
+			sourceTree = "<group>";
+		};
+		6CD6A8E3172B2B3C00413973 /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6A8E4172B2B6600413973 /* ABOAuthCore */,
 			);
 			name = Componentes;
+			sourceTree = "<group>";
+		};
+		6CD6A8E4172B2B6600413973 /* ABOAuthCore */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6A8E5172B2B9700413973 /* NSData+Base64.h */,
+				6CD6A8E6172B2B9700413973 /* NSData+Base64.m */,
+				6CD6A8E7172B2B9700413973 /* OAuth+Additions.h */,
+				6CD6A8E8172B2B9700413973 /* OAuth+Additions.m */,
+				6CD6A8E9172B2B9700413973 /* OAuthCore.h */,
+				6CD6A8EA172B2B9700413973 /* OAuthCore.m */,
+			);
+			name = ABOAuthCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD6A8F4172B31D600413973 /* NSData+Base64.m in Sources */,
+				6CD6A8F6172B31D600413973 /* OAuth+Additions.m in Sources */,
+				6CD6A8F8172B31D600413973 /* OAuthCore.m in Sources */,
+				6CD6A8EE172B31CC00413973 /* TWAPIManager.m in Sources */,
+				6CD6A8F2172B31CC00413973 /* TWSignedRequest.m in Sources */,
 				6CAF1B5E170F858D003CC459 /* main.m in Sources */,
 				6CAF1B62170F858D003CC459 /* AppDelegate.m in Sources */,
 				6CDFB3B3170FBD0700D5F041 /* SettingScreenViewController.m in Sources */,

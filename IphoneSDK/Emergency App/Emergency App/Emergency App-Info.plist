@@ -41,13 +41,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>${FB_BUNDLE_VERSION}</string>
+	<string>1.0</string>
 	<key>FacebookAppID</key>
 	<string>583315245019944</string>
 	<key>FacebookDisplayName</key>
 	<string>Emergency Response</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>TWITTER_CONSUMER_KEY</key>
+	<string>2he1EcnaiXTEVzVG4OTw</string>
+	<key>TWITTER_CONSUMER_SECRET</key>
+	<string>zgvXmagwdieHIN9kr5uy5b37JIfOLdecjOwkWTnLw0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>

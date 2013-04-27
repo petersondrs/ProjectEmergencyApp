@@ -10,6 +10,12 @@
 #import "FacebookLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
+#import <Accounts/Accounts.h>
+#import <Twitter/Twitter.h>
+#import "OAuth+Additions.h"
+#import "TWAPIManager.h"
+#import "TWSignedRequest.h"
+#import <Social/Social.h>
 
 @interface SocialNetworkViewController ()
 
@@ -30,7 +36,11 @@
 {
     return (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded);
 }
-
+-(BOOL)verifyIfIsLoggedToTwitter
+{
+    AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    return (app.twSession != nil);
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -132,7 +142,7 @@
         //Adiciono o UILabel
         text.text = @"TWITTER";
         
-        //switchNetwork.on = [self verifyIfIsLoggedToFacebook];
+        switchNetwork.on = [self verifyIfIsLoggedToTwitter];
         [switchNetwork addTarget:self
                           action:@selector(switchTwitter_ValueChanged:)
                 forControlEvents:UIControlEventValueChanged];
@@ -168,7 +178,7 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 12)];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 13)];
     
     label.textColor = [UIColor colorWithRed:1 green:27/255 blue:0 alpha:1];
     label.text = @"CONECTAR";
@@ -185,12 +195,55 @@
 
 - (void)switchTwitter_ValueChanged:(id)sender {
     
+    AppDelegate* app = [[UIApplication sharedApplication] delegate];
     
-    
+    if (self.switchTwitter.isOn)
+    {
+        ACAccountStore* store = [[ACAccountStore alloc] init];
+        
+        ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        
+        ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
+            ACAccount* twAccount;
+            UIAlertView *alert;
+            
+            if (granted)
+            {
+                NSArray *twAccounts = [store accountsWithAccountType:twitterType];
+                if (twAccounts.count > 0)
+                {
+                    twAccount = [twAccounts objectAtIndex:0];
+                    app.twSession = twAccount;
+                }
+                else
+                {
+                     alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response" message:@"Por favor configure uma conta do twitter no iOS" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
+                }
+                
+            }
+            else
+            {
+                alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response" message:@"O usuário não permitiu a acesso a conta do twitter pela aplicação emergency response" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+            
+        
+        
+        };
+        if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
+        {
+            [store requestAccessToAccountsWithType:twitterType options:nil completion:handler];
+        }
+    }
+    else
+    {
+        app.twSession = nil;
+    }
 }
 
 - (void)switchFacebook_ValueChanged:(id)sender {
-    
+    AppDelegate* app = [[UIApplication sharedApplication] delegate];
     if (self.switchFacebook.isOn)
     {
         if (![self verifyIfIsLoggedToFacebook])
@@ -201,10 +254,11 @@
     else
     {
         [[FBSession activeSession] closeAndClearTokenInformation];
+        [app.fbSession closeAndClearTokenInformation];
+        
     }
     
 }
 
-- (IBAction)btnSalvar_TouchUpInside:(id)sender {
-}
+
 @end

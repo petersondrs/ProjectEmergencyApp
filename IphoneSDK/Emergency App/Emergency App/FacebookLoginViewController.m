@@ -32,7 +32,7 @@
     
     AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     
-    if (appDelegate.session.isOpen)
+    if (appDelegate.fbSession.isOpen)
     {
         [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
     }
@@ -60,13 +60,13 @@
     
     //Se a sessão do facebook não está logado, logar no facebook
     
-    if (!appDelegate.session.isOpen)
+    if (!appDelegate.fbSession.isOpen)
     {
         //Criar uma sessão nova
-        appDelegate.session = [[FBSession alloc]init];
+        appDelegate.fbSession = [[FBSession alloc]init];
         
         
-        [appDelegate.session openWithCompletionHandler:
+        [appDelegate.fbSession openWithCompletionHandler:
          ^(FBSession *session, FBSessionState status, NSError *error)
         {
             [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
@@ -75,7 +75,7 @@
     }
     else
     {
-        [appDelegate.session closeAndClearTokenInformation];
+        [appDelegate.fbSession closeAndClearTokenInformation];
         [self.btnLogar setTitle:@"Log in" forState:UIControlStateNormal];
         self.rootController.switchFacebook.on = NO;
         

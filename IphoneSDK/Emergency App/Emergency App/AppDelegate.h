@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, retain) FBSession* session;
-
+@property (strong, retain) FBSession* fbSession;
+@property (strong, retain) ACAccount* twSession;
 @end
