@@ -69,6 +69,7 @@
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
 		6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE46349171204DF00EEF46C /* AddressBook.framework */; };
 		6CE4634C171204E000EEF46C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE4634A171204DF00EEF46C /* AddressBookUI.framework */; };
+		CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE825781172D956E00736CD1 /* MessageAlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,8 @@
 		6CE13CD71711360800E7E8E9 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = "Emergency App/ContactViewController.m"; sourceTree = "<group>"; };
 		6CE46349171204DF00EEF46C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CE4634A171204DF00EEF46C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		CE825780172D956E00736CD1 /* MessageAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageAlertViewController.h; path = "Emergency App/MessageAlertViewController.h"; sourceTree = "<group>"; };
+		CE825781172D956E00736CD1 /* MessageAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageAlertViewController.m; path = "Emergency App/MessageAlertViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,8 @@
 				6C5E56051720E26D005643C5 /* SocialNetworkViewController.m */,
 				6C628475172780AB005702A8 /* FacebookLoginViewController.h */,
 				6C628476172780AB005702A8 /* FacebookLoginViewController.m */,
+				CE825780172D956E00736CD1 /* MessageAlertViewController.h */,
+				CE825781172D956E00736CD1 /* MessageAlertViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -450,6 +455,7 @@
 				6C7007DD171CB98F00D57A99 /* TipoSanguineoViewController.m in Sources */,
 				6C5E56061720E26D005643C5 /* SocialNetworkViewController.m in Sources */,
 				6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */,
+				CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

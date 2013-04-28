@@ -195,8 +195,27 @@
                                             <segue destination="gQn-a5-tsi" kind="push" identifier="Contact" id="srz-x3-fz2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="JrN-OW-nW8" style="IBUITableViewCellStyleDefault" id="Gsc-lv-wPo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingCell" textLabel="BHB-7W-Tyu" style="IBUITableViewCellStyleDefault" id="WQ1-4f-0Q5">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Mensagem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHB-7W-Tyu">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="5d3-fl-vKY" kind="push" id="Qal-Es-FrZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="JrN-OW-nW8" style="IBUITableViewCellStyleDefault" id="Gsc-lv-wPo">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -215,7 +234,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="fEM-dR-IGX" style="IBUITableViewCellStyleDefault" id="Ljp-Gn-vnQ">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -236,7 +255,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" textLabel="L3V-Rv-Lt1" style="IBUITableViewCellStyleDefault" id="dew-Xn-7Oy">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -297,7 +316,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Las-3y-Ja7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5915" y="4221"/>
+            <point key="canvasLocation" x="-5915" y="3641"/>
         </scene>
         <!--Service Term View Controller - Termo de Uso-->
         <scene sceneID="COh-Ux-8Kz">
@@ -323,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfX-9e-JRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5915" y="4807"/>
+            <point key="canvasLocation" x="-5915" y="4247"/>
         </scene>
         <!--Edit Contact View Controller - Editar Contato-->
         <scene sceneID="0Pn-Qs-4wL">
@@ -486,7 +505,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQk-gI-nqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5428" y="4614"/>
+            <point key="canvasLocation" x="-5382" y="3938"/>
         </scene>
         <!--View Controller - Quando Usar-->
         <scene sceneID="HNn-cn-fnE">
@@ -501,7 +520,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JQ-BR-g2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5915" y="5388"/>
+            <point key="canvasLocation" x="-5915" y="5434"/>
+        </scene>
+        <!--Message Alert View Controller - Mensagem-->
+        <scene sceneID="HvM-oT-Z9k">
+            <objects>
+                <viewController id="5d3-fl-vKY" customClass="MessageAlertViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Myt-C9-oDD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mensagens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7n-h1-i15">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="6UB-Ic-cN6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-Me-bS0">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="pEk-EK-QSp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5d3-fl-vKY" id="2Ag-cg-uqR"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Caracteres 120" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds6-BQ-ygY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="8xq-iI-LY8"/>
+                                    <constraint firstAttribute="height" constant="21" id="zzI-HP-xcn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-ei-JHF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="8rj-1t-zOJ"/>
+                                </constraints>
+                                <string key="text">lorem ipsum lorem ipsu lorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem </string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YsY-Me-bS0" firstAttribute="top" secondItem="Myt-C9-oDD" secondAttribute="top" constant="44" id="0hg-dc-fcK"/>
+                            <constraint firstItem="h7n-h1-i15" firstAttribute="top" secondItem="Myt-C9-oDD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1qR-QK-SDx"/>
+                            <constraint firstItem="h7n-h1-i15" firstAttribute="leading" secondItem="Myt-C9-oDD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9fg-IH-wHV"/>
+                            <constraint firstItem="YsY-Me-bS0" firstAttribute="leading" secondItem="Myt-C9-oDD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9w6-Q2-WYw"/>
+                            <constraint firstAttribute="trailing" secondItem="Ds6-BQ-ygY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dwl-nX-SdD"/>
+                            <constraint firstAttribute="trailing" secondItem="YsY-Me-bS0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K1H-N9-QjI"/>
+                            <constraint firstAttribute="trailing" secondItem="bYV-ei-JHF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PQ5-ca-25C"/>
+                            <constraint firstItem="bYV-ei-JHF" firstAttribute="leading" secondItem="Myt-C9-oDD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cMO-1p-TPv"/>
+                            <constraint firstItem="Ds6-BQ-ygY" firstAttribute="top" secondItem="Myt-C9-oDD" secondAttribute="top" constant="157" id="eUj-Ag-F12"/>
+                            <constraint firstAttribute="bottom" secondItem="bYV-ei-JHF" secondAttribute="bottom" constant="91" id="iHy-Q1-PRx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mensagem" id="jTe-gU-5TC">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Ayd-xM-BTF">
+                            <connections>
+                                <action selector="btnSalvar_TouchUpInside:" destination="5d3-fl-vKY" id="Y6K-o1-YWt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lblWordCount" destination="Ds6-BQ-ygY" id="mIf-Ea-waU"/>
+                        <outlet property="txtMensagem" destination="YsY-Me-bS0" id="oLe-eN-LyH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ii-ua-5ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5915" y="4823"/>
         </scene>
         <!--Profile View Controller - Meus Dados-->
         <scene sceneID="pho-zG-a17">
@@ -762,7 +858,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1d-lo-OOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5915" y="5987"/>
+            <point key="canvasLocation" x="-5915" y="6035"/>
         </scene>
         <!--Social Network View Controller-->
         <scene sceneID="wuQ-ot-Xrc">
@@ -816,7 +912,7 @@ A mensagem será a mesma enviada via SMS.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqU-UO-UGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5915" y="7227"/>
+            <point key="canvasLocation" x="-5915" y="6689"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L4q-ZQ-mgj">
@@ -832,7 +928,7 @@ A mensagem será a mesma enviada via SMS.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VK-Sa-VSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5456" y="7227"/>
+            <point key="canvasLocation" x="-5387" y="6979"/>
         </scene>
         <!--Facebook Login View Controller - Facebook-->
         <scene sceneID="38X-gV-ESe">
@@ -883,7 +979,7 @@ A mensagem será a mesma enviada via SMS.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AI-AG-Yb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5044" y="7227"/>
+            <point key="canvasLocation" x="-4936" y="6979"/>
         </scene>
         <!--Nascido View Controller - Nascido em-->
         <scene sceneID="iPN-kf-aqJ">
@@ -932,7 +1028,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellNascido" id="5Zb-x1-YZw">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1327,7 +1423,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYy-GP-Ok4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5428" y="4022"/>
+            <point key="canvasLocation" x="-5382" y="3352"/>
         </scene>
     </scenes>
     <resources>
@@ -1338,86 +1434,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="icon-tabBar4.png" width="30" height="30"/>
         <image name="logoErShareScreen.png" width="98" height="67"/>
     </resources>
-    <classes>
-        <class className="AddContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
-                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAddContact_TouchUpInside:"/>
-            </relationships>
-        </class>
-        <class className="EditContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
-                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="FacebookLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnFechar_TouchUpInside:"/>
-                <relationship kind="action" name="btnLogarFB_TouchUpInside:"/>
-                <relationship kind="outlet" name="btnLogar" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NascidoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NascidoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-                <relationship kind="action" name="datePickerChanged:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="tblNascido" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ProfileViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-                <relationship kind="outlet" name="cellNascido" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="cellTipoSanguineo" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="txtAlergia" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtNome" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtObs" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtPais" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPlanoSaude" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="txtSobreNome" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ServiceTermViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServiceTermViewController.h"/>
-        </class>
-        <class className="SettingScreenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
-        </class>
-        <class className="SocialNetworkViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialNetworkViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tblRedeSocial" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="TipoSanguineoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipoSanguineoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

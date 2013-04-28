@@ -22,5 +22,7 @@
 	<string>0</string>
 	<key>Facebook</key>
 	<string>0</string>
+	<key>MessageAlert</key>
+	<string></string>
 </dict>
 </plist>
