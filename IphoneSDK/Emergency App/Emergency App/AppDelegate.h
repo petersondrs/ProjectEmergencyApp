@@ -13,7 +13,14 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+-(NSMutableDictionary*)getDictionaryBundleProfile;
+-(void)saveDictionaryBundleProfile : (NSMutableDictionary*) dic;
+-(NSMutableDictionary*) getDictionaryBundleContatos;
+-(void)saveDictionaryBundleContatos: (NSMutableDictionary*) dic;
+
+
 @property (strong, nonatomic) UIWindow *window;
+
 
 @property (strong, retain) FBSession* fbSession;
 @property (strong, retain) ACAccount* twSession;

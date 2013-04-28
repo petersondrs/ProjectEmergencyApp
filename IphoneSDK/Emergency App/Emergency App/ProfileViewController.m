@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NascidoViewController.h"
+#import "AppDelegate.h"
 
 @interface ProfileViewController ()
 
@@ -25,12 +26,19 @@
     return self;
 }
 
+-(AppDelegate*) getMainDelegate {
+    
+    return [[UIApplication sharedApplication] delegate];	
+    
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleProfile];
     
     
     self.txtNome.text = [dic objectForKey:@"Nome"];
@@ -46,8 +54,7 @@
 
 - (IBAction)btnSalvar_TouchUpInside:(id)sender {
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleProfile];
     
     [dic setObject:self.txtNome.text forKey:@"Nome"];
     [dic setObject:self.txtSobreNome.text forKey:@"SobreNome"];
@@ -56,8 +63,11 @@
     [dic setObject:self.txtObs.text forKey:@"Obs"];
     [dic setObject:self.cellNascido.detailTextLabel.text forKey:@"DataNascimento"];
     [dic setObject:self.cellTipoSanguineo.detailTextLabel.text forKey:@"TipoSanguineo"];
-    [dic writeToFile:bundle atomically:YES];
+   
     
+    [[self getMainDelegate] saveDictionaryBundleProfile:dic];
+    
+  
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
                                                     message:@"Dados Salvos"
                                                    delegate:self

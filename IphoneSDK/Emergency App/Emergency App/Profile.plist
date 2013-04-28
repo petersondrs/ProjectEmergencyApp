@@ -19,8 +19,8 @@
 	<key>Obs</key>
 	<string></string>
 	<key>Twitter</key>
-	<string></string>
+	<string>0</string>
 	<key>Facebook</key>
-	<string></string>
+	<string>0</string>
 </dict>
 </plist>

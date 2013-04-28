@@ -9,6 +9,7 @@
 #import "AddContactViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "AppDelegate.h"
 
 @interface AddContactViewController ()
 
@@ -26,6 +27,11 @@
     }
     return self;
 }
+
+-(AppDelegate*) getMainDelegate {
+    return [[UIApplication sharedApplication] delegate];
+}
+
 
 - (void)viewDidLoad
 {
@@ -111,8 +117,8 @@
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
-    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
+    
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleContatos];
     
     //Le o array ja gravado para se manter os antigos registros
     NSMutableArray* arrContato = [dic valueForKey:@"Contato"];
@@ -136,7 +142,8 @@
     [dic setObject:arrContato forKey:@"Contato"];
     
     //Escreve no arquivo o contato
-    [dic writeToFile:bundle atomically:YES];
+    [[self getMainDelegate] saveDictionaryBundleContatos:dic];
+    
     
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
                                                     message:@"Contato Salvo.\nDeseja adicionar mais contatos?"

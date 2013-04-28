@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Rafael Bento Cruz. All rights reserved.
 //
 
+
 #import "EditContactViewController.h"
+#import "AppDelegate.h"
 
 @interface EditContactViewController ()
 
@@ -23,6 +25,12 @@
         // Custom initialization
     }
     return self;
+}
+
+-(AppDelegate*) getMainDelegate {
+    
+    return [[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)loadDataContato
@@ -118,8 +126,7 @@
 
 - (IBAction)btnSalvarContato_TouchUpInside:(id)sender {
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
-    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleContatos];
     
     //Le o array ja gravado para se manter os antigos registros
     NSMutableArray* arrContato = [dic valueForKey:@"Contato"];
@@ -143,7 +150,7 @@
     [dic setObject:arrContato forKey:@"Contato"];
     
     //Escreve no arquivo o contato
-    [dic writeToFile:bundle atomically:YES];
+    [[self getMainDelegate] saveDictionaryBundleContatos:dic];
     
     [self.tableContato reloadData];
     

@@ -57,6 +57,9 @@
 - (IBAction)btnLogarFB_TouchUpInside:(id)sender {
     
     AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
     
     //Se a sessão do facebook não está logado, logar no facebook
     
@@ -71,6 +74,10 @@
         {
             [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
              self.rootController.switchFacebook.on = YES;
+            
+            [dic setObject:@"1" forKey:@"Facebook"];
+                        
+            
         }];
     }
     else
@@ -78,8 +85,10 @@
         [appDelegate.fbSession closeAndClearTokenInformation];
         [self.btnLogar setTitle:@"Log in" forState:UIControlStateNormal];
         self.rootController.switchFacebook.on = NO;
-        
+        [dic setObject:@"1" forKey:@"Facebook"];
     }
+    
+    [dic writeToFile:bundle atomically:YES];
     
 }
 

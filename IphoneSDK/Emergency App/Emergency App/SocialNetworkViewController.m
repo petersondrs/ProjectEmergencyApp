@@ -73,6 +73,16 @@
 }
 
 
+- (void)twitterAccountMessage: (NSString*) message{
+    UIAlertView *alertViewTwitter = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                               message:message
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
+    
+    [alertViewTwitter show];
+}
+
 #pragma UiTableViewDataSource Protocol
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -196,6 +206,9 @@
 - (void)switchTwitter_ValueChanged:(id)sender {
     
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+
     
     if (self.switchTwitter.isOn)
     {
@@ -205,8 +218,7 @@
         
         ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
             ACAccount* twAccount;
-            UIAlertView *alert;
-            
+         
             if (granted)
             {
                 NSArray *twAccounts = [store accountsWithAccountType:twitterType];
@@ -214,22 +226,33 @@
                 {
                     twAccount = [twAccounts objectAtIndex:0];
                     app.twSession = twAccount;
+                    
+                    [dic setObject:@"1" forKey:@"Twitter"];
+                    [dic writeToFile:bundle atomically:YES];
                 }
                 else
                 {
-                     alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response" message:@"Por favor configure uma conta do twitter no iOS" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    [alert show];
+                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+                        
+                        [self twitterAccountMessage:@"Por favor configure uma conta do twitter no iOS"];
+                        
+                         self.switchTwitter.On = NO;
+                   });
+                   
                 }
                 
             }
             else
             {
-                alert = [[UIAlertView alloc] initWithTitle:@"Emergency Response" message:@"O usuário não permitiu a acesso a conta do twitter pela aplicação emergency response" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
-            }
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+                    [self twitterAccountMessage:@"O usuário não permitiu a acesso a conta do twitter pela aplicação emergency response ou nenhuma conta configurada no iOS"];
+                     
+                    self.switchTwitter.On = NO;
             
-        
-        
+                });
+                
+            }
         };
         if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
         {
@@ -244,6 +267,10 @@
 
 - (void)switchFacebook_ValueChanged:(id)sender {
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
     if (self.switchFacebook.isOn)
     {
         if (![self verifyIfIsLoggedToFacebook])
@@ -255,6 +282,9 @@
     {
         [[FBSession activeSession] closeAndClearTokenInformation];
         [app.fbSession closeAndClearTokenInformation];
+        
+        [dic setObject:@"0" forKey:@"Facebook"];
+        [dic writeToFile:bundle atomically:YES];
         
     }
     

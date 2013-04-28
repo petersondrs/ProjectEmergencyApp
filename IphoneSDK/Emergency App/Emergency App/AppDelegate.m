@@ -17,6 +17,50 @@
 @synthesize fbSession = _fbSession;
 @synthesize twSession = _twSession;
 
+#pragma Shared Methods
+
+-(NSMutableDictionary*)getDictionaryBundleProfile {
+    
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+    NSString* bundle = [destPath stringByAppendingPathComponent:@"Profile.plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+
+    return dic;
+    
+    
+}
+
+-(void)saveDictionaryBundleProfile : (NSMutableDictionary*) dic
+{
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+    NSString* bundle = [destPath stringByAppendingPathComponent:@"Profile.plist"];
+
+    [dic writeToFile:bundle atomically:YES];
+}
+
+-(NSMutableDictionary*) getDictionaryBundleContatos {
+    
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+    NSString* bundle = [destPath stringByAppendingPathComponent:@"Contatos.plist"];
+    
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
+    return dic;
+    
+}
+
+-(void)saveDictionaryBundleContatos: (NSMutableDictionary*) dic
+{
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+    
+    NSString* bundle = [destPath stringByAppendingPathComponent:@"Contatos.plist"];
+    
+    [dic writeToFile:bundle atomically:YES];
+}
+
+
+
+
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     // attempt to extract a token from the url
@@ -49,37 +93,89 @@
     //Cria a sessão do twitter
     [self loggedTwitter];
     
+    
+    //Verificando os arquivos de plist foram criados corretamente
+    
+    [self verifyOrCreateContatosBundle];
+    [self verifyOrCreateProfileBundle];
+    
     // Override point for customization after application launch.
     return YES;
     
 }
 
--(void) loggedTwitter {
+-(void) verifyOrCreateContatosBundle{
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] ;
+    NSString* path = [destPath stringByAppendingPathComponent:@"Contatos.plist"];
+   
+    NSFileManager* fileManager = [NSFileManager defaultManager];
     
-    ACAccountStore* store = [[ACAccountStore alloc] init];
-    
-    ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    
-    ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
-        ACAccount* twAccount;
-        
-        if (granted)
-        {
-            NSArray *twAccounts = [store accountsWithAccountType:twitterType];
-            if (twAccounts.count > 0)
-            {
-                twAccount = [twAccounts objectAtIndex:0];
-                self.twSession = twAccount;
-            }
-        }
-        
-    };
-    if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
+    if (![fileManager fileExistsAtPath:path])
     {
-        [store requestAccessToAccountsWithType:twitterType options:nil completion:handler];
+        NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
+        
+        NSError* error;
+        
+        [fileManager copyItemAtPath:bundle toPath:path error:&error];
+        
+        if (error)
+            NSLog(@"%@",error);
+    }
+    
+}
+-(void) verifyOrCreateProfileBundle{
+    
+    NSString* destPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] ;
+    NSString* path = [destPath stringByAppendingPathComponent:@"Profile.plist"];
+    
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:path])
+    {
+        NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+        
+        NSError* error;
+        
+        [fileManager copyItemAtPath:bundle toPath:path error:&error];
+        
+        if (error)
+            NSLog(@"%@",error);
     }
 
     
+    
+}
+
+-(void) loggedTwitter {
+    
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    
+    if ([[dic objectForKey:@"Twitter"] intValue] == 1)
+    {
+        ACAccountStore* store = [[ACAccountStore alloc] init];
+        
+        ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        
+        ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
+            ACAccount* twAccount;
+            
+            if (granted)
+            {
+                NSArray *twAccounts = [store accountsWithAccountType:twitterType];
+                if (twAccounts.count > 0)
+                {
+                    twAccount = [twAccounts objectAtIndex:0];
+                    self.twSession = twAccount;
+                }
+            }
+            
+        };
+        if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
+        {
+            [store requestAccessToAccountsWithType:twitterType options:nil completion:handler];
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -9,6 +9,7 @@
 #import "ContactViewController.h"
 #import "AddContactViewController.h"
 #import "EditContactViewController.h"
+#import "AppDelegate.h"
 
 @interface ContactViewController ()
 
@@ -27,11 +28,17 @@
     return self;
 }
 
+-(AppDelegate*) getMainDelegate {
+    
+    return [[UIApplication sharedApplication] delegate];
+    
+}
+
+
 - (void)loadData
 {
     //Carrega os contato já gravados
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
-    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleContatos];
     
     //Le o array ja gravado para se manter os antigos registros
     contatos = [dic valueForKey:@"Contato"];
@@ -40,10 +47,13 @@
 - (void)gravaListaContatos
 {
     //grava a alteração na plist
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Contatos" ofType:@"plist"];
-    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
+    NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleContatos];
+
     [dic setObject:contatos forKey:@"Contato"];
-    [dic writeToFile:bundle atomically:YES];
+    
+    [[self getMainDelegate] saveDictionaryBundleContatos:dic];
+    
+    
 }
 
 - (void)viewDidLoad
