@@ -69,6 +69,9 @@
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
 		6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE46349171204DF00EEF46C /* AddressBook.framework */; };
 		6CE4634C171204E000EEF46C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE4634A171204DF00EEF46C /* AddressBookUI.framework */; };
+		CE802268172DDAA50034D398 /* CustomTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE802267172DDAA50034D398 /* CustomTabController.m */; };
+		CE80226B172DE3D20034D398 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = CE802269172DE3D20034D398 /* camera_button_take.png */; };
+		CE80226C172DE3D20034D398 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80226A172DE3D20034D398 /* camera_button_take@2x.png */; };
 		CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE825781172D956E00736CD1 /* MessageAlertViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +157,10 @@
 		6CE13CD71711360800E7E8E9 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = "Emergency App/ContactViewController.m"; sourceTree = "<group>"; };
 		6CE46349171204DF00EEF46C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CE4634A171204DF00EEF46C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		CE802266172DDAA50034D398 /* CustomTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabController.h; sourceTree = "<group>"; };
+		CE802267172DDAA50034D398 /* CustomTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabController.m; sourceTree = "<group>"; };
+		CE802269172DE3D20034D398 /* camera_button_take.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_button_take.png; sourceTree = "<group>"; };
+		CE80226A172DE3D20034D398 /* camera_button_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_button_take@2x.png"; sourceTree = "<group>"; };
 		CE825780172D956E00736CD1 /* MessageAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageAlertViewController.h; path = "Emergency App/MessageAlertViewController.h"; sourceTree = "<group>"; };
 		CE825781172D956E00736CD1 /* MessageAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageAlertViewController.m; path = "Emergency App/MessageAlertViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +286,8 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE802269172DE3D20034D398 /* camera_button_take.png */,
+				CE80226A172DE3D20034D398 /* camera_button_take@2x.png */,
 				18FA172017276D5600FA1366 /* logoFbShareScreen.png */,
 				18FA172117276D5600FA1366 /* logoTwitterShareScreen.png */,
 				18FA172217276D5600FA1366 /* logoTwitterShareScreen@2x.png */,
@@ -326,6 +335,7 @@
 		6CD6A8E3172B2B3C00413973 /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				CE802265172DDA4F0034D398 /* CenterTabBar */,
 				6CD6A8E4172B2B6600413973 /* ABOAuthCore */,
 			);
 			name = Componentes;
@@ -342,6 +352,15 @@
 				6CD6A8EA172B2B9700413973 /* OAuthCore.m */,
 			);
 			name = ABOAuthCore;
+			sourceTree = "<group>";
+		};
+		CE802265172DDA4F0034D398 /* CenterTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE802266172DDAA50034D398 /* CustomTabController.h */,
+				CE802267172DDAA50034D398 /* CustomTabController.m */,
+			);
+			name = CenterTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +447,8 @@
 				18FA172B17276D5600FA1366 /* logoErShareScreen.png in Resources */,
 				18FA172C17276D5600FA1366 /* logoErShareScreen@2x.png in Resources */,
 				18FA172D17276D5600FA1366 /* navigator-controller@2x.png in Resources */,
+				CE80226B172DE3D20034D398 /* camera_button_take.png in Resources */,
+				CE80226C172DE3D20034D398 /* camera_button_take@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +477,7 @@
 				6C5E56061720E26D005643C5 /* SocialNetworkViewController.m in Sources */,
 				6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */,
 				CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */,
+				CE802268172DDAA50034D398 /* CustomTabController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
