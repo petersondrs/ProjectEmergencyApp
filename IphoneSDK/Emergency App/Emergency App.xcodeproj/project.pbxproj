@@ -10,6 +10,32 @@
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
 		186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */; };
 		186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */; };
+		18B56E831731927400427D8B /* tabBatButtonsInfoNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E771731927300427D8B /* tabBatButtonsInfoNormal.png */; };
+		18B56E841731927400427D8B /* tabBatButtonsInfoNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E781731927300427D8B /* tabBatButtonsInfoNormal@2x.png */; };
+		18B56E851731927400427D8B /* tabBatButtonsInfoPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E791731927300427D8B /* tabBatButtonsInfoPressed.png */; };
+		18B56E861731927400427D8B /* tabBatButtonsInfoPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7A1731927400427D8B /* tabBatButtonsInfoPressed@2x.png */; };
+		18B56E871731927400427D8B /* tabBatButtonsSendNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7B1731927400427D8B /* tabBatButtonsSendNormal.png */; };
+		18B56E881731927400427D8B /* tabBatButtonsSendNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7C1731927400427D8B /* tabBatButtonsSendNormal@2x.png */; };
+		18B56E891731927400427D8B /* tabBatButtonsSendPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7D1731927400427D8B /* tabBatButtonsSendPressed.png */; };
+		18B56E8A1731927400427D8B /* tabBatButtonsSendPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7E1731927400427D8B /* tabBatButtonsSendPressed@2x.png */; };
+		18B56E8B1731927400427D8B /* tabBatButtonsSettingsNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E7F1731927400427D8B /* tabBatButtonsSettingsNormal.png */; };
+		18B56E8C1731927400427D8B /* tabBatButtonsSettingsNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E801731927400427D8B /* tabBatButtonsSettingsNormal@2x.png */; };
+		18B56E8D1731927400427D8B /* tabBatButtonsSettingsPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E811731927400427D8B /* tabBatButtonsSettingsPressed.png */; };
+		18B56E8E1731927400427D8B /* tabBatButtonsSettingsPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E821731927400427D8B /* tabBatButtonsSettingsPressed@2x.png */; };
+		18B56E9B17319C3700427D8B /* buttonSendNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E8F17319C3600427D8B /* buttonSendNormal.png */; };
+		18B56E9C17319C3700427D8B /* buttonSendNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9017319C3600427D8B /* buttonSendNormal@2x.png */; };
+		18B56E9D17319C3700427D8B /* buttonSendPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9117319C3600427D8B /* buttonSendPressed.png */; };
+		18B56E9E17319C3700427D8B /* buttonSendPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9217319C3600427D8B /* buttonSendPressed@2x.png */; };
+		18B56E9F17319C3700427D8B /* sendScreenIconsGPS.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9317319C3600427D8B /* sendScreenIconsGPS.png */; };
+		18B56EA017319C3700427D8B /* sendScreenIconsGPS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9417319C3600427D8B /* sendScreenIconsGPS@2x.png */; };
+		18B56EA117319C3700427D8B /* sendScreenIconsPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9517319C3600427D8B /* sendScreenIconsPhone.png */; };
+		18B56EA217319C3700427D8B /* sendScreenIconsPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9617319C3600427D8B /* sendScreenIconsPhone@2x.png */; };
+		18B56EA317319C3700427D8B /* sendScreenIconsSignal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9717319C3600427D8B /* sendScreenIconsSignal.png */; };
+		18B56EA417319C3700427D8B /* sendScreenIconsSignal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9817319C3600427D8B /* sendScreenIconsSignal@2x.png */; };
+		18B56EA517319C3700427D8B /* sendScreenIconsSMS.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9917319C3600427D8B /* sendScreenIconsSMS.png */; };
+		18B56EA617319C3700427D8B /* sendScreenIconsSMS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9A17319C3700427D8B /* sendScreenIconsSMS@2x.png */; };
+		18B56EA917319C5D00427D8B /* bgButtonSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56EA717319C5D00427D8B /* bgButtonSend.png */; };
+		18B56EAA17319C5D00427D8B /* bgButtonSend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */; };
 		18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F12171B92E000C57D0F /* UITabBar.png */; };
 		18FA170B1727694400FA1366 /* navigator-controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA170A1727694400FA1366 /* navigator-controller.png */; };
 		18FA171617276AE500FA1366 /* barBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA170C17276AE500FA1366 /* barBackButton@2x.png */; };
@@ -80,6 +106,32 @@
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
 		186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		18B56E771731927300427D8B /* tabBatButtonsInfoNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsInfoNormal.png; path = "Emergency App/img/tabBatButtonsInfoNormal.png"; sourceTree = "<group>"; };
+		18B56E781731927300427D8B /* tabBatButtonsInfoNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsInfoNormal@2x.png"; path = "Emergency App/img/tabBatButtonsInfoNormal@2x.png"; sourceTree = "<group>"; };
+		18B56E791731927300427D8B /* tabBatButtonsInfoPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsInfoPressed.png; path = "Emergency App/img/tabBatButtonsInfoPressed.png"; sourceTree = "<group>"; };
+		18B56E7A1731927400427D8B /* tabBatButtonsInfoPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsInfoPressed@2x.png"; path = "Emergency App/img/tabBatButtonsInfoPressed@2x.png"; sourceTree = "<group>"; };
+		18B56E7B1731927400427D8B /* tabBatButtonsSendNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsSendNormal.png; path = "Emergency App/img/tabBatButtonsSendNormal.png"; sourceTree = "<group>"; };
+		18B56E7C1731927400427D8B /* tabBatButtonsSendNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsSendNormal@2x.png"; path = "Emergency App/img/tabBatButtonsSendNormal@2x.png"; sourceTree = "<group>"; };
+		18B56E7D1731927400427D8B /* tabBatButtonsSendPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsSendPressed.png; path = "Emergency App/img/tabBatButtonsSendPressed.png"; sourceTree = "<group>"; };
+		18B56E7E1731927400427D8B /* tabBatButtonsSendPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsSendPressed@2x.png"; path = "Emergency App/img/tabBatButtonsSendPressed@2x.png"; sourceTree = "<group>"; };
+		18B56E7F1731927400427D8B /* tabBatButtonsSettingsNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsSettingsNormal.png; path = "Emergency App/img/tabBatButtonsSettingsNormal.png"; sourceTree = "<group>"; };
+		18B56E801731927400427D8B /* tabBatButtonsSettingsNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsSettingsNormal@2x.png"; path = "Emergency App/img/tabBatButtonsSettingsNormal@2x.png"; sourceTree = "<group>"; };
+		18B56E811731927400427D8B /* tabBatButtonsSettingsPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabBatButtonsSettingsPressed.png; path = "Emergency App/img/tabBatButtonsSettingsPressed.png"; sourceTree = "<group>"; };
+		18B56E821731927400427D8B /* tabBatButtonsSettingsPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabBatButtonsSettingsPressed@2x.png"; path = "Emergency App/img/tabBatButtonsSettingsPressed@2x.png"; sourceTree = "<group>"; };
+		18B56E8F17319C3600427D8B /* buttonSendNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonSendNormal.png; path = "Emergency App/img/buttonSendNormal.png"; sourceTree = "<group>"; };
+		18B56E9017319C3600427D8B /* buttonSendNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonSendNormal@2x.png"; path = "Emergency App/img/buttonSendNormal@2x.png"; sourceTree = "<group>"; };
+		18B56E9117319C3600427D8B /* buttonSendPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonSendPressed.png; path = "Emergency App/img/buttonSendPressed.png"; sourceTree = "<group>"; };
+		18B56E9217319C3600427D8B /* buttonSendPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonSendPressed@2x.png"; path = "Emergency App/img/buttonSendPressed@2x.png"; sourceTree = "<group>"; };
+		18B56E9317319C3600427D8B /* sendScreenIconsGPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendScreenIconsGPS.png; path = "Emergency App/img/sendScreenIconsGPS.png"; sourceTree = "<group>"; };
+		18B56E9417319C3600427D8B /* sendScreenIconsGPS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sendScreenIconsGPS@2x.png"; path = "Emergency App/img/sendScreenIconsGPS@2x.png"; sourceTree = "<group>"; };
+		18B56E9517319C3600427D8B /* sendScreenIconsPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendScreenIconsPhone.png; path = "Emergency App/img/sendScreenIconsPhone.png"; sourceTree = "<group>"; };
+		18B56E9617319C3600427D8B /* sendScreenIconsPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sendScreenIconsPhone@2x.png"; path = "Emergency App/img/sendScreenIconsPhone@2x.png"; sourceTree = "<group>"; };
+		18B56E9717319C3600427D8B /* sendScreenIconsSignal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendScreenIconsSignal.png; path = "Emergency App/img/sendScreenIconsSignal.png"; sourceTree = "<group>"; };
+		18B56E9817319C3600427D8B /* sendScreenIconsSignal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sendScreenIconsSignal@2x.png"; path = "Emergency App/img/sendScreenIconsSignal@2x.png"; sourceTree = "<group>"; };
+		18B56E9917319C3600427D8B /* sendScreenIconsSMS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendScreenIconsSMS.png; path = "Emergency App/img/sendScreenIconsSMS.png"; sourceTree = "<group>"; };
+		18B56E9A17319C3700427D8B /* sendScreenIconsSMS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sendScreenIconsSMS@2x.png"; path = "Emergency App/img/sendScreenIconsSMS@2x.png"; sourceTree = "<group>"; };
+		18B56EA717319C5D00427D8B /* bgButtonSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgButtonSend.png; path = "Emergency App/img/bgButtonSend.png"; sourceTree = "<group>"; };
+		18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bgButtonSend@2x.png"; path = "Emergency App/img/bgButtonSend@2x.png"; sourceTree = "<group>"; };
 		18EB0F12171B92E000C57D0F /* UITabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBar.png; sourceTree = "<group>"; };
 		18FA170A1727694400FA1366 /* navigator-controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigator-controller.png"; path = "Emergency App/img/navigator-controller.png"; sourceTree = "<group>"; };
 		18FA170C17276AE500FA1366 /* barBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barBackButton@2x.png"; path = "Emergency App/img/barBackButton@2x.png"; sourceTree = "<group>"; };
@@ -291,6 +343,32 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18B56EA717319C5D00427D8B /* bgButtonSend.png */,
+				18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */,
+				18B56E8F17319C3600427D8B /* buttonSendNormal.png */,
+				18B56E9017319C3600427D8B /* buttonSendNormal@2x.png */,
+				18B56E9117319C3600427D8B /* buttonSendPressed.png */,
+				18B56E9217319C3600427D8B /* buttonSendPressed@2x.png */,
+				18B56E9317319C3600427D8B /* sendScreenIconsGPS.png */,
+				18B56E9417319C3600427D8B /* sendScreenIconsGPS@2x.png */,
+				18B56E9517319C3600427D8B /* sendScreenIconsPhone.png */,
+				18B56E9617319C3600427D8B /* sendScreenIconsPhone@2x.png */,
+				18B56E9717319C3600427D8B /* sendScreenIconsSignal.png */,
+				18B56E9817319C3600427D8B /* sendScreenIconsSignal@2x.png */,
+				18B56E9917319C3600427D8B /* sendScreenIconsSMS.png */,
+				18B56E9A17319C3700427D8B /* sendScreenIconsSMS@2x.png */,
+				18B56E771731927300427D8B /* tabBatButtonsInfoNormal.png */,
+				18B56E781731927300427D8B /* tabBatButtonsInfoNormal@2x.png */,
+				18B56E791731927300427D8B /* tabBatButtonsInfoPressed.png */,
+				18B56E7A1731927400427D8B /* tabBatButtonsInfoPressed@2x.png */,
+				18B56E7B1731927400427D8B /* tabBatButtonsSendNormal.png */,
+				18B56E7C1731927400427D8B /* tabBatButtonsSendNormal@2x.png */,
+				18B56E7D1731927400427D8B /* tabBatButtonsSendPressed.png */,
+				18B56E7E1731927400427D8B /* tabBatButtonsSendPressed@2x.png */,
+				18B56E7F1731927400427D8B /* tabBatButtonsSettingsNormal.png */,
+				18B56E801731927400427D8B /* tabBatButtonsSettingsNormal@2x.png */,
+				18B56E811731927400427D8B /* tabBatButtonsSettingsPressed.png */,
+				18B56E821731927400427D8B /* tabBatButtonsSettingsPressed@2x.png */,
 				CE802269172DE3D20034D398 /* camera_button_take.png */,
 				CE80226A172DE3D20034D398 /* camera_button_take@2x.png */,
 				18FA172017276D5600FA1366 /* logoFbShareScreen.png */,
@@ -454,6 +532,32 @@
 				18FA172D17276D5600FA1366 /* navigator-controller@2x.png in Resources */,
 				CE80226B172DE3D20034D398 /* camera_button_take.png in Resources */,
 				CE80226C172DE3D20034D398 /* camera_button_take@2x.png in Resources */,
+				18B56E831731927400427D8B /* tabBatButtonsInfoNormal.png in Resources */,
+				18B56E841731927400427D8B /* tabBatButtonsInfoNormal@2x.png in Resources */,
+				18B56E851731927400427D8B /* tabBatButtonsInfoPressed.png in Resources */,
+				18B56E861731927400427D8B /* tabBatButtonsInfoPressed@2x.png in Resources */,
+				18B56E871731927400427D8B /* tabBatButtonsSendNormal.png in Resources */,
+				18B56E881731927400427D8B /* tabBatButtonsSendNormal@2x.png in Resources */,
+				18B56E891731927400427D8B /* tabBatButtonsSendPressed.png in Resources */,
+				18B56E8A1731927400427D8B /* tabBatButtonsSendPressed@2x.png in Resources */,
+				18B56E8B1731927400427D8B /* tabBatButtonsSettingsNormal.png in Resources */,
+				18B56E8C1731927400427D8B /* tabBatButtonsSettingsNormal@2x.png in Resources */,
+				18B56E8D1731927400427D8B /* tabBatButtonsSettingsPressed.png in Resources */,
+				18B56E8E1731927400427D8B /* tabBatButtonsSettingsPressed@2x.png in Resources */,
+				18B56E9B17319C3700427D8B /* buttonSendNormal.png in Resources */,
+				18B56E9C17319C3700427D8B /* buttonSendNormal@2x.png in Resources */,
+				18B56E9D17319C3700427D8B /* buttonSendPressed.png in Resources */,
+				18B56E9E17319C3700427D8B /* buttonSendPressed@2x.png in Resources */,
+				18B56E9F17319C3700427D8B /* sendScreenIconsGPS.png in Resources */,
+				18B56EA017319C3700427D8B /* sendScreenIconsGPS@2x.png in Resources */,
+				18B56EA117319C3700427D8B /* sendScreenIconsPhone.png in Resources */,
+				18B56EA217319C3700427D8B /* sendScreenIconsPhone@2x.png in Resources */,
+				18B56EA317319C3700427D8B /* sendScreenIconsSignal.png in Resources */,
+				18B56EA417319C3700427D8B /* sendScreenIconsSignal@2x.png in Resources */,
+				18B56EA517319C3700427D8B /* sendScreenIconsSMS.png in Resources */,
+				18B56EA617319C3700427D8B /* sendScreenIconsSMS@2x.png in Resources */,
+				18B56EA917319C5D00427D8B /* bgButtonSend.png in Resources */,
+				18B56EAA17319C5D00427D8B /* bgButtonSend@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

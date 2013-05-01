@@ -39,7 +39,7 @@
     
     button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
     
-    button.frame = CGRectMake(20, -17, buttonImage.size.width, buttonImage.size.height);
+    button.frame = CGRectMake(25, -17, buttonImage.size.width, buttonImage.size.height);
     
     [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
    
@@ -49,7 +49,7 @@
 -(void) topTabBarItem
 {
     
-    UIImage* buttonImage = [UIImage imageNamed:@"camera_button_take.png"];
+    UIImage* buttonImage = [UIImage imageNamed:@"tabBatButtonsSendNormal.png"];
     NSArray* tabViews = [self.tabBar subviews];
     
     int index = 0;
