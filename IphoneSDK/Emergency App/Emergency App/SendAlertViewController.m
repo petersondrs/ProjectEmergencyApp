@@ -8,6 +8,7 @@
 
 #import "SendAlertViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 @interface SendAlertViewController ()
 
@@ -22,6 +23,12 @@
         // Custom initialization
     }
     return self;
+}
+
+-(AppDelegate*) getMainAppDelegate {
+ 
+    return [[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)viewDidLoad
@@ -47,7 +54,10 @@
 {
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 0)];
     
-    [headerView setBackgroundColor:[UIColor lightGrayColor]];
+    [headerView setBackgroundColor:[UIColor colorWithRed:232.0/255.0
+                                                   green:232.0/255.0
+                                                    blue:232.0/255.0
+                                                   alpha:1.0]];
     
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 5, tableView.bounds.size.width, 13)];
     
@@ -69,6 +79,12 @@
     return headerView;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 55;
+}
 
 
 #pragma UITableViewDataSource
@@ -77,11 +93,6 @@
 {
     return 1;
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
-}
-
-
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -90,6 +101,18 @@
     
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    
+    NSMutableDictionary* dicInformation;
+    
+    if (indexPath.section == 0)
+    {
+        
+        
+        
+        
+        
+    }
+    
     
     
     return cell;
