@@ -6,3 +6,5 @@
 *.xcbkptlist
 
 IphoneSDK/Emergency App/Emergency App.xcodeproj/project.xcworkspace/xcuserdata/RafaelCruz.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.storyboard
