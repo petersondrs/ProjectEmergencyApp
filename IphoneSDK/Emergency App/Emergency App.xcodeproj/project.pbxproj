@@ -73,6 +73,7 @@
 		CE80226B172DE3D20034D398 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = CE802269172DE3D20034D398 /* camera_button_take.png */; };
 		CE80226C172DE3D20034D398 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80226A172DE3D20034D398 /* camera_button_take@2x.png */; };
 		CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE825781172D956E00736CD1 /* MessageAlertViewController.m */; };
+		CE82F04317318EA8003363CB /* SendAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE82F04217318EA8003363CB /* SendAlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,8 @@
 		CE80226A172DE3D20034D398 /* camera_button_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_button_take@2x.png"; sourceTree = "<group>"; };
 		CE825780172D956E00736CD1 /* MessageAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageAlertViewController.h; path = "Emergency App/MessageAlertViewController.h"; sourceTree = "<group>"; };
 		CE825781172D956E00736CD1 /* MessageAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageAlertViewController.m; path = "Emergency App/MessageAlertViewController.m"; sourceTree = "<group>"; };
+		CE82F04117318EA8003363CB /* SendAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendAlertViewController.h; path = "Emergency App/SendAlertViewController.h"; sourceTree = "<group>"; };
+		CE82F04217318EA8003363CB /* SendAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendAlertViewController.m; path = "Emergency App/SendAlertViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +281,8 @@
 				6C628476172780AB005702A8 /* FacebookLoginViewController.m */,
 				CE825780172D956E00736CD1 /* MessageAlertViewController.h */,
 				CE825781172D956E00736CD1 /* MessageAlertViewController.m */,
+				CE82F04117318EA8003363CB /* SendAlertViewController.h */,
+				CE82F04217318EA8003363CB /* SendAlertViewController.m */,
 			);
 			name = Views;
 			path = ..;
@@ -478,6 +483,7 @@
 				6C628477172780AB005702A8 /* FacebookLoginViewController.m in Sources */,
 				CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */,
 				CE802268172DDAA50034D398 /* CustomTabController.m in Sources */,
+				CE82F04317318EA8003363CB /* SendAlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
