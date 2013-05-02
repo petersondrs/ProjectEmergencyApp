@@ -95,6 +95,9 @@
 		6CE13CD91711360800E7E8E9 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE13CD71711360800E7E8E9 /* ContactViewController.m */; };
 		6CE4634B171204E000EEF46C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE46349171204DF00EEF46C /* AddressBook.framework */; };
 		6CE4634C171204E000EEF46C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE4634A171204DF00EEF46C /* AddressBookUI.framework */; };
+		6CF961831731D085008EE0D1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF961821731D085008EE0D1 /* CoreTelephony.framework */; };
+		6CF961851731DEE3008EE0D1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF961841731DEE3008EE0D1 /* SystemConfiguration.framework */; };
+		6CF961891731E44C008EE0D1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF961881731E44C008EE0D1 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE802268172DDAA50034D398 /* CustomTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE802267172DDAA50034D398 /* CustomTabController.m */; };
 		CE80226B172DE3D20034D398 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = CE802269172DE3D20034D398 /* camera_button_take.png */; };
 		CE80226C172DE3D20034D398 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80226A172DE3D20034D398 /* camera_button_take@2x.png */; };
@@ -210,6 +213,10 @@
 		6CE13CD71711360800E7E8E9 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = "Emergency App/ContactViewController.m"; sourceTree = "<group>"; };
 		6CE46349171204DF00EEF46C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CE4634A171204DF00EEF46C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		6CF961821731D085008EE0D1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6CF961841731DEE3008EE0D1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6CF961871731E44C008EE0D1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6CF961881731E44C008EE0D1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CE802266172DDAA50034D398 /* CustomTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabController.h; sourceTree = "<group>"; };
 		CE802267172DDAA50034D398 /* CustomTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabController.m; sourceTree = "<group>"; };
 		CE802269172DE3D20034D398 /* camera_button_take.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_button_take.png; sourceTree = "<group>"; };
@@ -225,6 +232,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF961851731DEE3008EE0D1 /* SystemConfiguration.framework in Frameworks */,
+				6CF961831731D085008EE0D1 /* CoreTelephony.framework in Frameworks */,
 				6CD6A8EC172B2D2E00413973 /* Twitter.framework in Frameworks */,
 				6C5E56031720DF71005643C5 /* libsqlite3.dylib in Frameworks */,
 				6C5E56011720DF62005643C5 /* Social.framework in Frameworks */,
@@ -263,6 +272,8 @@
 		6CAF1B50170F858D003CC459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CF961841731DEE3008EE0D1 /* SystemConfiguration.framework */,
+				6CF961821731D085008EE0D1 /* CoreTelephony.framework */,
 				6CD6A8EB172B2D2E00413973 /* Twitter.framework */,
 				186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */,
 				186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */,
@@ -418,6 +429,7 @@
 		6CD6A8E3172B2B3C00413973 /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				6CF961861731E40A008EE0D1 /* Reachability */,
 				CE802265172DDA4F0034D398 /* CenterTabBar */,
 				6CD6A8E4172B2B6600413973 /* ABOAuthCore */,
 			);
@@ -435,6 +447,15 @@
 				6CD6A8EA172B2B9700413973 /* OAuthCore.m */,
 			);
 			name = ABOAuthCore;
+			sourceTree = "<group>";
+		};
+		6CF961861731E40A008EE0D1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6CF961871731E44C008EE0D1 /* Reachability.h */,
+				6CF961881731E44C008EE0D1 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		CE802265172DDA4F0034D398 /* CenterTabBar */ = {
@@ -588,6 +609,7 @@
 				CE825782172D956E00736CD1 /* MessageAlertViewController.m in Sources */,
 				CE802268172DDAA50034D398 /* CustomTabController.m in Sources */,
 				CE82F04317318EA8003363CB /* SendAlertViewController.m in Sources */,
+				6CF961891731E44C008EE0D1 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

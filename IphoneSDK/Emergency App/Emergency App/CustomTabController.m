@@ -33,15 +33,19 @@
     
 }
 
-- (UIButton *)createCustomButton:(UIImage *)buttonImage
+- (UIButton *)createCustomButton:(UIImage *)buttonImage buttonHighlight:(UIImage*) buttonHighlight
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
     
-    button.frame = CGRectMake(25, -17, buttonImage.size.width, buttonImage.size.height);
+    button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+
     
     [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:buttonHighlight forState:UIControlStateHighlighted];
+    
+    [button addTarget:self action:@selector(btnCustomButton_TouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
    
     return button;
 }
@@ -49,25 +53,53 @@
 -(void) topTabBarItem
 {
     
-    UIImage* buttonImage = [UIImage imageNamed:@"tabBatButtonsSendNormal.png"];
-    NSArray* tabViews = [self.tabBar subviews];
     
-    int index = 0;
+    NSArray* arrayImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"tabBatButtonsInfoNormal.png"],
+                                                     [UIImage imageNamed:@"tabBatButtonsSendNormal.png"],
+                                                     [UIImage imageNamed:@"tabBatButtonsSettingsNormal.png"],
+                                                     nil];
     
-    for (UIView* view in tabViews)
+    
+    NSArray* arrayImagesHighlight = [NSArray arrayWithObjects:[UIImage imageNamed:@"tabBatButtonsInfoPressed.png"],
+                                                              [UIImage imageNamed:@"tabBatButtonsSendPressed.png"],
+                                                              [UIImage imageNamed:@"tabBatButtonsSettingsPressed.png"],
+                                                     nil];
+
+    
+    
+    for(int index = 0; index < [arrayImages count]; index ++)
     {
-        if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")])
+        UIButton *button;
+        
+        UIImage* buttonImage = [arrayImages objectAtIndex:index];
+        UIImage* buttonHighlight = [arrayImagesHighlight objectAtIndex:index];
+        
+        button = [self createCustomButton:buttonImage buttonHighlight:buttonHighlight];
+        button.tag = index;
+        
+        
+        CGPoint center = self.tabBar.center;
+        center.y = center.y - 20;
+        
+        //Não precisamos alinhar o center.x no index 1, pois ele já é o centro
+        
+        if (index == 0)
         {
-            UIButton *button;
-            button = [self createCustomButton:buttonImage];
-            button.tag = index;
-            [button addTarget:self action:@selector(btnCustomButton_TouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-            [button sizeToFit];
-            [view addSubview:button];
-            index++;
+            center.x = 52;
+        }
+        else if (index == 2)
+        {
+            center.x = center.x + 105;
         }
         
+        button.center = center;
+        
+        [self.view addSubview:button];
+      
     }
+    
+
+    
     
 }
 
