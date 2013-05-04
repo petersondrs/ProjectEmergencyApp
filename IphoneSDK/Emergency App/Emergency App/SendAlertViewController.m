@@ -212,10 +212,14 @@
             }
         }
         
-        //Retiro o ultimo caracter "-" por nada
-        NSRange range = NSMakeRange([stringBuild length] - 2, 1);
-    
-        [stringBuild replaceCharactersInRange:range withString:@""];
+        if ( [stringBuild length] > 2)
+        {
+        
+            //Retiro o ultimo caracter "-" por nada
+            NSRange range = NSMakeRange([stringBuild length] - 2, 1);
+            
+            [stringBuild replaceCharactersInRange:range withString:@""];
+        }
 
         label.text = stringBuild;
         
