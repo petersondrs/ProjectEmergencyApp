@@ -98,7 +98,7 @@
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Testando" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-vP-FbF">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="Vd7-xX-Rni"/>
+                                            <constraint firstAttribute="width" constant="48" id="2I7-Qk-ibm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -156,21 +156,29 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWm-Zj-aje" customClass="UIControl">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="buttonSendNormal.png" highlightedImage="buttonSendPressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="iRX-LT-yZz">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-wV-qLe" customClass="UIControl">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buttonSendNormal.png" highlightedImage="buttonSendNormal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-ey-H6v"/>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.9139199361" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="107" id="VUD-yf-Ymo"/>
-                                            <constraint firstAttribute="width" constant="138" id="vtt-P5-Y9r"/>
+                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="trailing" secondItem="6TL-wV-qLe" secondAttribute="trailing" type="default" id="48f-Vc-vXd"/>
+                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="top" secondItem="6TL-wV-qLe" secondAttribute="top" type="default" id="Chp-Vd-5dP"/>
+                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="leading" secondItem="6TL-wV-qLe" secondAttribute="leading" type="default" id="YLj-cs-c1J"/>
+                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="bottom" secondItem="6TL-wV-qLe" secondAttribute="bottom" type="default" id="dBK-QW-nfE"/>
                                         </constraints>
-                                    </imageView>
+                                        <connections>
+                                            <action selector="UIView_TouchUpInside:" destination="y5s-K9-3nc" eventType="touchUpInside" id="BKe-7t-Xfq"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.913919936131387" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="iRX-LT-yZz" firstAttribute="leading" secondItem="WWm-Zj-aje" secondAttribute="leading" constant="85" id="06v-za-lLz"/>
-                                    <constraint firstItem="iRX-LT-yZz" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" constant="1" id="iV9-tw-DuE"/>
+                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" constant="11" id="0Ce-JX-5Oa"/>
+                                    <constraint firstAttribute="bottom" secondItem="6TL-wV-qLe" secondAttribute="bottom" constant="14" id="DXE-9M-9n1"/>
+                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="centerX" secondItem="WWm-Zj-aje" secondAttribute="centerX" type="default" id="Khe-gX-diH"/>
+                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="leading" secondItem="WWm-Zj-aje" secondAttribute="leading" constant="80" id="tZJ-TZ-acx"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="UIView_TouchUpInside:" destination="y5s-K9-3nc" eventType="touchUpInside" id="M1f-kg-pbO"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -195,6 +203,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnEnviarAlert" destination="Kk4-ey-H6v" id="Mlx-Xh-Jw5"/>
                         <outlet property="imgGPS" destination="z8U-7C-HaM" id="cYB-9W-Pdv"/>
                         <outlet property="imgLigacao" destination="QA7-Ks-aOf" id="Th6-kb-Zhl"/>
                         <outlet property="imgSMS" destination="3Fg-dl-kLl" id="Iew-23-gzu"/>
@@ -1569,7 +1578,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="buttonSendNormal.png" width="165" height="165"/>
-        <image name="buttonSendPressed.png" width="165" height="165"/>
         <image name="facebook.jpg" width="441" height="235"/>
         <image name="logoErShareScreen.png" width="98" height="67"/>
         <image name="sendScreenIconsGPS.png" width="30" height="20"/>
@@ -1577,6 +1585,116 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="sendScreenIconsSMS.png" width="30" height="20"/>
         <image name="sendScreenIconsSignal.png" width="30" height="20"/>
     </resources>
+    <classes>
+        <class className="AddContactViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
+                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="ContactViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnAddContact_TouchUpInside:"/>
+            </relationships>
+        </class>
+        <class className="CustomTabController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTabController.h"/>
+        </class>
+        <class className="EditContactViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvarContato_TouchUpInside:"/>
+                <relationship kind="outlet" name="nomeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="switchCall" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="switchSMS" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="FacebookLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnFechar_TouchUpInside:"/>
+                <relationship kind="action" name="btnLogarFB_TouchUpInside:"/>
+                <relationship kind="outlet" name="btnLogar" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MessageAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
+                <relationship kind="outlet" name="lblWordCount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtMensagem" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NascidoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NascidoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
+                <relationship kind="action" name="datePickerChanged:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="tblNascido" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ProfileViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
+                <relationship kind="outlet" name="cellNascido" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="cellTipoSanguineo" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="txtAlergia" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="txtNome" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtObs" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="txtPais" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtPlanoSaude" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="txtSobreNome" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SendAlertViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendAlertViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="BtnRefresh_TouchUpInside:"/>
+                <relationship kind="action" name="UIView_TouchUpInside:"/>
+                <relationship kind="outlet" name="btnEnviarAlert" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imgGPS" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imgLigacao" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imgSMS" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imgSinal" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblTestGPS" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTestLigacao" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTestSMS" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTestSinal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tblSendAlert" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="uiViewSendAlert" candidateClass="UIView"/>
+                <relationship kind="outlet" name="viewTestFeature" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ServiceTermViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServiceTermViewController.h"/>
+        </class>
+        <class className="SettingScreenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingScreenViewController.h"/>
+        </class>
+        <class className="SocialNetworkViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialNetworkViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tblRedeSocial" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TipoSanguineoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipoSanguineoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSalvar_TouchUpInside:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

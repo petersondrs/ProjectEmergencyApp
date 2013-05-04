@@ -12,6 +12,8 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 #import "Reachability.h"
+#import <MessageUI/MessageUI.h>
+#import <CoreTelephony/CTCall.h>
 
 @interface SendAlertViewController ()
 
@@ -21,9 +23,12 @@
 {
     CLLocation* currentLocation;
     UILabel* messageLocation;
+    NSMutableArray* arraySMS;
+    NSMutableArray* arrayPhone;
+   
 }
-@synthesize reach, locationManager;
 
+@synthesize reach, locationManager;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,6 +46,32 @@
     
 }
 
+- (void)carregaContatosESMS
+{
+    arrayPhone = [[NSMutableArray alloc] init];
+    arraySMS = [[NSMutableArray alloc] init];
+    
+    
+    NSMutableDictionary* dicInformation = [[self getMainAppDelegate] getDictionaryBundleContatos];
+    
+    NSMutableArray* contatosArray = [dicInformation objectForKey:@"Contato"];
+    
+    for (int i =0; i< [contatosArray count]; i++)
+    {
+        NSMutableArray* contato = [contatosArray objectAtIndex:i];
+        
+        if ([[contato objectAtIndex:3] intValue] == 1)
+        {
+            [arraySMS addObject:contato];
+        }
+        
+        if ([[contato objectAtIndex:2] intValue] == 1)
+        {
+            [arrayPhone addObject:contato];
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,13 +79,26 @@
     
     reach = [Reachability reachabilityForInternetConnection];
     [self.reach startNotifier];
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
-    
+   
     self.locationManager = [[CLLocationManager alloc] init];
     
+  
+    //obsevador para calcular o sinal do telefone
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector: @selector(reachabilityChanged:)
+                                                 name: kReachabilityChangedNotification
+                                               object: nil];
+    
+    
+    //Carrega os contatos e os sms;
+    [self carregaContatosESMS];
     
 }
 
+-(void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+}
 
 
 -(void) viewWillAppear:(BOOL)animated
@@ -124,12 +168,56 @@
 
 - (IBAction)UIView_TouchUpInside:(id)sender {
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
+        NSMutableArray* recipients = [[NSMutableArray alloc] init];
+       
+        for (NSArray* contatoSMS in arraySMS) {
+            [recipients addObject:[contatoSMS objectAtIndex:1]];
+        }
+        
+        if ([MFMessageComposeViewController canSendText])
+        {
+            controller.body = messageLocation.text;
+            controller.recipients = recipients;
+            controller.messageComposeDelegate = self;
+            controller.toolbarHidden = YES;
+            controller.wantsFullScreenLayout = YES;
+            [self presentViewController:controller animated:YES completion:nil];
+            
+        }
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma MFMessageComposeViewControllerDelegate
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    switch (result)
+    {
+        case MessageComposeResultCancelled:
+            
+            [self.lblTestSMS setText:@"Cancelado"];
+            break;
+        case MessageComposeResultFailed:
+            [self.lblTestSMS setText:@"Error"];
+            break;
+        case MessageComposeResultSent:
+            [self.lblTestSMS setText:@"OK"];
+            break;
+            
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 
@@ -182,8 +270,11 @@
                 messageLocation.text = [dicInformation objectForKey:@"MessageAlert"];
                 messageLocation.text = [NSString stringWithFormat:@"%@ %@", messageLocation.text, localization];
                 
+                UITableViewCell* cell = [[self.tblSendAlert visibleCells] objectAtIndex:0];
+                
+                //Recalculando a label em relação a celula
+                messageLocation.frame = CGRectMake(5, 1, cell.bounds.size.width - 5, cell.bounds.size.height + 5);
                 [messageLocation sizeToFit];
-                               
             }
             
         }];
@@ -217,8 +308,6 @@
     label.textColor = [UIColor blackColor];
     label.font = [UIFont boldSystemFontOfSize:12];
     label.backgroundColor = [UIColor clearColor];
-    
-    
     
     if (section == 0)
         label.text = @"MENSAGEM";
@@ -262,50 +351,48 @@
     NSMutableDictionary* dicInformation;
     
     UILabel* label = [[UILabel alloc]
-                      initWithFrame:CGRectMake(5, 3, cell.bounds.size.width - 5, cell.bounds.size.height + 5)];
+                      initWithFrame:CGRectMake(5, 2, cell.bounds.size.width - 5, cell.bounds.size.height + 5)];
     
     [label clipsToBounds];
-    label.numberOfLines = 3;
+    label.numberOfLines = 4;
     label.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1];
     [label setFont:[UIFont systemFontOfSize:12]];
     
+  
+    
     if (indexPath.section == 0)
     {
-        label.numberOfLines = 4;
         dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
-        
         label.text = [dicInformation objectForKey:@"MessageAlert"];
-        
         messageLocation = label;
         
     }
     else if (indexPath.section == 1 || indexPath.section == 2)
     {
-       
-        dicInformation = [[self getMainAppDelegate] getDictionaryBundleContatos];
-        
-        NSMutableArray* contatosArray = [dicInformation objectForKey:@"Contato"];
         NSMutableString* stringBuild = [[NSMutableString alloc] init];
         
-        for (int i =0; i< [contatosArray count]; i++)
+        if (indexPath.section == 1) //caso seja destinarios leio somente a parte de sms
         {
-            NSMutableArray* contato = [contatosArray objectAtIndex:i];
-            
-            if (indexPath.section == 1) //caso seja destinarios leio somente a parte de sms
+            for (NSArray *contato in arraySMS)
             {
                 if ([[contato objectAtIndex:3] intValue] == 1)
                 {
                     [stringBuild appendString:[NSString stringWithFormat:@"%@ - ",[contato objectAtIndex:0]]];
                 }
             }
-            else // caso seja ligacao leio somente a parte de ligação
+        }
+        
+        if (indexPath.section == 2) //caso seja destinarios leio somente a parte de sms
+        {
+            for (NSArray *contato in arrayPhone)
             {
-                if ([[contato objectAtIndex:2] intValue] == 1)
+                if ([[contato objectAtIndex:3] intValue] == 1)
                 {
                     [stringBuild appendString:[NSString stringWithFormat:@"%@ - ",[contato objectAtIndex:0]]];
                 }
             }
         }
+        
         
         if ( [stringBuild length] > 2)
         {
@@ -322,7 +409,6 @@
     
     //Ajuste do tamanho do label em relação a celula;
     [label sizeToFit];
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;	
     [cell.contentView addSubview:label];
     

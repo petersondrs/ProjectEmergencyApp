@@ -73,6 +73,7 @@
 		6CAF1B5E170F858D003CC459 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B5D170F858D003CC459 /* main.m */; };
 		6CAF1B62170F858D003CC459 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B61170F858D003CC459 /* AppDelegate.m */; };
 		6CAF1B6B170F858D003CC459 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF1B69170F858D003CC459 /* MainStoryboard.storyboard */; };
+		6CC3B6D617358CFD0033DC4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC3B6D517358CFD0033DC4E /* MessageUI.framework */; };
 		6CD44F001715D85F0051B96A /* icon-tabBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EF81715D85F0051B96A /* icon-tabBar1.png */; };
 		6CD44F011715D85F0051B96A /* icon-tabBar1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EF91715D85F0051B96A /* icon-tabBar1@2x.png */; };
 		6CD44F021715D85F0051B96A /* icon-tabBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD44EFA1715D85F0051B96A /* icon-tabBar2.png */; };
@@ -182,6 +183,7 @@
 		6CAF1B60170F858D003CC459 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CAF1B61170F858D003CC459 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6CAF1B6A170F858D003CC459 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6CC3B6D517358CFD0033DC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6CD44EF81715D85F0051B96A /* icon-tabBar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar1.png"; sourceTree = "<group>"; };
 		6CD44EF91715D85F0051B96A /* icon-tabBar1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar1@2x.png"; sourceTree = "<group>"; };
 		6CD44EFA1715D85F0051B96A /* icon-tabBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tabBar2.png"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CC3B6D617358CFD0033DC4E /* MessageUI.framework in Frameworks */,
 				CE97734917355BCB0005BB92 /* CoreLocation.framework in Frameworks */,
 				6CF961851731DEE3008EE0D1 /* SystemConfiguration.framework in Frameworks */,
 				6CF961831731D085008EE0D1 /* CoreTelephony.framework in Frameworks */,
@@ -275,6 +278,7 @@
 		6CAF1B50170F858D003CC459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CC3B6D517358CFD0033DC4E /* MessageUI.framework */,
 				CE97734817355BCB0005BB92 /* CoreLocation.framework */,
 				6CF961841731DEE3008EE0D1 /* SystemConfiguration.framework */,
 				6CF961821731D085008EE0D1 /* CoreTelephony.framework */,

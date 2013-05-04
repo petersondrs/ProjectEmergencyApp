@@ -290,7 +290,7 @@
     NSString* nome = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     NSString* lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
     
-    if (![lastName isEqual: @""])
+    if (lastName != nil && ![lastName isEqual: @""])
         nome = [NSString stringWithFormat:@"%@ %@", nome, lastName];
     
     //pegando o telefone do contato

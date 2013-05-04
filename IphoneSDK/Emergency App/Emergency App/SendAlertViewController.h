@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Reachability.h"
 #import <CoreLocation/CoreLocation.h>
+#import <MessageUI/MessageUI.h>
+#import <CoreTelephony/CTCallCenter.h>
 
-@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
+@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate>
 {
     
 }
@@ -28,11 +30,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgGPS;
 @property (weak, nonatomic) IBOutlet UIImageView *imgSMS;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLigacao;
+@property (weak, nonatomic) IBOutlet UIImageView *btnEnviarAlert;
+
 
 - (IBAction)BtnRefresh_TouchUpInside:(id)sender;
-
-
-
 - (IBAction)UIView_TouchUpInside:(id)sender;
 
 @end
