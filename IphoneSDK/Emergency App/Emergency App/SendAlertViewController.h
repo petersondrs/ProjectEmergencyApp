@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Reachability.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 {
     
 }
+@property (retain, nonatomic) CLLocationManager* locationManager;
 @property (retain, nonatomic) Reachability* reach;
 @property (weak, nonatomic) IBOutlet UIView *viewTestFeature;
 @property (weak, nonatomic) IBOutlet UIView *uiViewSendAlert;
@@ -26,8 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgGPS;
 @property (weak, nonatomic) IBOutlet UIImageView *imgSMS;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLigacao;
-
-
 
 
 

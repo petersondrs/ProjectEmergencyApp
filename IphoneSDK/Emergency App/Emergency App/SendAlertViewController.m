@@ -18,8 +18,12 @@
 @end
 
 @implementation SendAlertViewController
+{
+    CLLocation* currentLocation;
+}
+@synthesize reach, locationManager;
 
-@synthesize reach;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,12 +46,10 @@
 	// Do any additional setup after loading the view.
     
     reach = [Reachability reachabilityForInternetConnection];
-    
     [self.reach startNotifier];
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
     
+    self.locationManager = [[CLLocationManager alloc] init];
     
     
 }
@@ -84,6 +86,7 @@
     }
 }
 
+//Quando o valor do sinal do telefone mudar, dispara esse evento para atualizar o estado do sinal
 -(void)reachabilityChanged: (NSNotification*) notification
 {
     Reachability* reachNote = [notification object];
@@ -100,6 +103,14 @@
 
     });
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.lblTestSinal setText:@"Testando"];
+        [self.locationManager setDelegate:self];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [self.locationManager startUpdatingLocation];
+    });
+    
+    
 }
 
 - (IBAction)UIView_TouchUpInside:(id)sender {
@@ -110,6 +121,82 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma CCLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
+    NSLog(@"%@",error);
+    
+    //Desliga o sinal de localização, economia de bateria
+    [self.locationManager stopUpdatingLocation];
+    
+    [self.lblTestGPS setText:@"Error"];
+    //[self.imgGPS setImage:[UIImage imageNamed:@"sendScreenIconsSignal.png"]];
+
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+   
+    [self.lblTestGPS setText:@"Calculando"];
+            
+    if ([locations count] > 0)
+    {
+       currentLocation =[locations objectAtIndex:0];
+      //[self.imgGPS setImage:[UIImage imageNamed:@"sendScreenIconsSignal.png"]];
+        
+        CLGeocoder* geoCoder = [[ CLGeocoder alloc] init];
+        
+        //Transformando a localizaçäo dele
+        [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+            
+            if ([placemarks count] > 0)
+            {
+                UITableViewCell* cellMessage = [[self.tblSendAlert visibleCells] objectAtIndex:0];
+                
+                if ([[cellMessage.contentView subviews] count] > 0) {
+                
+                [self.lblTestGPS setText:@"OK"];
+                    
+                    CLPlacemark* placeMark = [placemarks lastObject];
+                    
+                    
+                    UILabel* label = (UILabel*)[[cellMessage.contentView subviews] objectAtIndex:0];
+                    NSLog(@"%@",placeMark.thoroughfare);
+                    
+                    
+                    NSString* localization = [NSString stringWithFormat:@"\nMinha localização é %@, %@ ffsdfsfdfsd",placeMark.thoroughfare, placeMark.administrativeArea];
+                    
+                    label.text = [NSString stringWithFormat:@"%@ %@", label.text, localization];
+                    
+                    label.adjustsLetterSpacingToFitWidth = YES;
+                    
+                    [label sizeToFit];
+                    
+                    [cellMessage addSubview:label];
+                }
+                
+              
+                
+            }
+            
+        }];
+        
+        
+        
+    }
+    else
+    {
+        [self.lblTestGPS setText:@"Error"];
+        //[self.imgGPS setImage:[UIImage imageNamed:@"sendScreenIconsSignal.png"]];
+    }
+    
+    
+    //Desliga o sinal de localização, economia de bateria
+    [self.locationManager stopUpdatingLocation];
+    
 }
 
 
@@ -124,7 +211,7 @@
                                                     blue:232.0/255.0
                                                    alpha:1.0]];
     
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 2, tableView.bounds.size.width, 13)];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 3, tableView.bounds.size.width, 13)];
     
     label.textColor = [UIColor blackColor];
     label.font = [UIFont boldSystemFontOfSize:12];
@@ -148,7 +235,11 @@
     return 3;
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55;
+    
+    if (indexPath.section == 0)
+        return 65;
+    
+    return 50;
 }
 
 
@@ -170,16 +261,16 @@
     NSMutableDictionary* dicInformation;
     
     UILabel* label = [[UILabel alloc]
-                      initWithFrame:CGRectMake(5, 2, cell.bounds.size.width - 5, cell.bounds.size.height + 5)];
+                      initWithFrame:CGRectMake(5, 3, cell.bounds.size.width - 5, cell.bounds.size.height + 5)];
     
     [label clipsToBounds];
-    
     label.numberOfLines = 3;
     label.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1];
-    [label setFont:[UIFont systemFontOfSize:13]];
+    [label setFont:[UIFont systemFontOfSize:12]];
     
     if (indexPath.section == 0)
     {
+        label.numberOfLines = 4;
         dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
         
         label.text = [dicInformation objectForKey:@"MessageAlert"];
@@ -187,6 +278,7 @@
     }
     else if (indexPath.section == 1 || indexPath.section == 2)
     {
+       
         dicInformation = [[self getMainAppDelegate] getDictionaryBundleContatos];
         
         NSMutableArray* contatosArray = [dicInformation objectForKey:@"Contato"];
@@ -227,6 +319,8 @@
     
     //Ajuste do tamanho do label em relação a celula;
     [label sizeToFit];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;	
     [cell.contentView addSubview:label];
     
     return cell;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lNT-g3-rKe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lNT-g3-rKe">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="So7-ey-uG5"/>
@@ -49,11 +49,7 @@
                                             <constraint firstAttribute="height" constant="30" id="ffA-7P-Xca"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsGPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-7C-HaM">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hBs-Hf-Bz9"/>
-                                        </constraints>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsGPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-7C-HaM"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsSMS.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-dl-kLl"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-Ks-aOf"/>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sinal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGD-pe-uBC">
@@ -86,7 +82,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Testando" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-58-paa">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="eNg-bn-tTd"/>
-                                            <constraint firstAttribute="width" constant="43" id="yCm-Lf-vWJ"/>
+                                            <constraint firstAttribute="width" constant="49" id="jwU-FG-PKZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -124,11 +120,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="3Fg-dl-kLl" firstAttribute="top" secondItem="z8U-7C-HaM" secondAttribute="top" type="default" id="3RL-4I-qet"/>
+                                    <constraint firstItem="dcK-Qv-ehG" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="3lB-SY-nWn"/>
                                     <constraint firstItem="Jib-hL-v08" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="8" id="6I6-Pm-RfB"/>
                                     <constraint firstItem="TGD-pe-uBC" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="39" id="9nu-Md-0w1"/>
                                     <constraint firstItem="rcF-g5-Ykw" firstAttribute="baseline" secondItem="fMK-fb-hKk" secondAttribute="baseline" type="default" id="Aju-fA-lBi"/>
-                                    <constraint firstItem="QA7-Ks-aOf" firstAttribute="top" secondItem="3Fg-dl-kLl" secondAttribute="top" type="default" id="D61-rM-58l"/>
                                     <constraint firstItem="fMK-fb-hKk" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="115" id="E9g-Uu-ml7"/>
                                     <constraint firstItem="QA7-Ks-aOf" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="Esk-co-mB6"/>
                                     <constraint firstItem="b4L-TV-pYZ" firstAttribute="top" secondItem="Fmq-vP-FbF" secondAttribute="top" type="default" id="Ijh-2r-odt"/>
@@ -144,17 +139,19 @@
                                     <constraint firstItem="RhW-nU-fFI" firstAttribute="baseline" secondItem="TGD-pe-uBC" secondAttribute="baseline" type="default" id="d2a-tU-aMO"/>
                                     <constraint firstItem="RhW-nU-fFI" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="271" id="dFg-i2-wOU"/>
                                     <constraint firstItem="lIQ-58-paa" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="dXs-u8-0bI"/>
+                                    <constraint firstItem="z8U-7C-HaM" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="gck-F8-PkB"/>
                                     <constraint firstItem="b4L-TV-pYZ" firstAttribute="leading" secondItem="RhW-nU-fFI" secondAttribute="leading" type="default" id="hef-h8-UzX"/>
                                     <constraint firstItem="RhW-nU-fFI" firstAttribute="top" secondItem="TGD-pe-uBC" secondAttribute="top" type="default" id="hga-6Z-GvE"/>
-                                    <constraint firstItem="3Fg-dl-kLl" firstAttribute="leading" secondItem="lIQ-58-paa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nYe-ZJ-A1f"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Fg-dl-kLl" secondAttribute="trailing" constant="124" id="lVo-kZ-ZO7"/>
+                                    <constraint firstItem="QA7-Ks-aOf" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="sJV-s1-h5F"/>
                                     <constraint firstItem="Fmq-vP-FbF" firstAttribute="leading" secondItem="rcF-g5-Ykw" secondAttribute="leading" type="default" id="t6e-cj-7de"/>
+                                    <constraint firstItem="3Fg-dl-kLl" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="tNf-Ey-HYB"/>
                                     <constraint firstItem="lIQ-58-paa" firstAttribute="leading" secondItem="fMK-fb-hKk" secondAttribute="leading" type="default" id="td5-9Z-won"/>
                                     <constraint firstItem="rcF-g5-Ykw" firstAttribute="top" secondItem="fMK-fb-hKk" secondAttribute="top" type="default" id="vf6-yh-ate"/>
                                     <constraint firstItem="dcK-Qv-ehG" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="6" id="w05-iP-6pk"/>
                                     <constraint firstAttribute="trailing" secondItem="QA7-Ks-aOf" secondAttribute="trailing" constant="47" id="w9t-9r-UxM"/>
                                     <constraint firstItem="rcF-g5-Ykw" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="195" id="x5X-9P-XKn"/>
                                     <constraint firstItem="fMK-fb-hKk" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="-1" id="zOd-ep-fTr"/>
-                                    <constraint firstItem="dcK-Qv-ehG" firstAttribute="centerY" secondItem="rzT-OA-g2r" secondAttribute="centerY" type="default" id="zxr-G6-b9J"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWm-Zj-aje" customClass="UIControl">
@@ -200,7 +197,7 @@
                         <outlet property="lblTestLigacao" destination="b4L-TV-pYZ" id="dKI-cU-Cqe"/>
                         <outlet property="lblTestSMS" destination="Fmq-vP-FbF" id="uw3-Tk-Z8M"/>
                         <outlet property="lblTestSinal" destination="Jib-hL-v08" id="tUc-Bm-efr"/>
-                        <outlet property="tblSendAlert" destination="lNT-g3-rKe" id="ht6-4i-IcT"/>
+                        <outlet property="tblSendAlert" destination="lNT-g3-rKe" id="4S1-IW-hTp"/>
                         <outlet property="uiViewSendAlert" destination="WWm-Zj-aje" id="1fY-JL-QMs"/>
                         <outlet property="viewTestFeature" destination="rzT-OA-g2r" id="Iiw-xf-D0B"/>
                     </connections>
