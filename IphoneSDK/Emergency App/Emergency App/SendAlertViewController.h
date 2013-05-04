@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgSMS;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLigacao;
 
+- (IBAction)BtnRefresh_TouchUpInside:(id)sender;
 
 
 

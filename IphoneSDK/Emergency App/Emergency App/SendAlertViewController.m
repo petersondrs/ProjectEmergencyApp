@@ -20,6 +20,7 @@
 @implementation SendAlertViewController
 {
     CLLocation* currentLocation;
+    UILabel* messageLocation;
 }
 @synthesize reach, locationManager;
 
@@ -104,12 +105,20 @@
     });
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.lblTestSinal setText:@"Testando"];
+        [self.lblTestGPS setText:@"Testando"];
         [self.locationManager setDelegate:self];
         [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         [self.locationManager startUpdatingLocation];
     });
     
+    
+}
+
+- (IBAction)BtnRefresh_TouchUpInside:(id)sender {
+    
+   [self getSignalCarrierPhone: reach];
+   [self.locationManager startUpdatingLocation];
+
     
 }
 
@@ -128,14 +137,18 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     
-    NSLog(@"%@",error);
-    
+
     //Desliga o sinal de localização, economia de bateria
     [self.locationManager stopUpdatingLocation];
     
     [self.lblTestGPS setText:@"Error"];
     //[self.imgGPS setImage:[UIImage imageNamed:@"sendScreenIconsSignal.png"]];
-
+    
+    NSMutableDictionary* dicInformation;
+    dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
+    messageLocation.text = [dicInformation objectForKey:@"MessageAlert"];
+    
+    [messageLocation sizeToFit];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -154,38 +167,26 @@
             
             if ([placemarks count] > 0)
             {
-                UITableViewCell* cellMessage = [[self.tblSendAlert visibleCells] objectAtIndex:0];
-                
-                if ([[cellMessage.contentView subviews] count] > 0) {
-                
                 [self.lblTestGPS setText:@"OK"];
-                    
-                    CLPlacemark* placeMark = [placemarks lastObject];
-                    
-                    
-                    UILabel* label = (UILabel*)[[cellMessage.contentView subviews] objectAtIndex:0];
-                    NSLog(@"%@",placeMark.thoroughfare);
-                    
-                    
-                    NSString* localization = [NSString stringWithFormat:@"\nMinha localização é %@, %@ ffsdfsfdfsd",placeMark.thoroughfare, placeMark.administrativeArea];
-                    
-                    label.text = [NSString stringWithFormat:@"%@ %@", label.text, localization];
-                    
-                    label.adjustsLetterSpacingToFitWidth = YES;
-                    
-                    [label sizeToFit];
-                    
-                    [cellMessage addSubview:label];
-                }
                 
-              
+                CLPlacemark* placeMark = [placemarks lastObject];
+                NSMutableDictionary* dicInformation;
                 
+                NSString* localization = [NSString
+                                          stringWithFormat:@"\nMinha localização é %@, %@",
+                                          placeMark.thoroughfare,
+                                          placeMark.administrativeArea];
+                
+                dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
+                
+                messageLocation.text = [dicInformation objectForKey:@"MessageAlert"];
+                messageLocation.text = [NSString stringWithFormat:@"%@ %@", messageLocation.text, localization];
+                
+                [messageLocation sizeToFit];
+                               
             }
             
         }];
-        
-        
-        
     }
     else
     {
@@ -204,14 +205,14 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(9, 0, tableView.bounds.size.width, 0)];
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(7, 0, tableView.bounds.size.width, 0)];
     
     [headerView setBackgroundColor:[UIColor colorWithRed:232.0/255.0
                                                    green:232.0/255.0
                                                     blue:232.0/255.0
                                                    alpha:1.0]];
     
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(9, 3, tableView.bounds.size.width, 13)];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(7, 4, tableView.bounds.size.width, 13)];
     
     label.textColor = [UIColor blackColor];
     label.font = [UIFont boldSystemFontOfSize:12];
@@ -274,6 +275,8 @@
         dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
         
         label.text = [dicInformation objectForKey:@"MessageAlert"];
+        
+        messageLocation = label;
         
     }
     else if (indexPath.section == 1 || indexPath.section == 2)
