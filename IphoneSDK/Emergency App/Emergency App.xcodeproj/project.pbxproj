@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A39D31735B29900FA0D9D /* barBottomButtonAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */; };
+		181A39D41735B29900FA0D9D /* barBottomButtonAlert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */; };
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
 		186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */; };
 		186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */; };
@@ -108,6 +110,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barBottomButtonAlert.png; path = "Emergency App/img/barBottomButtonAlert.png"; sourceTree = "<group>"; };
+		181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barBottomButtonAlert@2x.png"; path = "Emergency App/img/barBottomButtonAlert@2x.png"; sourceTree = "<group>"; };
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
 		186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -362,6 +366,8 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */,
+				181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */,
 				18B56EA717319C5D00427D8B /* bgButtonSend.png */,
 				18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */,
 				18B56E8F17319C3600427D8B /* buttonSendNormal.png */,
@@ -587,6 +593,8 @@
 				18B56EA617319C3700427D8B /* sendScreenIconsSMS@2x.png in Resources */,
 				18B56EA917319C5D00427D8B /* bgButtonSend.png in Resources */,
 				18B56EAA17319C5D00427D8B /* bgButtonSend@2x.png in Resources */,
+				181A39D31735B29900FA0D9D /* barBottomButtonAlert.png in Resources */,
+				181A39D41735B29900FA0D9D /* barBottomButtonAlert@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
