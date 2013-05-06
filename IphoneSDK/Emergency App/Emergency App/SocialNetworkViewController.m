@@ -34,7 +34,7 @@
 
 -(BOOL)verifyIfIsLoggedToFacebook
 {
-    return (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded);
+    return [[FBSession activeSession] isOpen];
 }
 -(BOOL)verifyIfIsLoggedToTwitter
 {
@@ -206,10 +206,8 @@
 - (void)switchTwitter_ValueChanged:(id)sender {
     
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
-
-    
+   
+    NSMutableDictionary* dic = [app getDictionaryBundleProfile];
     if (self.switchTwitter.isOn)
     {
         ACAccountStore* store = [[ACAccountStore alloc] init];
@@ -228,7 +226,8 @@
                     app.twSession = twAccount;
                     
                     [dic setObject:@"1" forKey:@"Twitter"];
-                    [dic writeToFile:bundle atomically:YES];
+                    
+                    [app saveDictionaryBundleProfile:dic];
                 }
                 else
                 {
@@ -237,6 +236,9 @@
                         [self twitterAccountMessage:@"Por favor configure uma conta do twitter no iOS"];
                         
                          self.switchTwitter.On = NO;
+                        [dic setObject:@"0" forKey:@"Twitter"];
+                        
+                        [app saveDictionaryBundleProfile:dic];
                    });
                    
                 }
@@ -249,6 +251,10 @@
                     [self twitterAccountMessage:@"O usuário não permitiu a acesso a conta do twitter pela aplicação emergency response ou nenhuma conta configurada no iOS"];
                      
                     self.switchTwitter.On = NO;
+                    
+                    [dic setObject:@"0" forKey:@"Twitter"];
+                    
+                    [app saveDictionaryBundleProfile:dic];
             
                 });
                 
@@ -268,8 +274,7 @@
 - (void)switchFacebook_ValueChanged:(id)sender {
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+   NSMutableDictionary* dic = [app getDictionaryBundleProfile];
     
     if (self.switchFacebook.isOn)
     {
@@ -284,7 +289,7 @@
         [app.fbSession closeAndClearTokenInformation];
         
         [dic setObject:@"0" forKey:@"Facebook"];
-        [dic writeToFile:bundle atomically:YES];
+        [app saveDictionaryBundleProfile:dic];
         
     }
     

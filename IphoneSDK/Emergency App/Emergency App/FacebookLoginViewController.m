@@ -24,6 +24,11 @@
     }
     return self;
 }
+-(AppDelegate*) getMainDelegate {
+    
+    return [[UIApplication sharedApplication] delegate];
+    
+}
 
 - (void)viewDidLoad
 {
@@ -56,9 +61,10 @@
 
 - (IBAction)btnLogarFB_TouchUpInside:(id)sender {
     
-    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    AppDelegate* appDelegate = [self getMainDelegate];
+    
+    NSMutableDictionary* dic = [appDelegate getDictionaryBundleProfile];
+    
     
     
     //Se a sessão do facebook não está logado, logar no facebook
@@ -67,29 +73,38 @@
     {
         //Criar uma sessão nova
         appDelegate.fbSession = [[FBSession alloc]init];
+       
+        [FBSession setActiveSession:appDelegate.fbSession];
         
-        
-        [appDelegate.fbSession openWithCompletionHandler:
-         ^(FBSession *session, FBSessionState status, NSError *error)
+        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions",@"publish_checkins"]
+                                           defaultAudience:FBSessionDefaultAudienceFriends
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session, FBSessionState status, NSError *error)
         {
-            [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
-             self.rootController.switchFacebook.on = YES;
             
-            [dic setObject:@"1" forKey:@"Facebook"];
-                        
-            
+            if (!error)
+            {
+                
+                [self.btnLogar setTitle:@"Log out" forState:UIControlStateNormal];
+                self.rootController.switchFacebook.on = YES;
+                
+                [dic setObject:@"1" forKey:@"Facebook"];
+                [appDelegate saveDictionaryBundleProfile:dic];
+            }
         }];
+              
     }
     else
     {
         [appDelegate.fbSession closeAndClearTokenInformation];
         [self.btnLogar setTitle:@"Log in" forState:UIControlStateNormal];
         self.rootController.switchFacebook.on = NO;
-        [dic setObject:@"1" forKey:@"Facebook"];
+        [dic setObject:@"0" forKey:@"Facebook"];
+        [appDelegate saveDictionaryBundleProfile:dic];
+        
     }
     
-    [dic writeToFile:bundle atomically:YES];
-    
+   
 }
 
 
