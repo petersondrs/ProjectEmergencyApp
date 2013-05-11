@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181A39D31735B29900FA0D9D /* barBottomButtonAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */; };
-		181A39D41735B29900FA0D9D /* barBottomButtonAlert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */; };
 		183CA1321710D1C500FA8DA6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 183CA1341710D1C500FA8DA6 /* Default.png */; };
 		186B09C01724B1DB008F3E18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */; };
 		186B09C21724B22B008F3E18 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */; };
@@ -38,6 +36,16 @@
 		18B56EA617319C3700427D8B /* sendScreenIconsSMS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56E9A17319C3700427D8B /* sendScreenIconsSMS@2x.png */; };
 		18B56EA917319C5D00427D8B /* bgButtonSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56EA717319C5D00427D8B /* bgButtonSend.png */; };
 		18B56EAA17319C5D00427D8B /* bgButtonSend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */; };
+		18D37064173B52B100C7B7AB /* buttonSendMessagerNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705A173B52B100C7B7AB /* buttonSendMessagerNormal.png */; };
+		18D37065173B52B100C7B7AB /* buttonSendMessagerPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705B173B52B100C7B7AB /* buttonSendMessagerPressed.png */; };
+		18D37066173B52B100C7B7AB /* buttonViewContactsNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705C173B52B100C7B7AB /* buttonViewContactsNormal.png */; };
+		18D37067173B52B100C7B7AB /* buttonViewContactsPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705D173B52B100C7B7AB /* buttonViewContactsPressed.png */; };
+		18D37068173B52B100C7B7AB /* buttonSendMessagerPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705E173B52B100C7B7AB /* buttonSendMessagerPressed@2x.png */; };
+		18D37069173B52B100C7B7AB /* buttonViewContactsPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D3705F173B52B100C7B7AB /* buttonViewContactsPressed@2x.png */; };
+		18D3706A173B52B100C7B7AB /* buttonViewContactsNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D37060173B52B100C7B7AB /* buttonViewContactsNormal@2x.png */; };
+		18D3706B173B52B100C7B7AB /* buttonSendMessagerNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D37061173B52B100C7B7AB /* buttonSendMessagerNormal@2x.png */; };
+		18D3706C173B52B100C7B7AB /* barBottomButtonAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D37062173B52B100C7B7AB /* barBottomButtonAlert.png */; };
+		18D3706D173B52B100C7B7AB /* barBottomButtonAlert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D37063173B52B100C7B7AB /* barBottomButtonAlert@2x.png */; };
 		18EB0F13171B92E000C57D0F /* UITabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EB0F12171B92E000C57D0F /* UITabBar.png */; };
 		18FA170B1727694400FA1366 /* navigator-controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA170A1727694400FA1366 /* navigator-controller.png */; };
 		18FA171617276AE500FA1366 /* barBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FA170C17276AE500FA1366 /* barBackButton@2x.png */; };
@@ -110,8 +118,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barBottomButtonAlert.png; path = "Emergency App/img/barBottomButtonAlert.png"; sourceTree = "<group>"; };
-		181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barBottomButtonAlert@2x.png"; path = "Emergency App/img/barBottomButtonAlert@2x.png"; sourceTree = "<group>"; };
 		183CA1331710D1C500FA8DA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Default.png; sourceTree = "<group>"; };
 		186B09BF1724B1DB008F3E18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		186B09C11724B22B008F3E18 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -141,6 +147,16 @@
 		18B56E9A17319C3700427D8B /* sendScreenIconsSMS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sendScreenIconsSMS@2x.png"; path = "Emergency App/img/sendScreenIconsSMS@2x.png"; sourceTree = "<group>"; };
 		18B56EA717319C5D00427D8B /* bgButtonSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgButtonSend.png; path = "Emergency App/img/bgButtonSend.png"; sourceTree = "<group>"; };
 		18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bgButtonSend@2x.png"; path = "Emergency App/img/bgButtonSend@2x.png"; sourceTree = "<group>"; };
+		18D3705A173B52B100C7B7AB /* buttonSendMessagerNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonSendMessagerNormal.png; path = "Emergency App/img/buttonSendMessagerNormal.png"; sourceTree = "<group>"; };
+		18D3705B173B52B100C7B7AB /* buttonSendMessagerPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonSendMessagerPressed.png; path = "Emergency App/img/buttonSendMessagerPressed.png"; sourceTree = "<group>"; };
+		18D3705C173B52B100C7B7AB /* buttonViewContactsNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonViewContactsNormal.png; path = "Emergency App/img/buttonViewContactsNormal.png"; sourceTree = "<group>"; };
+		18D3705D173B52B100C7B7AB /* buttonViewContactsPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonViewContactsPressed.png; path = "Emergency App/img/buttonViewContactsPressed.png"; sourceTree = "<group>"; };
+		18D3705E173B52B100C7B7AB /* buttonSendMessagerPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonSendMessagerPressed@2x.png"; path = "Emergency App/img/buttonSendMessagerPressed@2x.png"; sourceTree = "<group>"; };
+		18D3705F173B52B100C7B7AB /* buttonViewContactsPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonViewContactsPressed@2x.png"; path = "Emergency App/img/buttonViewContactsPressed@2x.png"; sourceTree = "<group>"; };
+		18D37060173B52B100C7B7AB /* buttonViewContactsNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonViewContactsNormal@2x.png"; path = "Emergency App/img/buttonViewContactsNormal@2x.png"; sourceTree = "<group>"; };
+		18D37061173B52B100C7B7AB /* buttonSendMessagerNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonSendMessagerNormal@2x.png"; path = "Emergency App/img/buttonSendMessagerNormal@2x.png"; sourceTree = "<group>"; };
+		18D37062173B52B100C7B7AB /* barBottomButtonAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barBottomButtonAlert.png; path = "Emergency App/img/barBottomButtonAlert.png"; sourceTree = "<group>"; };
+		18D37063173B52B100C7B7AB /* barBottomButtonAlert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barBottomButtonAlert@2x.png"; path = "Emergency App/img/barBottomButtonAlert@2x.png"; sourceTree = "<group>"; };
 		18EB0F12171B92E000C57D0F /* UITabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITabBar.png; sourceTree = "<group>"; };
 		18FA170A1727694400FA1366 /* navigator-controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigator-controller.png"; path = "Emergency App/img/navigator-controller.png"; sourceTree = "<group>"; };
 		18FA170C17276AE500FA1366 /* barBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barBackButton@2x.png"; path = "Emergency App/img/barBackButton@2x.png"; sourceTree = "<group>"; };
@@ -366,8 +382,16 @@
 		6CAF1B80170F85AA003CC459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				181A39D11735B29900FA0D9D /* barBottomButtonAlert.png */,
-				181A39D21735B29900FA0D9D /* barBottomButtonAlert@2x.png */,
+				18D3705A173B52B100C7B7AB /* buttonSendMessagerNormal.png */,
+				18D3705B173B52B100C7B7AB /* buttonSendMessagerPressed.png */,
+				18D3705C173B52B100C7B7AB /* buttonViewContactsNormal.png */,
+				18D3705D173B52B100C7B7AB /* buttonViewContactsPressed.png */,
+				18D3705E173B52B100C7B7AB /* buttonSendMessagerPressed@2x.png */,
+				18D3705F173B52B100C7B7AB /* buttonViewContactsPressed@2x.png */,
+				18D37060173B52B100C7B7AB /* buttonViewContactsNormal@2x.png */,
+				18D37061173B52B100C7B7AB /* buttonSendMessagerNormal@2x.png */,
+				18D37062173B52B100C7B7AB /* barBottomButtonAlert.png */,
+				18D37063173B52B100C7B7AB /* barBottomButtonAlert@2x.png */,
 				18B56EA717319C5D00427D8B /* bgButtonSend.png */,
 				18B56EA817319C5D00427D8B /* bgButtonSend@2x.png */,
 				18B56E8F17319C3600427D8B /* buttonSendNormal.png */,
@@ -593,8 +617,16 @@
 				18B56EA617319C3700427D8B /* sendScreenIconsSMS@2x.png in Resources */,
 				18B56EA917319C5D00427D8B /* bgButtonSend.png in Resources */,
 				18B56EAA17319C5D00427D8B /* bgButtonSend@2x.png in Resources */,
-				181A39D31735B29900FA0D9D /* barBottomButtonAlert.png in Resources */,
-				181A39D41735B29900FA0D9D /* barBottomButtonAlert@2x.png in Resources */,
+				18D37064173B52B100C7B7AB /* buttonSendMessagerNormal.png in Resources */,
+				18D37065173B52B100C7B7AB /* buttonSendMessagerPressed.png in Resources */,
+				18D37066173B52B100C7B7AB /* buttonViewContactsNormal.png in Resources */,
+				18D37067173B52B100C7B7AB /* buttonViewContactsPressed.png in Resources */,
+				18D37068173B52B100C7B7AB /* buttonSendMessagerPressed@2x.png in Resources */,
+				18D37069173B52B100C7B7AB /* buttonViewContactsPressed@2x.png in Resources */,
+				18D3706A173B52B100C7B7AB /* buttonViewContactsNormal@2x.png in Resources */,
+				18D3706B173B52B100C7B7AB /* buttonSendMessagerNormal@2x.png in Resources */,
+				18D3706C173B52B100C7B7AB /* barBottomButtonAlert.png in Resources */,
+				18D3706D173B52B100C7B7AB /* barBottomButtonAlert@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

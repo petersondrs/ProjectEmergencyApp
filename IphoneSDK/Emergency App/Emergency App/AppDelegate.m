@@ -68,6 +68,7 @@
     
 }
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // SETA A COR DE FUNDO DE TODAS AS TELAS DE NAVEGACAO;
@@ -90,6 +91,9 @@
     
     //Cria a sessão do twitter
     [self loggedTwitter];
+    
+    //Cria a sessão do facebook
+    [self loggedFacebook];
     
     
     //Verificando os arquivos de plist foram criados corretamente
@@ -143,11 +147,21 @@
     
     
 }
+- (void)loggedFacebook
+{
+    if ([[[self getDictionaryBundleProfile] objectForKey:@"Facebook"] intValue] == 1)
+    {
+        [FBSession openActiveSessionWithAllowLoginUI:NO];
+        
+        self.fbSession = [FBSession activeSession];
+        
+    }
+}
+
 
 -(void) loggedTwitter {
     
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"Profile" ofType:@"plist"];
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithContentsOfFile:bundle];
+    NSMutableDictionary* dic = [self getDictionaryBundleProfile];
     
     if ([[dic objectForKey:@"Twitter"] intValue] == 1)
     {

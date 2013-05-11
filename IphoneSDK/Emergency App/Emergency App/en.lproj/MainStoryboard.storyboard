@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YQw-Hq-mqA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -35,7 +35,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lNT-g3-rKe">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="So7-ey-uG5"/>
+                                    <constraint firstAttribute="height" constant="192" id="yoP-AQ-lMO"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="y5s-K9-3nc" id="qyf-Fd-AqO"/>
@@ -44,47 +44,33 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWm-Zj-aje" customClass="UIControl">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="buttonSendNormal.png" highlightedImage="buttonSendPressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="iRX-LT-yZz">
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-wV-qLe" customClass="UIControl">
+                                        <color key="backgroundColor" white="0.9139199361" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="UIView_TouchUpInside:" destination="y5s-K9-3nc" eventType="touchUpInside" id="BKe-7t-Xfq"/>
+                                        </connections>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buttonSendMessagerNormal.png" highlightedImage="buttonSendMessagerPressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-ey-H6v">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="82" type="user" id="VUD-yf-Ymo"/>
-                                            <constraint firstAttribute="width" constant="105" type="user" id="vtt-P5-Y9r"/>
+                                            <constraint firstAttribute="height" constant="124" id="RDE-68-0fZ"/>
                                         </constraints>
                                     </imageView>
-<<<<<<< HEAD
-=======
                                 </subviews>
                                 <color key="backgroundColor" white="0.913919936131387" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="iRX-LT-yZz" firstAttribute="centerX" secondItem="WWm-Zj-aje" secondAttribute="centerX" type="default" id="2vh-RV-Cgt"/>
-                                    <constraint firstItem="iRX-LT-yZz" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" constant="10" id="Bab-Lq-Ask"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="UIView_TouchUpInside:" destination="y5s-K9-3nc" eventType="touchUpInside" id="M1f-kg-pbO"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-zR-i2i">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="barBottomButtonAlert.png" highlightedImage="barBottomButtonAlert.png" translatesAutoresizingMaskIntoConstraints="NO" id="cvE-UU-M1I">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="5" type="user" id="X3N-kn-su8"/>
-                                            <constraint firstAttribute="width" constant="320" type="user" id="gUd-dX-AvT"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="cvE-UU-M1I" firstAttribute="top" secondItem="Hvi-zR-i2i" secondAttribute="top" constant="-2" id="IBx-s1-aFG"/>
-                                    <constraint firstItem="cvE-UU-M1I" firstAttribute="leading" secondItem="Hvi-zR-i2i" secondAttribute="leading" type="default" id="Lbt-X2-LOu"/>
+                                    <constraint firstAttribute="bottom" secondItem="6TL-wV-qLe" secondAttribute="bottom" constant="2" id="4w0-PP-MJS"/>
+                                    <constraint firstItem="Kk4-ey-H6v" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" constant="16" id="8Tm-DZ-dl6"/>
+                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="leading" secondItem="WWm-Zj-aje" secondAttribute="leading" type="default" id="OjK-hX-4to"/>
+                                    <constraint firstAttribute="trailing" secondItem="6TL-wV-qLe" secondAttribute="trailing" constant="73" id="hOn-6e-WOm"/>
+                                    <constraint firstItem="Kk4-ey-H6v" firstAttribute="leading" secondItem="WWm-Zj-aje" secondAttribute="leading" type="default" id="hdI-iU-9Vg"/>
+                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" type="default" id="phC-Ix-8oP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzT-OA-g2r">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsSignal.png" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-Qv-ehG"/>
->>>>>>> Botão Enviar redondo + atualização da tela de enviar
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsGPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-7C-HaM"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsSMS.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-dl-kLl"/>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sendScreenIconsPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-Ks-aOf"/>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sinal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGD-pe-uBC">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="4wG-4w-Tfb"/>
@@ -105,8 +91,7 @@
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-fb-hKk">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="27" id="Ib1-nj-V3i"/>
-                                            <constraint firstAttribute="height" constant="21" id="mga-c4-ibu"/>
+                                            <constraint firstAttribute="width" constant="27" id="aqP-dm-JOl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -114,7 +99,6 @@
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Testando" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-58-paa">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="eNg-bn-tTd"/>
                                             <constraint firstAttribute="width" constant="49" id="jwU-FG-PKZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
@@ -137,116 +121,56 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ligações" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhW-nU-fFI">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Testando" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4L-TV-pYZ">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="yHW-MY-Anf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-<<<<<<< HEAD
+                                    <constraint firstItem="z8U-7C-HaM" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="132" id="0NJ-dA-74o"/>
                                     <constraint firstItem="dcK-Qv-ehG" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="3lB-SY-nWn"/>
-                                    <constraint firstItem="Jib-hL-v08" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="8" id="6I6-Pm-RfB"/>
-=======
-                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="top" secondItem="b4L-TV-pYZ" secondAttribute="top" type="default" id="2m1-Pp-xWe"/>
-                                    <constraint firstItem="dcK-Qv-ehG" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="6IX-3l-EJk"/>
-                                    <constraint firstItem="Jib-hL-v08" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="8" id="7FD-XE-4TA"/>
->>>>>>> Botão Enviar redondo + atualização da tela de enviar
-                                    <constraint firstItem="TGD-pe-uBC" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="39" id="9nu-Md-0w1"/>
-                                    <constraint firstItem="RhW-nU-fFI" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="271" id="9w3-hQ-ZHZ"/>
-                                    <constraint firstItem="rcF-g5-Ykw" firstAttribute="baseline" secondItem="fMK-fb-hKk" secondAttribute="baseline" type="default" id="Aju-fA-lBi"/>
-                                    <constraint firstItem="fMK-fb-hKk" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="115" id="E9g-Uu-ml7"/>
-                                    <constraint firstItem="QA7-Ks-aOf" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="Esk-co-mB6"/>
-                                    <constraint firstItem="dcK-Qv-ehG" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="6" id="FS5-Ub-1jG"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Fg-dl-kLl" secondAttribute="trailing" constant="59" id="4cV-Im-etO"/>
+                                    <constraint firstItem="Jib-hL-v08" firstAttribute="leading" secondItem="dcK-Qv-ehG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8fz-r6-ote"/>
+                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="top" secondItem="lIQ-58-paa" secondAttribute="top" type="default" id="AW9-0E-KRX"/>
+                                    <constraint firstItem="Jib-hL-v08" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="11" id="GWB-94-j91"/>
                                     <constraint firstItem="z8U-7C-HaM" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="L7C-Ns-vMb"/>
-                                    <constraint firstItem="fMK-fb-hKk" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="-1" id="Lwu-ri-SDZ"/>
+                                    <constraint firstItem="Jib-hL-v08" firstAttribute="baseline" secondItem="lIQ-58-paa" secondAttribute="baseline" type="default" id="LO5-tt-4xg"/>
+                                    <constraint firstItem="dcK-Qv-ehG" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="15" id="MUL-lg-pAk"/>
                                     <constraint firstItem="dcK-Qv-ehG" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="Oek-lU-oki"/>
-                                    <constraint firstItem="lIQ-58-paa" firstAttribute="top" secondItem="Fmq-vP-FbF" secondAttribute="top" type="default" id="VZb-B0-beI"/>
-                                    <constraint firstItem="b4L-TV-pYZ" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="VhD-HH-KwW"/>
-                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="Wez-Ki-gR8"/>
-                                    <constraint firstItem="Jib-hL-v08" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="38" id="X58-jM-ESt"/>
+                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="baseline" secondItem="lIQ-58-paa" secondAttribute="baseline" type="default" id="Rn3-P6-vKl"/>
+                                    <constraint firstItem="lIQ-58-paa" firstAttribute="leading" secondItem="fMK-fb-hKk" secondAttribute="leading" type="default" id="Smw-1e-9ot"/>
+                                    <constraint firstItem="Jib-hL-v08" firstAttribute="top" secondItem="lIQ-58-paa" secondAttribute="top" type="default" id="T28-4M-Bov"/>
+                                    <constraint firstItem="fMK-fb-hKk" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="Y5i-Bz-6R5"/>
                                     <constraint firstItem="3Fg-dl-kLl" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="ZWI-lJ-AY8"/>
-                                    <constraint firstItem="z8U-7C-HaM" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="87" id="d0b-fh-wOh"/>
-                                    <constraint firstItem="RhW-nU-fFI" firstAttribute="baseline" secondItem="TGD-pe-uBC" secondAttribute="baseline" type="default" id="d2a-tU-aMO"/>
-                                    <constraint firstItem="lIQ-58-paa" firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" type="default" id="dXs-u8-0bI"/>
+                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="264" id="etu-Yh-2fF"/>
                                     <constraint firstItem="z8U-7C-HaM" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="gck-F8-PkB"/>
-                                    <constraint firstItem="b4L-TV-pYZ" firstAttribute="leading" secondItem="RhW-nU-fFI" secondAttribute="leading" type="default" id="hef-h8-UzX"/>
-                                    <constraint firstItem="RhW-nU-fFI" firstAttribute="top" secondItem="TGD-pe-uBC" secondAttribute="top" type="default" id="hga-6Z-GvE"/>
-<<<<<<< HEAD
-                                    <constraint firstAttribute="trailing" secondItem="3Fg-dl-kLl" secondAttribute="trailing" constant="124" id="lVo-kZ-ZO7"/>
-                                    <constraint firstItem="QA7-Ks-aOf" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="sJV-s1-h5F"/>
-=======
-                                    <constraint firstItem="3Fg-dl-kLl" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="jPu-kK-uiJ"/>
-                                    <constraint firstItem="3Fg-dl-kLl" firstAttribute="leading" secondItem="lIQ-58-paa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nYe-ZJ-A1f"/>
-                                    <constraint firstItem="TGD-pe-uBC" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="-2" id="rEL-AL-BmD"/>
->>>>>>> Botão Enviar redondo + atualização da tela de enviar
-                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="leading" secondItem="rcF-g5-Ykw" secondAttribute="leading" type="default" id="t6e-cj-7de"/>
+                                    <constraint firstItem="fMK-fb-hKk" firstAttribute="baseline" secondItem="rcF-g5-Ykw" secondAttribute="baseline" type="default" id="gfe-Yk-hMM"/>
+                                    <constraint firstItem="TGD-pe-uBC" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="hlI-iY-Ne5"/>
+                                    <constraint firstItem="TGD-pe-uBC" firstAttribute="leading" secondItem="dcK-Qv-ehG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="jcz-8d-wAT"/>
+                                    <constraint firstItem="rcF-g5-Ykw" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="law-lt-whL"/>
                                     <constraint firstItem="3Fg-dl-kLl" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="tNf-Ey-HYB"/>
-                                    <constraint firstItem="lIQ-58-paa" firstAttribute="leading" secondItem="fMK-fb-hKk" secondAttribute="leading" type="default" id="td5-9Z-won"/>
-                                    <constraint firstItem="rcF-g5-Ykw" firstAttribute="top" secondItem="fMK-fb-hKk" secondAttribute="top" type="default" id="vf6-yh-ate"/>
-                                    <constraint firstAttribute="trailing" secondItem="QA7-Ks-aOf" secondAttribute="trailing" constant="47" id="w9t-9r-UxM"/>
-                                    <constraint firstItem="QA7-Ks-aOf" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="wR2-kV-rM0"/>
-                                    <constraint firstItem="z8U-7C-HaM" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" type="default" id="wTo-xA-OPq"/>
-                                    <constraint firstItem="rcF-g5-Ykw" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="195" id="x5X-9P-XKn"/>
-<<<<<<< HEAD
-                                    <constraint firstItem="fMK-fb-hKk" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="top" constant="-1" id="zOd-ep-fTr"/>
+                                    <constraint firstItem="Fmq-vP-FbF" firstAttribute="leading" secondItem="rcF-g5-Ykw" secondAttribute="leading" type="default" id="wF6-Bo-L9P"/>
+                                    <constraint firstItem="TGD-pe-uBC" firstAttribute="baseline" secondItem="fMK-fb-hKk" secondAttribute="baseline" type="default" id="y6d-TK-7Ir"/>
+                                    <constraint firstItem="lIQ-58-paa" firstAttribute="leading" secondItem="rzT-OA-g2r" secondAttribute="leading" constant="164" id="z6b-Ih-67J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWm-Zj-aje" customClass="UIControl">
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-wV-qLe" customClass="UIControl">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buttonSendNormal.png" highlightedImage="buttonSendNormal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-ey-H6v"/>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.9139199361" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="trailing" secondItem="6TL-wV-qLe" secondAttribute="trailing" type="default" id="48f-Vc-vXd"/>
-                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="top" secondItem="6TL-wV-qLe" secondAttribute="top" type="default" id="Chp-Vd-5dP"/>
-                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="leading" secondItem="6TL-wV-qLe" secondAttribute="leading" type="default" id="YLj-cs-c1J"/>
-                                            <constraint firstItem="Kk4-ey-H6v" firstAttribute="bottom" secondItem="6TL-wV-qLe" secondAttribute="bottom" type="default" id="dBK-QW-nfE"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="UIView_TouchUpInside:" destination="y5s-K9-3nc" eventType="touchUpInside" id="BKe-7t-Xfq"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.913919936131387" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="top" constant="11" id="0Ce-JX-5Oa"/>
-                                    <constraint firstAttribute="bottom" secondItem="6TL-wV-qLe" secondAttribute="bottom" constant="14" id="DXE-9M-9n1"/>
-                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="centerX" secondItem="WWm-Zj-aje" secondAttribute="centerX" type="default" id="Khe-gX-diH"/>
-                                    <constraint firstItem="6TL-wV-qLe" firstAttribute="leading" secondItem="WWm-Zj-aje" secondAttribute="leading" constant="80" id="tZJ-TZ-acx"/>
-=======
->>>>>>> Botão Enviar redondo + atualização da tela de enviar
-                                </constraints>
-                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="buttonViewContactsNormal.png" highlightedImage="buttonViewContactsPressed.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16D-q3-kAw"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="barBottomButtonAlert.png" translatesAutoresizingMaskIntoConstraints="NO" id="oGw-e4-yia"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rzT-OA-g2r" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="2WN-LC-Zly"/>
-                            <constraint firstAttribute="bottom" secondItem="Hvi-zR-i2i" secondAttribute="bottom" constant="259" id="83N-wu-YGh"/>
                             <constraint firstItem="lNT-g3-rKe" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="A2X-PR-r60"/>
-                            <constraint firstItem="Hvi-zR-i2i" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="IUg-9I-iLb"/>
-                            <constraint firstItem="lNT-g3-rKe" firstAttribute="bottom" secondItem="j6d-QD-pXm" secondAttribute="bottom" type="default" id="Rfx-qH-gQt"/>
-                            <constraint firstItem="Hvi-zR-i2i" firstAttribute="trailing" secondItem="j6d-QD-pXm" secondAttribute="trailing" type="default" id="Ty5-fm-ITq"/>
-                            <constraint firstItem="WWm-Zj-aje" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" type="default" id="UhK-Tu-JaV"/>
-                            <constraint firstItem="WWm-Zj-aje" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="W5U-zt-6bd"/>
-                            <constraint firstItem="WWm-Zj-aje" firstAttribute="trailing" secondItem="j6d-QD-pXm" secondAttribute="trailing" type="default" id="WjV-vi-b7B"/>
-                            <constraint firstAttribute="bottom" secondItem="rzT-OA-g2r" secondAttribute="bottom" constant="230" id="cle-hd-Q4Z"/>
-                            <constraint firstItem="rzT-OA-g2r" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="107" id="dZ6-dl-zWc"/>
+                            <constraint firstAttribute="bottom" secondItem="lNT-g3-rKe" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="FHw-bw-goy"/>
+                            <constraint firstItem="16D-q3-kAw" firstAttribute="trailing" secondItem="j6d-QD-pXm" secondAttribute="trailing" type="default" id="Kid-kX-Uwg"/>
+                            <constraint firstItem="WWm-Zj-aje" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="QlQ-5b-Ven"/>
+                            <constraint firstAttribute="bottom" secondItem="WWm-Zj-aje" secondAttribute="bottom" constant="246" id="cCm-wL-L7U"/>
+                            <constraint firstItem="16D-q3-kAw" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="-8" id="cqA-6W-4Zf"/>
                             <constraint firstItem="lNT-g3-rKe" firstAttribute="trailing" secondItem="j6d-QD-pXm" secondAttribute="trailing" type="default" id="gQC-TL-NST"/>
-                            <constraint firstItem="rzT-OA-g2r" firstAttribute="top" secondItem="WWm-Zj-aje" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="huX-6v-nGM"/>
-                            <constraint firstItem="Hvi-zR-i2i" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="101" id="oqR-eh-dzX"/>
+                            <constraint firstAttribute="trailing" secondItem="WWm-Zj-aje" secondAttribute="trailing" constant="158" id="i2l-q4-tiE"/>
+                            <constraint firstItem="WWm-Zj-aje" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="-23" id="iXJ-Qh-8fZ"/>
+                            <constraint firstItem="oGw-e4-yia" firstAttribute="leading" secondItem="j6d-QD-pXm" secondAttribute="leading" type="default" id="mPE-ko-KAJ"/>
+                            <constraint firstItem="rzT-OA-g2r" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="117" id="ndb-XR-uCb"/>
+                            <constraint firstItem="lNT-g3-rKe" firstAttribute="top" secondItem="rzT-OA-g2r" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xE8-Co-HX0"/>
                             <constraint firstItem="rzT-OA-g2r" firstAttribute="trailing" secondItem="j6d-QD-pXm" secondAttribute="trailing" type="default" id="ylY-6V-kaf"/>
+                            <constraint firstItem="oGw-e4-yia" firstAttribute="top" secondItem="j6d-QD-pXm" secondAttribute="top" constant="110" id="ztK-aN-0RI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gjE-Wc-Yev">
@@ -259,11 +183,9 @@
                     <connections>
                         <outlet property="btnEnviarAlert" destination="Kk4-ey-H6v" id="Mlx-Xh-Jw5"/>
                         <outlet property="imgGPS" destination="z8U-7C-HaM" id="cYB-9W-Pdv"/>
-                        <outlet property="imgLigacao" destination="QA7-Ks-aOf" id="Th6-kb-Zhl"/>
                         <outlet property="imgSMS" destination="3Fg-dl-kLl" id="Iew-23-gzu"/>
                         <outlet property="imgSinal" destination="dcK-Qv-ehG" id="5nA-li-Erq"/>
                         <outlet property="lblTestGPS" destination="lIQ-58-paa" id="YOf-xw-6eX"/>
-                        <outlet property="lblTestLigacao" destination="b4L-TV-pYZ" id="dKI-cU-Cqe"/>
                         <outlet property="lblTestSMS" destination="Fmq-vP-FbF" id="uw3-Tk-Z8M"/>
                         <outlet property="lblTestSinal" destination="Jib-hL-v08" id="tUc-Bm-efr"/>
                         <outlet property="tblSendAlert" destination="lNT-g3-rKe" id="4S1-IW-hTp"/>
@@ -273,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDP-3j-eY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6438" y="1446"/>
+            <point key="canvasLocation" x="-6329" y="1446"/>
         </scene>
         <!--Navigation Controller - Enviar Alerta-->
         <scene sceneID="bcZ-MU-oFr">
@@ -763,13 +685,27 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-ei-JHF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-ei-JHF">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="8rj-1t-zOJ"/>
+                                    <constraint firstAttribute="height" constant="157" id="fU8-X1-uke"/>
                                 </constraints>
-                                <string key="text">lorem ipsum lorem ipsu lorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem ipsulorem ipsum lorem </string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Dicas para escrever a mensagem.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Coloque seu nome, nem sempre quem vai receber terá ele na agenda.  Crie um texto curto para poder ser enviado pelo Twitter com até 120 caracteres. Os outros 20 carateres são reservados para adicionar o link com sua localização.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -781,10 +717,10 @@
                             <constraint firstItem="YsY-Me-bS0" firstAttribute="leading" secondItem="Myt-C9-oDD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9w6-Q2-WYw"/>
                             <constraint firstAttribute="trailing" secondItem="Ds6-BQ-ygY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dwl-nX-SdD"/>
                             <constraint firstAttribute="trailing" secondItem="YsY-Me-bS0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K1H-N9-QjI"/>
-                            <constraint firstAttribute="trailing" secondItem="bYV-ei-JHF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PQ5-ca-25C"/>
+                            <constraint firstAttribute="bottom" secondItem="bYV-ei-JHF" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="KGa-7m-WnV"/>
+                            <constraint firstAttribute="trailing" secondItem="bYV-ei-JHF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bin-Pe-7bp"/>
                             <constraint firstItem="bYV-ei-JHF" firstAttribute="leading" secondItem="Myt-C9-oDD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cMO-1p-TPv"/>
                             <constraint firstItem="Ds6-BQ-ygY" firstAttribute="top" secondItem="Myt-C9-oDD" secondAttribute="top" constant="157" id="eUj-Ag-F12"/>
-                            <constraint firstAttribute="bottom" secondItem="bYV-ei-JHF" secondAttribute="bottom" constant="91" id="iHy-Q1-PRx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mensagem" id="jTe-gU-5TC">
@@ -1085,27 +1021,25 @@
                                     <outlet property="delegate" destination="yXh-uZ-mgO" id="uiQ-QO-TZJ"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoErShareScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="GqP-fR-1nv"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="282" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-GV-5CV">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="299" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-GV-5CV">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="282" id="GF0-GR-9dt"/>
-                                    <constraint firstAttribute="height" constant="86" id="O30-Oa-pzF"/>
+                                    <constraint firstAttribute="height" constant="101" id="AbR-aV-B4Y"/>
+                                    <constraint firstAttribute="width" constant="299" id="JhG-QL-7k4"/>
                                 </constraints>
-                                <string key="text">Conecte sua conta do Facebook e Twitter ao Emergency Response e utilize estes dois canais para enviar seu pedido de ajuda. 
-A mensagem será a mesma enviada via SMS.</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
+                                <string key="text">Conecte o Emergency Response ao Facebook e Twitter e utilize estes dois canais para enviar seu pedido de ajuda.    Observação  A mensagem enviada será a mesma do SMS.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" cyan="0.57999999999999996" magenta="0.5" yellow="0.48999999999999999" black="0.17000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GqP-fR-1nv" firstAttribute="centerX" secondItem="PQ9-Or-KcC" secondAttribute="centerX" type="default" id="FcM-kt-AUl"/>
-                            <constraint firstItem="GqP-fR-1nv" firstAttribute="top" secondItem="E4m-vm-hMt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="MLx-fG-OEB"/>
-                            <constraint firstItem="vWa-GV-5CV" firstAttribute="top" secondItem="E4m-vm-hMt" secondAttribute="top" constant="113" id="hX1-GE-aT5"/>
-                            <constraint firstItem="vWa-GV-5CV" firstAttribute="leading" secondItem="E4m-vm-hMt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ln4-Ly-HWY"/>
-                            <constraint firstAttribute="bottom" secondItem="PQ9-Or-KcC" secondAttribute="bottom" constant="3" id="ot2-ZB-8kZ"/>
-                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="centerX" secondItem="E4m-vm-hMt" secondAttribute="centerX" type="default" id="sBb-5j-qWq"/>
+                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="centerX" secondItem="E4m-vm-hMt" secondAttribute="centerX" type="default" id="468-vi-Cu0"/>
+                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="top" secondItem="E4m-vm-hMt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="adL-ja-vCk"/>
+                            <constraint firstItem="PQ9-Or-KcC" firstAttribute="centerX" secondItem="vWa-GV-5CV" secondAttribute="centerX" type="default" id="mSi-M9-3Ku"/>
+                            <constraint firstItem="vWa-GV-5CV" firstAttribute="top" secondItem="PQ9-Or-KcC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oHa-rl-MJa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x8n-Pc-MXE"/>
@@ -1561,7 +1495,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellAddContact" id="Zy4-Ie-yBr">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1588,7 +1522,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="r5t-4e-XqZ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellAddContact" textLabel="58I-TW-xfC" style="IBUITableViewCellStyleDefault" id="ZvP-Wk-MlN">
-                                        <rect key="frame" x="0.0" y="207" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="207" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1631,17 +1565,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name="buttonSendNormal.png" width="165" height="165"/>
-=======
         <image name="barBottomButtonAlert.png" width="320" height="5"/>
-        <image name="buttonSendNormal.png" width="124" height="124"/>
-        <image name="buttonSendPressed.png" width="124" height="124"/>
->>>>>>> Botão Enviar redondo + atualização da tela de enviar
+        <image name="buttonSendMessagerNormal.png" width="160" height="125"/>
+        <image name="buttonSendMessagerPressed.png" width="160" height="125"/>
+        <image name="buttonViewContactsNormal.png" width="160" height="125"/>
+        <image name="buttonViewContactsPressed.png" width="160" height="125"/>
         <image name="facebook.jpg" width="441" height="235"/>
-        <image name="logoErShareScreen.png" width="98" height="67"/>
         <image name="sendScreenIconsGPS.png" width="30" height="20"/>
-        <image name="sendScreenIconsPhone.png" width="30" height="20"/>
         <image name="sendScreenIconsSMS.png" width="30" height="20"/>
         <image name="sendScreenIconsSignal.png" width="30" height="20"/>
     </resources>

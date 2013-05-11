@@ -14,6 +14,7 @@
 #import "Reachability.h"
 #import <MessageUI/MessageUI.h>
 #import <CoreTelephony/CTCall.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface SendAlertViewController ()
 
@@ -25,6 +26,7 @@
     UILabel* messageLocation;
     NSMutableArray* arraySMS;
     NSMutableArray* arrayPhone;
+    CLPlacemark* currentPlaceMark;
    
 }
 
@@ -81,6 +83,8 @@
     [self.reach startNotifier];
    
     self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    [self.locationManager setDistanceFilter: 10.0f];
     
   
     //obsevador para calcular o sinal do telefone
@@ -166,13 +170,13 @@
     
 }
 
-- (IBAction)UIView_TouchUpInside:(id)sender {
+- (void)sendSMS {
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
         MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
         NSMutableArray* recipients = [[NSMutableArray alloc] init];
-       
+        
         for (NSArray* contatoSMS in arraySMS) {
             [recipients addObject:[contatoSMS objectAtIndex:1]];
         }
@@ -188,7 +192,83 @@
             
         }
     });
+}
+
+- (IBAction)UIView_TouchUpInside:(id)sender {
     
+    [self postToFacebook];
+    
+    //[self sendSMS];
+    
+    
+    
+}
+
+
+-(void) postToFacebook
+{
+    
+    AppDelegate* mainApp = [[UIApplication sharedApplication] delegate];
+        
+    NSMutableDictionary* dic = [mainApp getDictionaryBundleProfile];
+    
+    NSInteger facebook = [[dic objectForKey:@"Facebook"] intValue];
+    
+    if ([[mainApp fbSession] isOpen] && facebook == 1)
+    {
+        
+        if (currentPlaceMark == nil)
+        {
+        
+            [FBRequestConnection startForPostStatusUpdate:messageLocation.text
+                                        completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                            
+                                            if (error)
+                                            {
+                                                
+                                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                                                                    message:@"Aconteceu um erro ao enviar a alerta para o facebook"
+                                                                                                   delegate:nil
+                                                                                          cancelButtonTitle:@"OK"
+                                                                                          otherButtonTitles:nil];
+                                                [alertView show];
+                                                
+                                            }
+                                            
+                                        }];
+        }
+        else
+        {
+            
+            NSDictionary* dic = [[self getMainAppDelegate] getDictionaryBundleProfile];
+            
+            NSString* message = [NSString stringWithFormat:@"%@ Minha localização é %@, %@, %@ %@", [dic objectForKey:@"MessageAlert"], currentPlaceMark.thoroughfare, currentPlaceMark.subLocality, currentPlaceMark.subAdministrativeArea,currentPlaceMark.country];
+            
+            NSMutableDictionary *params = [[NSMutableDictionary alloc]
+                                         initWithObjectsAndKeys:message , @"message", nil];
+           
+            
+            [FBRequestConnection  startWithGraphPath:@"me/feed"
+                                         parameters:params
+                                         HTTPMethod:@"POST"
+                                  completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (error)
+                {
+                    
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Emergency Response"
+                                                                        message:@"Aconteceu um erro ao enviar a alerta para o facebook"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                    [alertView show];
+
+                }
+            }];
+            
+            
+        }
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -242,7 +322,14 @@
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
    
     [self.lblTestGPS setText:@"Calculando"];
-            
+    
+    NSMutableDictionary* dicInformation;
+    UITableViewCell* cell = [[self.tblSendAlert visibleCells] objectAtIndex:0];
+    
+    dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
+    
+
+    
     if ([locations count] > 0)
     {
        currentLocation =[locations objectAtIndex:0];
@@ -258,25 +345,31 @@
                 [self.lblTestGPS setText:@"OK"];
                 
                 CLPlacemark* placeMark = [placemarks lastObject];
-                NSMutableDictionary* dicInformation;
+                
+                currentPlaceMark = placeMark;
                 
                 NSString* localization = [NSString
                                           stringWithFormat:@"\nMinha localização é %@, %@",
                                           placeMark.thoroughfare,
                                           placeMark.administrativeArea];
-                
-                dicInformation = [[self getMainAppDelegate] getDictionaryBundleProfile];
-                
+               
                 messageLocation.text = [dicInformation objectForKey:@"MessageAlert"];
                 messageLocation.text = [NSString stringWithFormat:@"%@ %@", messageLocation.text, localization];
                 
-                UITableViewCell* cell = [[self.tblSendAlert visibleCells] objectAtIndex:0];
-                
-                //Recalculando a label em relação a celula
-                messageLocation.frame = CGRectMake(5, 1, cell.bounds.size.width - 5, cell.bounds.size.height + 5);
-                [messageLocation sizeToFit];
-            }
+          }
+          else
+          {
+              [self.lblTestGPS setText:@"Sem Sinal"];
+              currentPlaceMark = nil;
+              currentLocation = nil;
+              messageLocation.text = [dicInformation objectForKey:@"MessageAlert"];
+              
+          }
             
+            //Recalculando a label em relação a celula
+            messageLocation.frame = CGRectMake(5, 1, cell.bounds.size.width - 5, cell.bounds.size.height + 5);
+            [messageLocation sizeToFit];
+         
         }];
     }
     else
