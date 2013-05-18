@@ -11,9 +11,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MessageUI/MessageUI.h>
 #import <CoreTelephony/CTCallCenter.h>
+#import "SA_OAuthTwitterEngine.h"
 
-@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate>
+@interface SendAlertViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate, SA_OAuthTwitterEngineDelegate>
 {
+   // UIView*     _blockerView;
+
     
 }
 @property (retain, nonatomic) CLLocationManager* locationManager;
@@ -32,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgLigacao;
 @property (weak, nonatomic) IBOutlet UIImageView *btnEnviarAlert;
 
-
+- (IBAction)UIViewContact_TouchUpInside:(id)sender;
 - (IBAction)BtnRefresh_TouchUpInside:(id)sender;
 - (IBAction)UIView_TouchUpInside:(id)sender;
 

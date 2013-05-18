@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ServiceTermViewController : UIViewController
+@interface ServiceTermViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tblService;
 
 @end

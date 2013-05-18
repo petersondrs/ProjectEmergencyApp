@@ -4,7 +4,7 @@
 //  Created by Ben Gottlieb on 24 July 2009.
 //  Copyright 2009 Stand Alone, Inc.
 //
-//  Some code and concepts taken from examples provided by 
+//  Some code and concepts taken from examples provided by
 //  Matt Gemmell, Chris Kimpton, and Isaiah Carew
 //  See ReadMe for further attributions, copyrights and license info.
 //
@@ -109,7 +109,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 		
 		NSURLRequest			*request = _engine.authorizeURLRequest;
 		[_webView loadRequest: request];
-
+        
 		[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(pasteboardChanged:) name: UIPasteboardChangedNotification object: nil];
 	}
 	return self;
@@ -139,22 +139,22 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 #pragma mark View Controller Stuff
 - (void) loadView {
 	[super loadView];
-
+    
 	_backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kGGTwitterLoadingBackgroundImage]];
 	if ( UIInterfaceOrientationIsLandscape( self.orientation ) ) {
-		self.view = [[[UIView alloc] initWithFrame: CGRectMake(0, 0, 480, 288)] autorelease];	
+		self.view = [[[UIView alloc] initWithFrame: CGRectMake(0, 0, 480, 288)] autorelease];
 		_backgroundView.frame =  CGRectMake(0, 44, 480, 288);
 		
 		_navBar = [[[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 480, 32)] autorelease];
 	} else {
-		self.view = [[[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)] autorelease];	
+		self.view = [[[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)] autorelease];
 		_backgroundView.frame =  CGRectMake(0, 44, 320, 416);
 		_navBar = [[[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 44)] autorelease];
 	}
 	_navBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
 	_backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
+    
 	if (!UIInterfaceOrientationIsLandscape( self.orientation)) [self.view addSubview:_backgroundView];
 	
 	[self.view addSubview: _webView];
@@ -182,7 +182,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 	[self.view addSubview: _blockerView];
 	[spinner startAnimating];
 	
-	UINavigationItem				*navItem = [[[UINavigationItem alloc] initWithTitle: NSLocalizedString(@"Twitter Info", nil)] autorelease];
+	UINavigationItem				*navItem = [[[UINavigationItem alloc] initWithTitle:@""] autorelease];
 	navItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target: self action: @selector(cancel:)] autorelease];
 	
 	[_navBar pushNavigationItem: navItem animated: NO];
@@ -196,7 +196,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 - (void) didRotateFromInterfaceOrientation: (UIInterfaceOrientation) fromInterfaceOrientation {
 	self.orientation = self.interfaceOrientation;
 	_blockerView.center = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height / 2);
-//	[self performInjection];			//removed due to twitter update
+    //	[self performInjection];			//removed due to twitter update
 }
 
 //=============================================================================================================================
@@ -223,7 +223,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 		_firstLoad = NO;
 	} else {
 		NSString					*authPin = [self locateAuthPinInWebView: webView];
-
+        
 		if (authPin.length) {
 			[self gotPin: authPin];
 			return;
@@ -236,7 +236,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 		}
 	}
 	
-
+    
 	
 	[UIView beginAnimations: nil context: nil];
 	_blockerView.alpha = 0.0;
@@ -265,10 +265,10 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
  - first we check, using standard DOM-diving, for the pin, looking at both the old and new tags for it.
  - if not found, we try a regex for it. This did not work for me (though it did work in test web pages).
  - if STILL not found, we iterate the entire HTML and look for an all-numeric 'word', 7 characters in length
-
-Ugly. I apologize for its inelegance. Bleah.
-
-*********************************************************************************************************/
+ 
+ Ugly. I apologize for its inelegance. Bleah.
+ 
+ *********************************************************************************************************/
 
 - (NSString *) locateAuthPinInWebView: (UIWebView *) webView {
 	// Look for either 'oauth-pin' or 'oauth_pin' in the raw HTML
@@ -298,12 +298,12 @@ Ugly. I apologize for its inelegance. Bleah.
 		_pinCopyPromptBar = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, bounds.size.width, 44)] autorelease];
 		_pinCopyPromptBar.barStyle = UIBarStyleBlackTranslucent;
 		_pinCopyPromptBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-
-		_pinCopyPromptBar.items = [NSArray arrayWithObjects: 
-							  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: nil action: nil] autorelease],
-							  [[[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Select and Copy the PIN", @"Select and Copy the PIN") style: UIBarButtonItemStylePlain target: nil action: nil] autorelease], 
-							  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: nil action: nil] autorelease], 
-							nil];
+        
+		_pinCopyPromptBar.items = [NSArray arrayWithObjects:
+                                   [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: nil action: nil] autorelease],
+                                   [[[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Select and Copy the PIN", @"Select and Copy the PIN") style: UIBarButtonItemStylePlain target: nil action: nil] autorelease],
+                                   [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: nil action: nil] autorelease],
+                                   nil];
 	}
 	
 	return _pinCopyPromptBar;
@@ -314,18 +314,18 @@ Ugly. I apologize for its inelegance. Bleah.
 //removed since Twitter changed the page format
 //- (void) performInjection {
 //	if (_loading) return;
-//	
+//
 //	NSError					*error;
 //	NSString				*filename = UIInterfaceOrientationIsLandscape(self.orientation ) ? @"jQueryInjectLandscape" : @"jQueryInject";
 //	NSString				*path = [[NSBundle mainBundle] pathForResource: filename ofType: @"txt"];
-//	
+//
 //    NSString *dataSource = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-//	
+//
 //    if (dataSource == nil) {
 //        NSLog(@"An error occured while processing the jQueryInject file");
 //    }
-//	
-//	[_webView stringByEvaluatingJavaScriptFromString:dataSource]; //This line injects the jQuery to make it look better	
+//
+//	[_webView stringByEvaluatingJavaScriptFromString:dataSource]; //This line injects the jQuery to make it look better
 //}
 
 - (void) webViewDidStartLoad: (UIWebView *) webView {

@@ -8,7 +8,6 @@
 
 #import "MGTwitterEngineGlobalHeader.h"
 #include <libxml/xmlreader.h>
-
 #import "MGTwitterParserDelegate.h"
 
 @interface MGTwitterLibXMLParser : NSObject {

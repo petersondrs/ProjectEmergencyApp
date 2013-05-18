@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileEditNomeViewController : UIViewController
+@interface ProfileEditNomeViewController : UIViewController<UITextViewDelegate>
 
+- (IBAction)btnSalvar_TouchUpInside:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txtNome;
+@property (weak,nonatomic) UITableViewCell* cellNome;
 @end

@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self.txtNome becomeFirstResponder];
+    
+    self.txtNome.text = self.cellNome.detailTextLabel.text;
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +38,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"])
+    {
+        self.cellNome.detailTextLabel.text = self.txtNome.text;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    return YES;
+}
+
+
+- (IBAction)btnSalvar_TouchUpInside:(id)sender {
+    NSLog(@"%@",self.txtNome.text);
+    self.cellNome.detailTextLabel.text = self.txtNome.text;
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

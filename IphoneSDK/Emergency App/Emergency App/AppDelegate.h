@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
+#import "SA_OAuthTwitterEngine.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -23,5 +24,6 @@
 
 
 @property (strong, retain) FBSession* fbSession;
-@property (strong, retain) ACAccount* twSession;
+//@property (strong, retain) ACAccount* twSession;
+@property (strong, retain) SA_OAuthTwitterEngine* twSession;
 @end

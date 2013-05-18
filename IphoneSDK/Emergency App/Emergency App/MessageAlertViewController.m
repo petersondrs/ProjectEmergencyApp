@@ -52,7 +52,10 @@ const NSInteger count = 120;
     [self.txtMensagem.layer setBorderWidth:1.0];
     [self.txtMensagem.layer setBorderColor:[UIColor darkGrayColor].CGColor];
     [self.txtMensagem.layer setBorderWidth:1.3];
-    [self.txtMensagem.layer setBackgroundColor:[UIColor lightGrayColor].CGColor];
+    [self.txtMensagem.layer setBackgroundColor:[UIColor colorWithRed:244.0/255.0
+                                                               green:244.0/255.0
+                                                                blue:244.0/255.0
+                                                               alpha:1.0].CGColor];
     [self.txtMensagem clipsToBounds];
     
     

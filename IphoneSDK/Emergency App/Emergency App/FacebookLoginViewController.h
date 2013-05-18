@@ -11,12 +11,11 @@
 #import "SocialNetworkViewController.h"
 
 @interface FacebookLoginViewController : UIViewController
+{
+     UIView* _blockerView;
+}
 
 - (IBAction)btnFechar_TouchUpInside:(id)sender;
-
-- (IBAction)btnLogarFB_TouchUpInside:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIButton *btnLogar;
 
 @property (weak,nonatomic) SocialNetworkViewController* rootController;
 

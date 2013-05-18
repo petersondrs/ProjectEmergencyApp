@@ -164,8 +164,22 @@
     ABPeoplePickerNavigationController* picker = [[ABPeoplePickerNavigationController alloc] init];
     
     picker.peoplePickerDelegate = self;
+    picker.delegate = self;
+   
     
     [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+#pragma mark UINavigationControllerDelegate
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if ([navigationController isKindOfClass:NSClassFromString(@"ABPeoplePickerNavigationController")])
+    {
+        navigationController.topViewController.navigationItem.leftBarButtonItem = nil;
+        navigationController.topViewController.title = @"";
+    }
+    
     
 }
 

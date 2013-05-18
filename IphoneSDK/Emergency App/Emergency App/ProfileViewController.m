@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NascidoViewController.h"
 #import "AppDelegate.h"
+#import "TipoSanguineoViewController.h"
+#import "ProfileEditNomeViewController.h"
 
 @interface ProfileViewController ()
 
@@ -41,8 +43,7 @@
     NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleProfile];
     
     
-    self.txtNome.text = [dic objectForKey:@"Nome"];
-    self.txtSobreNome.text = [dic objectForKey:@"SobreNome"];
+    self.cellNome.detailTextLabel.text = [dic objectForKey:@"Nome"];
     self.cellNascido.detailTextLabel.text = [dic objectForKey:@"DataNascimento"];
     self.cellTipoSanguineo.detailTextLabel.text = [dic objectForKey:@"TipoSanguineo"];
     self.txtAlergia.text = [dic objectForKey:@"Alergia"];
@@ -56,8 +57,7 @@
     
     NSMutableDictionary* dic = [[self getMainDelegate] getDictionaryBundleProfile];
     
-    [dic setObject:self.txtNome.text forKey:@"Nome"];
-    [dic setObject:self.txtSobreNome.text forKey:@"SobreNome"];
+    [dic setObject:self.cellNome.detailTextLabel.text forKey:@"Nome"];
     [dic setObject:self.txtAlergia.text forKey:@"Alergia"];
     [dic setObject:self.txtPlanoSaude.text forKey:@"PlanoSaude"];
     [dic setObject:self.txtObs.text forKey:@"Obs"];
@@ -84,91 +84,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma UITextField Protocol
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    UIResponder* nextTextField = [self.view viewWithTag:textField.tag + 1];
-    
-    if (textField.tag == 1)
-    {
-        [nextTextField becomeFirstResponder];
-    }
-    else if (textField.tag == 2)
-    {
-        [nextTextField resignFirstResponder];
-        [self.view endEditing:YES];
-    }
-    
-    return YES;
-    
-}
-
-#pragma UITextView Protocol
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if ([text isEqualToString:@"\n"])
-    {
-        [textView resignFirstResponder];
-        [self.view endEditing:YES];
-    }
-    return YES;
-}
-
 
 
 #pragma mark - Table view delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 2 && indexPath.section == 0)
+    if (indexPath.row == 0 && indexPath.section == 0)
+    {
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [self performSegueWithIdentifier:@"Nome" sender:cell];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    if (indexPath.row == 1 && indexPath.section == 0)
     {
         UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"NascidoEm" sender:cell];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    if (indexPath.row == 3 && indexPath.section == 0)
+    if (indexPath.row == 2 && indexPath.section == 0)
     {
         UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"TipoSanguineo" sender:cell];
@@ -181,14 +114,34 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"NascidoEm"] || [segue.identifier isEqualToString:@"TipoSanguineo"])
+    UITableViewCell* cell;
+    
+    
+    if ([segue.identifier isEqualToString:@"NascidoEm"])
     {
-        UITableViewCell* cell = (UITableViewCell*)sender;
+        cell = (UITableViewCell*)sender;
         
         NascidoViewController* destinationController = (NascidoViewController*) [segue destinationViewController];
         
         destinationController.cell = cell;
     }
+    else if ([segue.identifier isEqualToString:@"TipoSanguineo"])
+    {
+        cell = (UITableViewCell*)sender;
+        
+        TipoSanguineoViewController* destinationController = (TipoSanguineoViewController*) [segue destinationViewController];
+        
+        destinationController.cell = cell;
+    }
+    else if ([segue.identifier isEqualToString:@"Nome"])
+    {
+        cell = (UITableViewCell*)sender;
+        
+        ProfileEditNomeViewController* destinationController = (ProfileEditNomeViewController*) [segue destinationViewController];
+        
+        destinationController.cellNome = cell;
+    }
+    
     
     
 }

@@ -13,9 +13,12 @@
 #import <Accounts/Accounts.h>
 #import <Twitter/Twitter.h>
 #import "OAuth+Additions.h"
-#import "TWAPIManager.h"
-#import "TWSignedRequest.h"
 #import <Social/Social.h>
+#import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
+
+#define kOAuthConsumerKey			@"2he1EcnaiXTEVzVG4OTw"
+#define kOAuthConsumerSecret		@"zgvXmagwdieHIN9kr5uy5b37JIfOLdecjOwkWTnLw0"
 
 @interface SocialNetworkViewController ()
 
@@ -38,8 +41,12 @@
 }
 -(BOOL)verifyIfIsLoggedToTwitter
 {
-    AppDelegate* app = [[UIApplication sharedApplication] delegate];
-    return (app.twSession != nil);
+    //AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    SA_OAuthTwitterEngine* twitter_engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+    twitter_engine.consumerKey = kOAuthConsumerKey;
+    twitter_engine.consumerSecret = kOAuthConsumerSecret;
+    
+    return [twitter_engine isAuthorized];
 }
 - (void)viewDidLoad
 {
@@ -47,7 +54,7 @@
 	
     // Do any additional setup after loading the view.
     [self.tblRedeSocial
-     setSeparatorColor:[UIColor colorWithRed:198.0/255.0 green:0 blue:0 alpha:1]];
+     setSeparatorColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     
 }
 
@@ -112,9 +119,9 @@
     
     //Configura o label
     UILabel* text = [[UILabel alloc]initWithFrame:CGRectMake(50, 11, 100 , 30)];
-    text.textColor = [UIColor whiteColor];
-    text.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
-    text.font = [UIFont boldSystemFontOfSize:17];
+    text.textColor = [UIColor colorWithRed:73/255.0 green:73/255.0 blue:73/255.0 alpha:1];
+    text.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
+    text.font = [UIFont boldSystemFontOfSize:15];
    
     //Configura o switch
     UISwitch*  switchNetwork = [[UISwitch alloc] initWithFrame:CGRectMake(231, 13, 79, 27)];
@@ -174,7 +181,7 @@
     //Cria a view na cell
     [cell.contentView addSubview:viewCell];
     
-    cell.contentView.backgroundColor = [UIColor colorWithRed:1 green:27.0/255.0 blue:0.0 alpha:1];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;
@@ -199,6 +206,17 @@
     return headerView;
 }
 
+#pragma mark SA_OAuthTwitterEngineDelegate
+- (void) storeCachedTwitterOAuthData: (NSString *) data forUsername: (NSString *) username {
+	NSUserDefaults			*defaults = [NSUserDefaults standardUserDefaults];
+    
+	[defaults setObject: data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *) cachedTwitterOAuthDataForUsername: (NSString *) username {
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
 
 
 #pragma View Events
@@ -206,68 +224,41 @@
 - (void)switchTwitter_ValueChanged:(id)sender {
     
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    SA_OAuthTwitterEngine* twitter_engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+    twitter_engine.consumerKey = kOAuthConsumerKey;
+    twitter_engine.consumerSecret = kOAuthConsumerSecret;
+    
    
     NSMutableDictionary* dic = [app getDictionaryBundleProfile];
+    
     if (self.switchTwitter.isOn)
     {
-        ACAccountStore* store = [[ACAccountStore alloc] init];
-        
-        ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        
-        ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
-            ACAccount* twAccount;
-         
-            if (granted)
-            {
-                NSArray *twAccounts = [store accountsWithAccountType:twitterType];
-                if (twAccounts.count > 0)
-                {
-                    twAccount = [twAccounts objectAtIndex:0];
-                    app.twSession = twAccount;
-                    
-                    [dic setObject:@"1" forKey:@"Twitter"];
-                    
-                    [app saveDictionaryBundleProfile:dic];
-                }
-                else
-                {
-                    dispatch_async(dispatch_get_main_queue(), ^(void) {
-                        
-                        [self twitterAccountMessage:@"Por favor configure uma conta do twitter no iOS"];
-                        
-                         self.switchTwitter.On = NO;
-                        [dic setObject:@"0" forKey:@"Twitter"];
-                        
-                        [app saveDictionaryBundleProfile:dic];
-                   });
-                   
-                }
-                
-            }
-            else
-            {
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                
-                    [self twitterAccountMessage:@"O usuário não permitiu a acesso a conta do twitter pela aplicação emergency response ou nenhuma conta configurada no iOS"];
-                     
-                    self.switchTwitter.On = NO;
-                    
-                    [dic setObject:@"0" forKey:@"Twitter"];
-                    
-                    [app saveDictionaryBundleProfile:dic];
-            
-                });
-                
-            }
-        };
-        if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
+        if (![twitter_engine isAuthorized])
         {
-            [store requestAccessToAccountsWithType:twitterType options:nil completion:handler];
+            UIViewController *controller = [SA_OAuthTwitterController
+                                            controllerToEnterCredentialsWithTwitterEngine: twitter_engine
+                                            delegate: self];
+            
+            [controller setTitle:@"teste"];
+            
+            [self presentViewController:controller animated:YES completion:nil];
+            
         }
+        
+        
+        [dic setObject:@"1" forKey:@"Twitter"];
+        [app saveDictionaryBundleProfile:dic];
     }
     else
     {
-        app.twSession = nil;
+         NSMutableDictionary* dic = [app getDictionaryBundleProfile];
+        [dic setObject:@"0" forKey:@"Twitter"];
+        [app saveDictionaryBundleProfile:dic];
+        
+        NSUserDefaults	*defaults = [NSUserDefaults standardUserDefaults];
+        [defaults removeObjectForKey:@"authData"];
+        
+        [twitter_engine clearAccessToken];
     }
 }
 
@@ -287,12 +278,22 @@
     {
         [[FBSession activeSession] closeAndClearTokenInformation];
         [app.fbSession closeAndClearTokenInformation];
+        app.fbSession = nil;
+        self.switchFacebook.on = NO;
         
         [dic setObject:@"0" forKey:@"Facebook"];
         [app saveDictionaryBundleProfile:dic];
         
     }
     
+}
+
+#pragma mark SA_OAuthTwitterControllerDelegate
+- (void) OAuthTwitterControllerCanceled: (SA_OAuthTwitterController *) controller {
+	self.switchTwitter.on = NO;
+}
+- (void) OAuthTwitterControllerFailed: (SA_OAuthTwitterController *) controller {
+	self.switchTwitter.on = NO;
 }
 
 

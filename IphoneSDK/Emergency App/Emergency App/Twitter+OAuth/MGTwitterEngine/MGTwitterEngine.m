@@ -10,11 +10,11 @@
 #import "MGTwitterHTTPURLConnection.h"
 
 #import "NSData+Base64.h"
-
-#define USE_LIBXML 0
+#define API_FORMAT @"json"
+#define USE_LIBXML 1
 
 #if YAJL_AVAILABLE
-	#define API_FORMAT @"json"
+	//#define API_FORMAT @"json"
 
 	#import "MGTwitterStatusesYAJLParser.h"
 	#import "MGTwitterMessagesYAJLParser.h"
@@ -22,7 +22,7 @@
 	#import "MGTwitterMiscYAJLParser.h"
 	#import "MGTwitterSearchYAJLParser.h"
 #else
-	#define API_FORMAT @"xml"
+	//#define API_FORMAT @"xml"
 
 	#if USE_LIBXML
 		#import "MGTwitterStatusesLibXMLParser.h"
@@ -49,10 +49,10 @@
 #define MAX_LOCATION_LENGTH		30
 #define MAX_DESCRIPTION_LENGTH	160
 
-#define DEFAULT_CLIENT_NAME     @"MGTwitterEngine"
+#define DEFAULT_CLIENT_NAME     @"Emergency Response"
 #define DEFAULT_CLIENT_VERSION  @"1.0"
-#define DEFAULT_CLIENT_URL      @"http://mattgemmell.com/source"
-#define DEFAULT_CLIENT_TOKEN	@"mgtwitterengine"
+#define DEFAULT_CLIENT_URL      @"http://emergencyResponse.com"
+#define DEFAULT_CLIENT_TOKEN	@"emergencyResponde"
 
 #define URL_REQUEST_TIMEOUT     25.0 // Twitter usually fails quickly if it's going to fail at all.
 
@@ -1008,13 +1008,9 @@
 }
 
 
-- (NSString *)sendUpdate:(NSString *)status
-{
-    return [self sendUpdate:status inReplyTo:0];
-}
 
 
-- (NSString *)sendUpdate:(NSString *)status inReplyTo:(unsigned long)updateID
+- (NSString *)sendUpdate:(NSString *)status inReplyTo:(unsigned long)updateID latitude:(NSString*)lat longitude:(NSString*)longi displayCoordenate:(Boolean)showCoordenate
 {
     if (!status) {
         return nil;
@@ -1029,6 +1025,15 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:0];
     [params setObject:trimmedText forKey:@"status"];
+    
+    if (![lat isEqualToString:@""])
+        [params setObject:lat forKey:@"lat"];
+    if (![longi isEqualToString:@""])
+        [params setObject:longi forKey:@"long"];
+    if (showCoordenate)
+        [params setObject:@"true" forKey:@"display_coordinates"];
+    
+    
     if (updateID > 0) {
         [params setObject:[NSString stringWithFormat:@"%lu", updateID] forKey:@"in_reply_to_status_id"];
     }

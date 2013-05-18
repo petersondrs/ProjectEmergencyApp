@@ -12,6 +12,8 @@
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
 
+
+
 @implementation AppDelegate
 
 @synthesize fbSession = _fbSession;
@@ -88,9 +90,7 @@
     
     [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1.0]];
     
-    
-    //Cria a sessão do twitter
-    [self loggedTwitter];
+  
     
     //Cria a sessão do facebook
     [self loggedFacebook];
@@ -154,41 +154,15 @@
         [FBSession openActiveSessionWithAllowLoginUI:NO];
         
         self.fbSession = [FBSession activeSession];
-        
     }
-}
-
-
--(void) loggedTwitter {
-    
-    NSMutableDictionary* dic = [self getDictionaryBundleProfile];
-    
-    if ([[dic objectForKey:@"Twitter"] intValue] == 1)
+    else
     {
-        ACAccountStore* store = [[ACAccountStore alloc] init];
+        [[FBSession activeSession] closeAndClearTokenInformation];
+        self.fbSession = nil;
         
-        ACAccountType *twitterType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        
-        ACAccountStoreRequestAccessCompletionHandler handler = ^(BOOL granted, NSError *error) {
-            ACAccount* twAccount;
-            
-            if (granted)
-            {
-                NSArray *twAccounts = [store accountsWithAccountType:twitterType];
-                if (twAccounts.count > 0)
-                {
-                    twAccount = [twAccounts objectAtIndex:0];
-                    self.twSession = twAccount;
-                }
-            }
-            
-        };
-        if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)])
-        {
-            [store requestAccessToAccountsWithType:twitterType options:nil completion:handler];
-        }
     }
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InformationViewController : UITableViewController
+@interface InformationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tblInfo;
 
 @end
